@@ -1,0 +1,480 @@
+<title>Radar de Sinergias Lanzadera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F2F5F4; --surface:#FFFFFF; --sunken:#E7EDEB;
+  --ink:#111C1A; --ink-2:#3C4B49; --muted:#677977;
+  --line:#D3DCDA; --line-strong:#B6C4C1;
+  --accent:#0C6558; --accent-soft:#DCEFEA;
+  --amber:#8F5D12; --amber-soft:#F5E9D4;
+  --coral:#A8413A; --coral-soft:#F6E0DD;
+  --violet:#5A4A8F; --violet-soft:#E6E2F3;
+  --slate:#4A5F6D; --slate-soft:#E1E9ED;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1413; --surface:#141E1D; --sunken:#0F1817;
+    --ink:#E7EEEC; --ink-2:#BECBC8; --muted:#8B9E9B;
+    --line:#25322F; --line-strong:#3A4A47;
+    --accent:#57D3B9; --accent-soft:#12332C;
+    --amber:#E2AC5C; --amber-soft:#33260F;
+    --coral:#E68A80; --coral-soft:#331916;
+    --violet:#AFA2E0; --violet-soft:#221D33;
+    --slate:#9FB6C2; --slate-soft:#1A2429;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1413; --surface:#141E1D; --sunken:#0F1817;
+  --ink:#E7EEEC; --ink-2:#BECBC8; --muted:#8B9E9B;
+  --line:#25322F; --line-strong:#3A4A47;
+  --accent:#57D3B9; --accent-soft:#12332C;
+  --amber:#E2AC5C; --amber-soft:#33260F;
+  --coral:#E68A80; --coral-soft:#331916;
+  --violet:#AFA2E0; --violet-soft:#221D33;
+  --slate:#9FB6C2; --slate-soft:#1A2429;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px 90px}
+button,input,select{font:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+/* header */
+header{padding:38px 0 22px;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between}
+.brand{display:flex;flex-direction:column;gap:7px;max-width:56ch}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted)}
+h1{font-family:"Bricolage Grotesque","Helvetica Neue",sans-serif;font-weight:800;
+  font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.03;letter-spacing:-.022em;margin:0}
+.sub{margin:0;color:var(--ink-2);font-size:1rem}
+
+/* picker */
+.picker{position:relative;flex:1 1 320px;max-width:400px}
+.picker label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+#q{width:100%;padding:11px 14px;border:1.5px solid var(--accent);border-radius:3px;
+  background:var(--surface);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13px}
+#q:focus{outline:2px solid var(--accent);outline-offset:1px}
+#sug{position:absolute;z-index:20;left:0;right:0;top:100%;margin-top:4px;
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;
+  max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+#sug[hidden]{display:none!important}
+#sug button{display:block;width:100%;text-align:left;border:0;background:transparent;
+  color:var(--ink);padding:9px 13px;cursor:pointer;border-bottom:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.35}
+#sug button:last-child{border-bottom:0}
+#sug button:hover,#sug button.on{background:var(--accent-soft);color:var(--accent)}
+#sug button span{display:block;color:var(--muted);font-size:10.5px;letter-spacing:.05em;margin-top:2px}
+#sug button:hover span,#sug button.on span{color:var(--accent)}
+
+/* layout */
+.cols{display:grid;grid-template-columns:288px 1fr;gap:34px;align-items:start;padding-top:28px}
+aside{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:17px 18px}
+.card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.18rem;font-weight:700;
+  letter-spacing:-.015em;margin:0 0 3px}
+.card .cmeta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.card p.desc{margin:0 0 14px;color:var(--ink-2);font-size:.94rem}
+.legendttl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.tagrow{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.tagrow:last-child{margin-bottom:0}
+.tg{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.06em;
+  padding:3px 7px;border-radius:2px;background:var(--sunken);color:var(--ink-2);
+  border:1px solid var(--line)}
+.tg.aud{background:var(--slate-soft);color:var(--slate);border-color:transparent}
+.tg.cap{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+
+.dist{display:flex;flex-direction:column;gap:7px}
+.dist button{display:grid;grid-template-columns:11px 1fr auto;gap:9px;align-items:center;
+  width:100%;background:transparent;border:0;padding:3px 0;cursor:pointer;color:var(--ink-2);
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;text-align:left;
+  border-radius:2px}
+.dist button:hover{color:var(--ink)}
+.dist button[aria-pressed="true"]{color:var(--ink);font-weight:600}
+.dist button[aria-pressed="false"]{opacity:.5}
+.sw{width:11px;height:11px;border-radius:2px}
+.dist .n{font-variant-numeric:tabular-nums;color:var(--muted)}
+.how{font-size:.85rem;color:var(--muted);margin:0;line-height:1.5}
+.how b{color:var(--ink-2);font-weight:600}
+
+/* results */
+.rhead{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:14px}
+.rhead h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem;
+  letter-spacing:-.015em;margin:0}
+.rhead .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+  letter-spacing:.07em;margin-left:auto}
+
+.list{display:flex;flex-direction:column;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.item{background:var(--surface);display:grid;grid-template-columns:52px 1fr;gap:16px;
+  padding:14px 18px 15px;align-items:start}
+.scorebox{display:flex;flex-direction:column;align-items:center;gap:5px;padding-top:2px}
+.sval{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.22rem;
+  line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.sbar{width:100%;height:3px;background:var(--sunken);border-radius:2px;overflow:hidden}
+.sbar i{display:block;height:100%}
+.main{min-width:0;display:flex;flex-direction:column;gap:5px}
+.top{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.02rem;
+  letter-spacing:-.012em}
+.nm a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.nm a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+.mt{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted)}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 7px;border-radius:2px}
+.p-aliado{background:var(--accent-soft);color:var(--accent)}
+.p-competidor{background:var(--coral-soft);color:var(--coral)}
+.p-proveedor{background:var(--violet-soft);color:var(--violet)}
+.p-espejo{background:var(--slate-soft);color:var(--slate)}
+.p-cliente{background:var(--amber-soft);color:var(--amber)}
+.dsc{margin:0;color:var(--ink-2);font-size:.94rem}
+.why{margin:0;font-size:.9rem;padding-left:12px;border-left:2px solid var(--line-strong)}
+.why em{font-style:normal;color:var(--muted)}
+.setbase{border:0;background:transparent;color:var(--muted);cursor:pointer;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;
+  text-transform:uppercase;padding:0;text-align:left;width:fit-content}
+.setbase:hover{color:var(--accent)}
+.empty{padding:34px;text-align:center;color:var(--muted);background:var(--surface);
+  border:1px solid var(--line);border-radius:3px}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);line-height:1.8}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:860px){
+  .cols{grid-template-columns:1fr;gap:22px}
+  aside{position:static}
+  .picker{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="kicker">549 startups · Lanzadera · motor de compatibilidad</div>
+    <h1>Radar de Sinergias</h1>
+    <p class="sub">Elige una empresa base y el motor puntúa las otras 548 contra ella: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
+  </div>
+  <div class="picker">
+    <label for="q">Empresa base</label>
+    <input id="q" type="text" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sug" placeholder="escribe un nombre…">
+    <div id="sug" role="listbox" hidden></div>
+  </div>
+</header>
+
+<div class="cols">
+  <aside>
+    <div class="card" id="ficha"></div>
+    <div class="card">
+      <p class="legendttl">Tipo de relación</p>
+      <div class="dist" id="dist"></div>
+    </div>
+    <div class="card">
+      <p class="legendttl">Cómo se calcula</p>
+      <p class="how">Cada ficha se etiqueta por <b>público</b> (a quién vende) y por <b>función</b> (qué hace), leyendo su descripción pública. La puntuación suma público compartido, complementariedad de función, encaje proveedor-cliente y cercanía de cohorte; el solapamiento total de función sobre el mismo público cambia la etiqueta a competidor en vez de restar. Es un cribado heurístico sobre una frase por empresa, no un análisis de la compañía.</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="rhead">
+      <h2 id="rttl">Coincidencias</h2>
+      <span class="n" id="rn"></span>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="empty" id="empty" hidden>Ningún resultado con ese filtro.</div>
+  </main>
+</div>
+
+<footer>
+  Fuente: directorio público de startups de Lanzadera, 549 fichas leídas de su API el 09/09/2026. Descripciones literales de cada ficha.<br>
+  Cohortes: MAR24 · SEPT24 · MAR25 · SEPT25 · MAR26 · SEPT26 · Alumni (sin cohorte asignada en la ficha).
+</footer>
+</div>
+
+<script>
+const RAW = __DATA__;
+
+/* ---------- taxonomía ---------- */
+const AUD = {
+  clinica:      ["Clínicas y sanidad", /cl[íi]nic|dental|odont|paciente|hospital|sanitari|m[ée]dic[oa]s?\\b|medicina|fisioterap|farmac|enfermer|quir[úu]rg|biopsia|radiolog|pr[óo]tesis|neonatal|veterinari|intubaci|c[áa]ncer|biom[ée]dic|gen[óo]mic|historia cl[íi]nica/i],
+  bienestar:    ["Bienestar personal", /bienestar|longevidad|salud mental|emocional|terapia|psic[óo]|nutric|suplemento|meditaci|estr[ée]s|ansiedad|belleza|skin ?care|cosm[ée]t/i],
+  mascotas:     ["Mascotas", /mascota|perro|gato|canino|veterinari|pet-?care|felin/i],
+  negocioLocal: ["Negocio de calle", /pyme|aut[óo]nomo|taller|gimnas|comercio|tienda f[íi]sica|negocios? f[íi]sico|peluquer|sal[óo]n|centro deportivo|centros? de belleza|trastero|supermercado|academia|local/i],
+  horeca:       ["Hostelería", /restaurante|hosteler|horeca|chef|cocina|cerveza|pizzer|comida|paella|milanesa|bebida|ocio nocturno/i],
+  turismo:      ["Turismo y hoteles", /hotel|turis|viaje|ferry|alojamiento|charter|n[áa]utic|barco|embarcaci[óo]n|vacacion|crucero/i],
+  eventos:      ["Eventos", /evento|boda|feria|festival|entrada|ticket|concierto|\bDJ\b|artista|fiesta|acreditaci|campamento/i],
+  marcaRetail:  ["Marca de consumo", /marca (de|valenciana|referente)|\bmoda\b|calzado|joyer|\bropa\b|bolso|gafas|mueble|decoraci[óo]n|regalo|accesorio|puzzle|sneaker|streetwear|maquillaje|abanico/i],
+  ecommerce:    ["Ecommerce", /ecommerce|e-?commerce|comercio (electr[óo]nico|digital)|tienda online|marketplace|venta online|retail|dropship/i],
+  industria:    ["Industria", /industri|f[áa]brica|fabricaci[óo]n|maquinaria|planta|manufactur|soldadur|pl[áa]stico|cer[áa]mic|electr[óo]nic|distribuidora/i],
+  logistica:    ["Logística y flotas", /log[íi]stic|env[íi]o|transporte|paquet|almac[ée]n|flota|reparto|cadena de suministro|forwarding|embalaje|\brutas\b|conductor|\bVTC\b/i],
+  inmobiliaria: ["Inmobiliario y obra", /inmobiliari|vivienda|alquiler|finca|\bobra\b|construcci[óo]n|arquitect|\bpiso\b|habitacion|hogar|inquilino|convivir|fachada/i],
+  educacion:    ["Educación", /educa|formaci[óo]n|colegio|universi|docente|alumno|\bcurso|oposici|estudiante|profesor|aprender|e-?learning|escuela|campus|acad[ée]mic/i],
+  finanzas:     ["Finanzas", /inversi[óo]n|\bfondo|banca|cr[ée]dito|financ|fiscal|contab|seguro|tokeniz|cripto|wealth|patrimonio|exchange|ahorro/i],
+  rrhh:         ["RRHH y talento", /talento|selecci[óo]n de personal|recursos humanos|empleado|contrataci[óo]n|n[óo]mina|absentismo|freelance|candidat|opositor|reclut/i],
+  legal:        ["Legal y trámites", /abogado|despacho|jur[íi]dic|contrato|licitacion|firma electr[óo]nica|gestor[íi]a|tr[áa]mite|burocracia|notari|pericial/i],
+  publico:      ["Sector público", /ayuntamiento|sector p[úu]blico|administraci[óo]n p[úu]blica|policial|emergencia|defensa|municipal|ayudas? p[úu]blicas?|subvenci|financiaci[óo]n europea|funerario/i],
+  deporte:      ["Deporte", /deport|f[úu]tbol|baloncesto|p[áa]del|entrenamiento|entrena|fitness|ciclista|running|atleta|voleibol|esqu[íi]|gimnasia|\bclub\b|maillot/i],
+  agro:         ["Agro y alimentación", /agr[íi]cola|\bagro|cultivo|ganader|pastoreo|riego|forestal|alimentari|aliment[oa]s?\b|envase|microveget/i],
+  energia:      ["Energía", /energ[íi]a|solar|fotovoltaic|el[ée]ctric|hidr[óo]geno|bater[íi]a|renovable|factura de luz|refrigera|carga port[áa]til/i],
+  cultura:      ["Cultura y medios", /m[úu]sic|canci[óo]n|discogr[áa]fic|royalt|guitarra|editorial|manuscrito|\barte\b|audiovisual|videojuego|streaming|revista|medio de comunicaci/i],
+  empresaB2B:   ["Empresa B2B", /para empresas|empresarial|corporativ|\bB2B\b|organizaciones|compa[ñn][íi]as|\bpymes\b|startups/i],
+  consumidor:   ["Consumidor final", /personas|usuario|familia|consumidor|mayores|ni[ñn]os|adultos|j[óo]venes|particulares|mujeres|s[ée]nior/i]
+};
+const CAP = {
+  ia:          ["IA y agentes", /\bIA\b|inteligencia artificial|agente|\bGPT\b|\bLLM\b|visi[óo]n artificial|generativa|algoritm|asistente|empleados? digital|trabajadores? virtual/i],
+  automat:     ["Automatización", /automatiz|autom[áa]tic|\bflujos?\b|workflow|digitaliza|optimiza (procesos|operaciones|la gesti)/i],
+  voz:         ["Voz y teléfono", /\bvoz\b|telef[óo]n|llamada|telecomunicaciones|VoIP|conversacional/i],
+  marketing:   ["Marketing y captación", /marketing|captaci[óo]n|\bleads?\b|publicidad|\bSEO\b|posicionamiento|rese[ñn]as|reputaci[óo]n|visibilidad|contenido|redes sociales|campa[ñn]|creadores|influencer|\bUGC\b|anuncios|growth|fideliza|valoraciones online|embajadores/i],
+  ventas:      ["Ventas y CRM", /\bCRM\b|ventas|comercial|funnel|prospec|vender|monetiz|\bcompra y venta\b/i],
+  gestion:     ["Gestión y operativa", /gesti[óo]n|gestiona|\bERP\b|operativa|administraci[óo]n de|agenda|reserva|control de|inventario|planifica|ejecuci[óo]n de/i],
+  datos:       ["Datos y analítica", /\bdatos\b|anal[íi]tic|analytics|m[ée]trica|predicc|informes?\b|dashboard|estad[íi]stic|monitoriza|pron[óo]stico|medici[óo]n|diagn[óo]stico/i],
+  infra:       ["Infraestructura", /cloud|\bnube\b|c[óo]mputo|infraestructura|servidor|plataforma de datos|soberan|Postgres|acceso a modelos|streaming profesional|geoespacial/i],
+  seguridad:   ["Seguridad", /cibersegur|vulnerab|cortafuegos|pentest|fraude|verifica|vigilancia|hurto|\brobo\b|riesgo|protecci[óo]n|seguridad/i],
+  compliance:  ["Cumplimiento", /cumplimiento|normativ|\bRGPD\b|AI Act|auditor?[ií]?a?\b|certifica|verifactu|trazabilidad|gobernanza|\blegal\b|acredita|multas/i],
+  pagos:       ["Pagos y financiación", /\bpagos?\b|cobr[oa]|factura|financiaci[óo]n|cr[ée]dito|plazos|tokeniz|adelanto|ticketera/i],
+  personas:    ["Personas y RRHH", /selecci[óo]n de personal|\btalento\b|n[óo]mina|horario|clima laboral|recursos humanos|absentismo|contrataci[óo]n/i],
+  marketplace: ["Marketplace", /marketplace|conecta|plataforma que conecta|red que conecta|comparador/i],
+  hardware:    ["Hardware", /robot|dispositivo|sensor|dron|fabrica|m[áa]quina|impres|bater[íi]a|pr[óo]tesis|instrumento|incubadora|gr[úu]a|\b3D\b|pantalla/i],
+  producto:    ["Producto físico", /marca (de|valenciana)|\bropa\b|calzado|joyer|cosm[ée]t|mueble|bolso|gafas|regalo|accesorio|puzzle|suplemento|envase|textil|elaboraci[óo]n de/i],
+  formacion:   ["Formación", /formaci[óo]n|\bcursos?\b|academia|aprender|escuela|e-?learning|tutor|capacita|talleres/i],
+  servicios:   ["Servicios y consultoría", /consultor|agencia|\bservicios?\b|estudio de|instalador|mantenedor|asesor|a domicilio/i],
+  comunidad:   ["Comunidad", /comunidad|red social|conecta a personas|\bfans\b|amistades|voluntariado/i],
+  sostenible:  ["Sostenibilidad", /sostenib|residuo|recicl|circular|huella|ecol[óo]gic|segunda mano|reacondicionad|excedente/i],
+  software:    ["Software / plataforma", /software|plataforma|\bSaaS\b|\bapps?\b|aplicaci[óo]n|herramienta|\bsistema\b|soluci[óo]n digital/i]
+};
+const PROVEEDOR = ["infra","seguridad","compliance","pagos","personas","datos"];
+const SOFTWARE  = ["ia","automat","gestion","marketing","ventas","datos","marketplace","voz","infra","software"];
+const COHORTS = ["MAR24","SEPT24","MAR25","SEPT25","MAR26","SEPT26"];
+const SECTOR_AUD = {"Salud":"clinica","Ecommerce":"ecommerce","Retail":"marcaRetail","HORECA":"horeca",
+  "Turismo":"turismo","Educación":"educacion","Finanzas":"finanzas","Construcción":"inmobiliaria",
+  "Movilidad":"logistica","Alimentación":"agro","Gaming":"cultura","Cripto":"finanzas",
+  "Energía":"energia","Moda":"marcaRetail"};
+
+/* ---------- construcción ---------- */
+const CO = RAW.map((r,i)=>{
+  const [name,sector,batch,desc,slug] = r;
+  const hay = name+" "+desc;                       // el sector NO se usa para etiquetar: sesgaría todo
+  let aud = Object.keys(AUD).filter(k=>AUD[k][1].test(hay));
+  const cap = Object.keys(CAP).filter(k=>CAP[k][1].test(hay));
+  let fb = false;
+  if(!aud.length){ aud = [SECTOR_AUD[sector] || "empresaB2B"]; fb = true; }  // respaldo por sector: señal débil
+  return {i,name,sector,batch,desc,slug,aud,cap,fb,
+          key:(name+" "+sector+" "+desc).toLowerCase()};
+});
+
+/* peso por especificidad: una etiqueta que llevan 200 empresas informa menos que una de 20 */
+const N = CO.length;
+const W = {};
+[...Object.keys(AUD),...Object.keys(CAP)].forEach(k=>{
+  const df = CO.filter(c=>c.aud.includes(k)||c.cap.includes(k)).length || 1;
+  W[k] = Math.log(N/df);
+});
+const sumW = a => a.reduce((t,k)=>t+(W[k]||1),0);
+
+/* léxico de nicho: palabras poco frecuentes que dos fichas comparten literalmente */
+const STOP = new Set(["plataf","soluci","empres","servic","sistem","tecnol","digita","produc","negoci","client","mercad","nuestr","traves","primer","mejora","person","gestio","softwa","automa","permit","ofrece","conect","transf","proces","herram","aplica","inteli","artifi","genera","manera","format","proyec","desarr","comple","especi","median","basado","travez","calida","facili","tiempo","modelo","reduci","aument","optimi","mundo","valenc","espana","online","global","nuevos","nueva"]);
+const deacc = t => t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function stemsOf(t){
+  const raw = deacc(t).match(/[a-z0-9]{5,}/g) || [];
+  const out = new Map();
+  raw.forEach(w=>{ const st=w.slice(0,6); if(!STOP.has(st) && !out.has(st)) out.set(st,w); });
+  return out;
+}
+CO.forEach(c=>{ c.stm = stemsOf(c.name+" "+c.desc); });
+const SDF = {};
+CO.forEach(c=>c.stm.forEach((_,st)=>SDF[st]=(SDF[st]||0)+1));
+const RARE = st => (SDF[st]||0) <= 45;
+const inter = (a,b)=>a.filter(x=>b.includes(x));
+const cohortGap=(a,b)=>{
+  const ia=COHORTS.indexOf(a), ib=COHORTS.indexOf(b);
+  return (ia<0||ib<0) ? null : Math.abs(ia-ib);
+};
+const MULT = {competidor:1, aliado:1, proveedor:.94, cliente:.76, espejo:.8, debil:.5};
+
+function evaluate(B,C){
+  const audS = inter(B.aud,C.aud);
+  const capS = inter(B.cap,C.cap);
+  const capUnion = [...new Set([...B.cap,...C.cap])];
+  const conf = (B.fb||C.fb) ? 0.55 : 1;           // audiencia inferida del sector pesa menos
+  const audFit = B.aud.length ? conf*sumW(audS)/sumW(B.aud) : 0;
+  const nicho = [...B.stm.keys()].filter(st=>C.stm.has(st) && RARE(st)).slice(0,3)
+                  .map(st=>B.stm.get(st));
+  const capJ   = capUnion.length ? sumW(capS)/sumW(capUnion) : 0;
+  const Bsoft = B.cap.some(c=>SOFTWARE.includes(c));
+  const Csoft = C.cap.some(c=>SOFTWARE.includes(c));
+  const aporta = C.cap.filter(c=>!B.cap.includes(c));
+  const prov   = aporta.filter(c=>PROVEEDOR.includes(c));
+
+  let rel;
+  if(audFit>=0.5 && capJ>=0.5) rel="competidor";
+  else if(audFit>0 && Bsoft && !Csoft) rel="cliente";
+  else if(audFit>0 && !Bsoft && Csoft) rel="proveedor";
+  else if(audFit>0) rel="aliado";
+  else if(Bsoft && prov.length>=2) rel="proveedor";
+  else if(capJ>=0.34) rel="espejo";
+  else rel="debil";
+
+  let s = 38*audFit;
+  if(audFit>0 && capJ<0.5)   // complementar solo cuenta si de verdad comparten comprador
+    s += audFit * (10 + Math.min(14, 5*aporta.filter(c=>SOFTWARE.includes(c)||PROVEEDOR.includes(c)).length));
+  if(Bsoft && Csoft) s += 10;
+  if(Bsoft) s += Math.min(16, 8*prov.length) * (0.4 + 0.6*audFit);
+  if(!audFit && capJ>=0.34) s += 20;
+  if(B.sector===C.sector && B.sector!=="Sin definir") s += 6;
+  s += 7*nicho.length;
+  const gap = cohortGap(B.batch,C.batch);
+  if(gap===0) s += 9; else if(gap===1) s += 4;
+
+  s = Math.round(Math.min(100, s*MULT[rel]));
+  return {s,rel,audS,capS,aporta,prov,gap,audFit,capJ,nicho};
+}
+
+const REL = {
+  competidor:{t:"Competidor", c:"var(--coral)",  cls:"p-competidor",
+    h:"Mismo público y función muy solapada: o pactáis frontera, o competís por la misma cuenta."},
+  aliado:{t:"Aliado comercial", c:"var(--accent)", cls:"p-aliado",
+    h:"Comparten comprador y cubren funciones distintas: paquete conjunto o integración."},
+  proveedor:{t:"Proveedor", c:"var(--violet)", cls:"p-proveedor",
+    h:"Vende una pieza que el otro consume: infraestructura, cumplimiento, pagos, datos o personas."},
+  espejo:{t:"Espejo de modelo", c:"var(--slate)", cls:"p-espejo",
+    h:"Misma jugada en otro vertical: playbook transferible, cero solapamiento de cliente."},
+  cliente:{t:"Cliente potencial", c:"var(--amber)", cls:"p-cliente",
+    h:"Negocio del mismo público que no fabrica software: candidato a comprarlo."},
+  debil:{t:"Encaje débil", c:"var(--line-strong)", cls:"p-espejo",
+    h:"Sin público ni función en común."}
+};
+const ORDER = ["competidor","aliado","proveedor","cliente","espejo","debil"];
+
+function phrase(B,C,e){
+  const n=k=>((AUD[k]||CAP[k])||["?"])[0];
+  const list=a=>a.map(n).join(", ").toLowerCase();
+  const p=[];
+  if(e.audS.length) p.push(`Mismo público: ${list(e.audS)}.`);
+  else p.push("Sin público en común.");
+  const solap=e.capS.filter(k=>k!=="software");
+  if(solap.length) p.push(`Se solapan en ${list(solap)}.`);
+  const add=e.aporta.filter(c=>PROVEEDOR.includes(c)||["marketing","ventas","voz","formacion","automat","ia"].includes(c));
+  if(add.length && e.rel!=="competidor") p.push(`Aportan ${list(add.slice(0,3))} que ${B.name} no cubre.`);
+  if(e.nicho.length) p.push(`Las dos fichas hablan de ${e.nicho.join(", ")}.`);
+  if(e.gap===0) p.push(`Misma cohorte ${B.batch}: están a un café.`);
+  return p.join(" ");
+}
+
+/* ---------- estado y render ---------- */
+let base = CO.find(c=>c.name==="Dentista Ideal") || CO[0];
+let relFilter = null;
+let scored = [];
+
+function compute(){
+  scored = CO.filter(c=>c.i!==base.i)
+    .map(c=>({c,e:evaluate(base,c)}))
+    .filter(x=>x.e.s>=22)
+    .sort((a,b)=>b.e.s-a.e.s || ORDER.indexOf(a.e.rel)-ORDER.indexOf(b.e.rel));
+}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function renderFicha(){
+  const tags = (arr,dict,cls)=> arr.length
+    ? `<div class="tagrow">${arr.map(k=>`<span class="tg ${cls}">${esc(dict[k][0])}</span>`).join("")}</div>`
+    : `<div class="tagrow"><span class="tg">sin señal clara</span></div>`;
+  document.getElementById("ficha").innerHTML =
+    `<h3>${esc(base.name)}</h3>
+     <div class="cmeta">${esc(base.sector)} · ${esc(base.batch)}</div>
+     <p class="desc">${esc(base.desc)}</p>
+     <p class="legendttl">Público detectado</p>${tags(base.aud,AUD,"aud")}
+     <p class="legendttl">Función detectada</p>${tags(base.cap,CAP,"cap")}`;
+}
+
+function renderDist(){
+  const counts={};
+  ORDER.forEach(k=>counts[k]=0);
+  scored.forEach(x=>counts[x.e.rel]++);
+  document.getElementById("dist").innerHTML = ORDER.filter(k=>counts[k]>0).map(k=>
+    `<button data-rel="${k}" aria-pressed="${relFilter===null||relFilter===k}" title="${esc(REL[k].h)}">
+       <span class="sw" style="background:${REL[k].c}"></span>
+       <span>${REL[k].t}</span><span class="n">${counts[k]}</span>
+     </button>`).join("");
+  document.querySelectorAll("#dist button").forEach(b=>b.onclick=()=>{
+    relFilter = (relFilter===b.dataset.rel) ? null : b.dataset.rel;
+    renderDist(); renderList();
+  });
+}
+
+function renderList(){
+  const rows = scored.filter(x=>!relFilter||x.e.rel===relFilter).slice(0,60);
+  document.getElementById("rttl").textContent = `Con quién encaja ${base.name}`;
+  document.getElementById("rn").textContent =
+    `${rows.length} mostradas · ${scored.length} con señal de ${CO.length-1} analizadas`;
+  document.getElementById("empty").hidden = rows.length>0;
+  document.getElementById("list").innerHTML = rows.map(({c,e})=>{
+    const r=REL[e.rel];
+    return `<article class="item">
+      <div class="scorebox">
+        <span class="sval" style="color:${r.c}">${e.s}</span>
+        <span class="sbar"><i style="width:${e.s}%;background:${r.c}"></i></span>
+      </div>
+      <div class="main">
+        <div class="top">
+          <span class="nm"><a href="https://lanzadera.es/startups/${esc(c.slug)}/" target="_blank" rel="noopener">${esc(c.name)}</a></span>
+          <span class="pill ${r.cls}">${r.t}</span>
+          <span class="mt">${esc(c.sector)} · ${esc(c.batch)}</span>
+        </div>
+        <p class="dsc">${esc(c.desc)}</p>
+        <p class="why">${esc(phrase(base,c,e))}</p>
+        <button class="setbase" data-i="${c.i}">↳ analizar ${esc(c.name)} como base</button>
+      </div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll(".setbase").forEach(b=>b.onclick=()=>{
+    setBase(CO.find(c=>c.i===+b.dataset.i));
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+}
+
+function setBase(c){
+  if(!c) return;
+  base=c; relFilter=null;
+  document.getElementById("q").value="";
+  compute(); renderFicha(); renderDist(); renderList();
+}
+
+/* ---------- combobox ---------- */
+const q=document.getElementById("q"), sug=document.getElementById("sug");
+let cur=-1, hits=[];
+function closeSug(){sug.hidden=true;q.setAttribute("aria-expanded","false");cur=-1;}
+function openSug(){
+  const v=q.value.trim().toLowerCase();
+  if(!v){closeSug();return;}
+  hits=CO.filter(c=>c.key.includes(v)).slice(0,40);
+  if(!hits.length){closeSug();return;}
+  sug.innerHTML=hits.map((c,j)=>
+    `<button role="option" data-j="${j}" aria-selected="false">${esc(c.name)}<span>${esc(c.sector)} · ${esc(c.batch)}</span></button>`).join("");
+  sug.querySelectorAll("button").forEach(b=>b.onclick=()=>{closeSug();setBase(hits[+b.dataset.j]);});
+  sug.hidden=false;q.setAttribute("aria-expanded","true");cur=-1;
+}
+q.addEventListener("input",openSug);
+q.addEventListener("keydown",ev=>{
+  if(sug.hidden) return;
+  const bs=[...sug.querySelectorAll("button")];
+  if(ev.key==="ArrowDown"||ev.key==="ArrowUp"){
+    ev.preventDefault();
+    cur = ev.key==="ArrowDown" ? Math.min(bs.length-1,cur+1) : Math.max(0,cur-1);
+    bs.forEach((b,j)=>{b.classList.toggle("on",j===cur);b.setAttribute("aria-selected",String(j===cur));});
+    bs[cur].scrollIntoView({block:"nearest"});
+  } else if(ev.key==="Enter"){
+    ev.preventDefault(); closeSug(); setBase(hits[cur<0?0:cur]);
+  } else if(ev.key==="Escape"){ closeSug(); }
+});
+document.addEventListener("click",ev=>{if(!ev.target.closest(".picker"))closeSug();});
+
+compute(); renderFicha(); renderDist(); renderList();
+</script>

@@ -1,0 +1,3845 @@
+[
+ {
+  "nombre": "Suncast",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Suncast entrega pronósticos de generación de energías renovables",
+  "slug": "suncast"
+ },
+ {
+  "nombre": "TuFinca",
+  "sector": "Construcción",
+  "cohorte": "SEPT26",
+  "descripcion": "El software que transforma la administración de fincas",
+  "slug": "tufinca"
+ },
+ {
+  "nombre": "MiFood",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "MiFood comercializa robots para la automatización agrícola.",
+  "slug": "mifood"
+ },
+ {
+  "nombre": "OFFLOVIN",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "El futuro de la gestión y la operativa de las clínicas privadas.",
+  "slug": "offlovin"
+ },
+ {
+  "nombre": "Fraktal Software",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma de ejecución de proyectos software para empresas",
+  "slug": "fraktal-software"
+ },
+ {
+  "nombre": "Coach Court",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Coach Court centraliza el baloncesto en una sola plataforma.",
+  "slug": "coach-court"
+ },
+ {
+  "nombre": "Misclub.es",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Misclub conecta a personas con centros deportivos de su ciudad",
+  "slug": "misclub-es"
+ },
+ {
+  "nombre": "FIDEX",
+  "sector": "Cripto",
+  "cohorte": "SEPT26",
+  "descripcion": "Banca privada especializada en activos digitales estables.",
+  "slug": "fidex"
+ },
+ {
+  "nombre": "SuperSocial",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "SuperSocial es una plataforma de IA para ecommerce",
+  "slug": "supersocial"
+ },
+ {
+  "nombre": "Project Robin",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Robin es una plataforma tecnológica de orientación universitaria",
+  "slug": "project-robin"
+ },
+ {
+  "nombre": "Upcars",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "Gestión de flotas de renting especializado para PYMES.",
+  "slug": "upcars"
+ },
+ {
+  "nombre": "Isla23",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Convierte eventos presenciales en el canal de ventas más rentable",
+  "slug": "isla23"
+ },
+ {
+  "nombre": "Solvia",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Solvia es el billete del talento sanitario hacia Europa",
+  "slug": "solvia"
+ },
+ {
+  "nombre": "Kylia",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Kylia democratiza el campo con IA y satélites sin usar hardware.",
+  "slug": "kylia"
+ },
+ {
+  "nombre": "LOVEOBSESSED",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "LOVEOBSESSED viste a una nueva generación que busca estilo propio",
+  "slug": "loveobsessed"
+ },
+ {
+  "nombre": "Anzy Home",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Decoración para el hogar y productos infantiles",
+  "slug": "anzy-home"
+ },
+ {
+  "nombre": "ABNER",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "Soluciones de negocio para escalar operaciones en el sector VTC",
+  "slug": "abner"
+ },
+ {
+  "nombre": "Versedia",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Versedia evita que se pierdan las historias de nuestros mayores.",
+  "slug": "versedia"
+ },
+ {
+  "nombre": "Ace Serve",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Ace Serve impulsa el voleibol a través de soluciones innovadoras.",
+  "slug": "ace-serve"
+ },
+ {
+  "nombre": "837CRAFTS",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "Barcos que vuelan, literalmente",
+  "slug": "837crafts"
+ },
+ {
+  "nombre": "Aithority",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Automatiza el cumplimiento de AI Act de manera continua",
+  "slug": "aithority"
+ },
+ {
+  "nombre": "SymBiontics",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Biológicos más eficientes que los agroquímicos",
+  "slug": "symbiontics"
+ },
+ {
+  "nombre": "FIBTRAY",
+  "sector": "Alimentación",
+  "cohorte": "SEPT26",
+  "descripcion": "Fibtray desarrolla envases alimentarios de papel.",
+  "slug": "fibtray"
+ },
+ {
+  "nombre": "For You Print",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "Aporta soluciones de impresión al sector de la personalización",
+  "slug": "for-you-print"
+ },
+ {
+  "nombre": "Wellbeinn",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Wellbeinn es una startup de tecnología para la longevidad",
+  "slug": "wellbeinn"
+ },
+ {
+  "nombre": "Aurvex AI",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Agentes de voz con IA para la gestión comercial de inmobiliarias.",
+  "slug": "aurvex-ai"
+ },
+ {
+  "nombre": "Revista FIUM",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "FIUM publica una revista trimestral de historia de la Fórmula 1",
+  "slug": "revista-fium"
+ },
+ {
+  "nombre": "ARP Certificate",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "ARP Certificate audita y certifica programas de formación online.",
+  "slug": "arp-certificate"
+ },
+ {
+  "nombre": "Kora",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Kora, el cerebro de la energía del hogar",
+  "slug": "kora"
+ },
+ {
+  "nombre": "Persianas Online",
+  "sector": "Construcción",
+  "cohorte": "SEPT26",
+  "descripcion": "Aporta automatización, bienestar y seguridad a los hogares",
+  "slug": "persianas-online"
+ },
+ {
+  "nombre": "Pilotium",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Automatiza con IA la captación de socios para gimnasios y fitness",
+  "slug": "pilotium"
+ },
+ {
+  "nombre": "vonsel",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Convierte Google Maps en tu máquina de ventas con IA",
+  "slug": "vonsel"
+ },
+ {
+  "nombre": "Datawifi",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Location analytics que convierte datos de visitantes en acción.",
+  "slug": "datawifi"
+ },
+ {
+  "nombre": "X-Emotos",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "El HUB de las motos eléctricas off road.",
+  "slug": "x-emotos"
+ },
+ {
+  "nombre": "Windfit",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Windfit une entrenamiento, bienestar y longevidad en sus centros.",
+  "slug": "windfit"
+ },
+ {
+  "nombre": "Verdecer",
+  "sector": "Alimentación",
+  "cohorte": "SEPT26",
+  "descripcion": "Pastoreo autónomo: menos pienso y más animales por hectárea.",
+  "slug": "verdecer"
+ },
+ {
+  "nombre": "Datadope",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Datadope: IA operacional autónoma para infraestructuras críticas",
+  "slug": "datadope"
+ },
+ {
+  "nombre": "Ventor Innovations",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Drones biomiméticos para control aviar y vigilancia ecointegrada",
+  "slug": "ventor-innovations"
+ },
+ {
+  "nombre": "TRATO",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "TRATO transforma los contratos en activos vivos",
+  "slug": "trato"
+ },
+ {
+  "nombre": "Aerth Labs",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Great for humans, tech for evolution.",
+  "slug": "aerth-labs"
+ },
+ {
+  "nombre": "AdinHub",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma de creación y distribución de contenidos formativos",
+  "slug": "adinhub"
+ },
+ {
+  "nombre": "Systratec",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Instrumentos avanzados para medir el peso y el centro de gravedad",
+  "slug": "systratec"
+ },
+ {
+  "nombre": "Esquí Sarrios",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Escuela de esquí alpino en Pirineos y centro indoor en Madrid",
+  "slug": "esqui-sarrios"
+ },
+ {
+  "nombre": "OTAI Akham",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "OTAI, monitorización de ciberseguridad industrial incorporando IA",
+  "slug": "otai-akham"
+ },
+ {
+  "nombre": "Golsmedia",
+  "sector": "Gaming",
+  "cohorte": "SEPT26",
+  "descripcion": "Medio de comunicación digital especializado en el fútbol regional",
+  "slug": "golsmedia"
+ },
+ {
+  "nombre": "WatermelonCo",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "WMCO recauda regalías de música globales de forma transparente.",
+  "slug": "watermelonco"
+ },
+ {
+  "nombre": "Suplai Sales",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Transforma distribuidoras tradicionales en inteligentes con IA",
+  "slug": "suplai-sales-ia-para-distribuidores-inteligentes"
+ },
+ {
+  "nombre": "Caos Brand",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "Marca de bolsos atemporales y en tendencia, para el día a día.",
+  "slug": "caos-brand"
+ },
+ {
+  "nombre": "VYNE",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "La consultora que reinventa la selección de talento cualificado.",
+  "slug": "vyne"
+ },
+ {
+  "nombre": "Billber",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Agencia de growth en transición hacia un producto digital.",
+  "slug": "billber"
+ },
+ {
+  "nombre": "Voone",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Voone conecta voz, chat, CRM y automatización en un solo sistema",
+  "slug": "voone"
+ },
+ {
+  "nombre": "STILARO",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Stilaro es un probador virtual para tiendas de ropa online",
+  "slug": "stilaro"
+ },
+ {
+  "nombre": "A3D Building",
+  "sector": "Construcción",
+  "cohorte": "SEPT26",
+  "descripcion": "A3D imprime edificios en 3D con hormigón y tecnología propia",
+  "slug": "a3d-building"
+ },
+ {
+  "nombre": "CIS Robotics",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "CIS Robotics crea robots a medida para retos complejos.",
+  "slug": "cis-robotics"
+ },
+ {
+  "nombre": "SIYA",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "SIYA es una plataforma de IA para evaluación en colegios.",
+  "slug": "siya"
+ },
+ {
+  "nombre": "Crosscheck Verificación",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma de verificación de inquilinos para inmobiliarias",
+  "slug": "crosscheck-verificacion"
+ },
+ {
+  "nombre": "THEKER",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Sin descripción publicada en la ficha.",
+  "slug": "theker"
+ },
+ {
+  "nombre": "Reglapp",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Reglapp desarrolla IA para automatizar la gestión de autónomos.",
+  "slug": "reglapp"
+ },
+ {
+  "nombre": "HackBlock",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "HackBlock reduce el riesgo humano en ciberseguridad para empresas",
+  "slug": "hackblock"
+ },
+ {
+  "nombre": "Ploid AI",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Agente de IA para la investigación en biotecnología.",
+  "slug": "ploid-ai"
+ },
+ {
+  "nombre": "MOWLabs",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Fabricamos incubadoras neonatales para países en desarrollo.",
+  "slug": "mowlabs"
+ },
+ {
+  "nombre": "TuriaDesign AI",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Despliega agentes de IA en producción para PyMEs, en semanas.",
+  "slug": "turiadesign-ai"
+ },
+ {
+  "nombre": "Singular Things",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Ingeniería electrónica soberana para una Industria 5.0 confiable",
+  "slug": "singular-things"
+ },
+ {
+  "nombre": "Picuco",
+  "sector": "Turismo",
+  "cohorte": "SEPT26",
+  "descripcion": "Toda experiencia turística, descubrible y reservable online",
+  "slug": "picuco"
+ },
+ {
+  "nombre": "Outs World",
+  "sector": "Construcción",
+  "cohorte": "SEPT26",
+  "descripcion": "Outs World empresa de diseño y construcción de exteriores premium",
+  "slug": "outs-world"
+ },
+ {
+  "nombre": "TalentAds",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Captación de talento mediante publicidad digital",
+  "slug": "talentads"
+ },
+ {
+  "nombre": "QURE",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "QURE es un centro sanitario de entrenamiento y fisioterapia.",
+  "slug": "qure"
+ },
+ {
+  "nombre": "Olorama",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Olorama Technology sincroniza aromas con imagen y sonido.",
+  "slug": "olorama"
+ },
+ {
+  "nombre": "Weekend Solutions",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Soluciones inteligentes para transformar procesos complejos.",
+  "slug": "weekend-solutions"
+ },
+ {
+  "nombre": "Obelance",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Obelance automatiza tareas manuales de pymes mediante IA",
+  "slug": "obelance"
+ },
+ {
+  "nombre": "NOUS",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Infraestructura de gobernanza de sistemas de IA",
+  "slug": "nous"
+ },
+ {
+  "nombre": "Trika App",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Entrenamiento, nutrición e IA. Todo en una app.",
+  "slug": "trika-app"
+ },
+ {
+  "nombre": "Sherpapp",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Mide el estudio fuera de clase y anticipa el abandono.",
+  "slug": "sherpapp"
+ },
+ {
+  "nombre": "NasApp",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "NasApp monitoriza, gestiona y reduce el impacto de los olores",
+  "slug": "nasapp"
+ },
+ {
+  "nombre": "Saca",
+  "sector": "Finanzas",
+  "cohorte": "SEPT26",
+  "descripcion": "Saca simplifica la burocracia en España desde una sola plataforma",
+  "slug": "saca"
+ },
+ {
+  "nombre": "PanaVoIP",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "La solución de las telecomunicaciones en tu empresa",
+  "slug": "panavoip"
+ },
+ {
+  "nombre": "NanoFreeze Inc",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Una nueva forma de refrigerar naturalmente",
+  "slug": "nanofreeze-inc"
+ },
+ {
+  "nombre": "MUTE Garage",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "MUTE ofrece motos eléctricas por suscripción mensual flexible.",
+  "slug": "mute-garage"
+ },
+ {
+  "nombre": "Stadio",
+  "sector": "Turismo",
+  "cohorte": "SEPT26",
+  "descripcion": "Stadio es una startup danesa de turismo deportivo",
+  "slug": "stadio"
+ },
+ {
+  "nombre": "Monolegal",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Agentes de inteligencia artificial para abogados",
+  "slug": "monolegal"
+ },
+ {
+  "nombre": "Momento Guitarra",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Escuela online de guitarra clásica para adultos.",
+  "slug": "momento-guitarra"
+ },
+ {
+  "nombre": "Mobbiz",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Mobbiz gobierna la ejecución de tus procesos operativos",
+  "slug": "mobbiz"
+ },
+ {
+  "nombre": "Mimosa Blu",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Estudio y marca de diseño de joyería",
+  "slug": "mimosa-blu"
+ },
+ {
+  "nombre": "Miinta",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Mejoramos el bienestar emocional de las nuevas generaciones.",
+  "slug": "miinta"
+ },
+ {
+  "nombre": "Tapstar",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Tapstar aumenta y gestiona las reseñas de negocios físicos",
+  "slug": "tapstar"
+ },
+ {
+  "nombre": "Midatec",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Diseña y fabrica sensores industriales en España.",
+  "slug": "midatec"
+ },
+ {
+  "nombre": "ThinRemote",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Es una plataforma de mantenimiento remoto de equipos conectados",
+  "slug": "thinremote"
+ },
+ {
+  "nombre": "QCSolutions",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "QCSolutions protege a las empresas frente al riesgo cuántico.",
+  "slug": "qcsolutions"
+ },
+ {
+  "nombre": "Wemigo",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Wemigo conecta adultos para crear amistades genuinas en persona.",
+  "slug": "wemigo"
+ },
+ {
+  "nombre": "Marina García",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "Marina García crea tendencia y moda en joyería.",
+  "slug": "marina-garcia"
+ },
+ {
+  "nombre": "Kensight",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Kensight transforma datos industriales en decisiones inteligentes",
+  "slug": "kensight"
+ },
+ {
+  "nombre": "EnergyApp",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "EnergyApp analiza facturas de luz para ayudarte a ahorrar.",
+  "slug": "energyapp"
+ },
+ {
+  "nombre": "Noetia",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "SaaS para gestionar y redactar licitaciones públicas",
+  "slug": "noetia"
+ },
+ {
+  "nombre": "International Medicine Group",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "IMG da acceso al grado de Medicina en inglés sin nota de corte",
+  "slug": "international-medicine-group"
+ },
+ {
+  "nombre": "iaLicitaciones",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma para encontrar y preparar licitaciones públicas con IA",
+  "slug": "ialicitaciones"
+ },
+ {
+  "nombre": "Instrumentomania",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "Transforma la compra de un instrumento en una experiencia única.",
+  "slug": "instrumentomania"
+ },
+ {
+  "nombre": "Hi European Youth",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Ayuda a entidades socioeducativas a acceder a financiación europea",
+  "slug": "hi-european-youth-hey"
+ },
+ {
+  "nombre": "Innovare Genetics",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Innovare Genetics convierte genomas en decisiones clínicas",
+  "slug": "innovare-genetics"
+ },
+ {
+  "nombre": "Modoru Biotech",
+  "sector": "Deeptech",
+  "cohorte": "SEPT26",
+  "descripcion": "Protección de cultivos frente a virus con biopesticidas de ARN",
+  "slug": "modoru-biotech"
+ },
+ {
+  "nombre": "HistARy",
+  "sector": "Turismo",
+  "cohorte": "SEPT26",
+  "descripcion": "HistARy convierte el turismo cultural en experiencias inmersivas.",
+  "slug": "histary"
+ },
+ {
+  "nombre": "DiscoRuta",
+  "sector": "Turismo",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma para descubrir el mejor ocio nocturno de España.",
+  "slug": "discoruta"
+ },
+ {
+  "nombre": "LLUQUIIIIII",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Puzzles dignos de enmarcar, y un packaging que no se tira.",
+  "slug": "lluquiiiiii"
+ },
+ {
+  "nombre": "Bektor",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Plantilla digital de IA que opera negocios de alquiler.",
+  "slug": "bektor"
+ },
+ {
+  "nombre": "Zerion",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Dan el control a las empresas de su evolución con tecnología",
+  "slug": "zerion"
+ },
+ {
+  "nombre": "Autix",
+  "sector": "Movilidad",
+  "cohorte": "SEPT26",
+  "descripcion": "Autix es el ERP SaaS con IA que digitaliza el taller mecánico.",
+  "slug": "autix"
+ },
+ {
+  "nombre": "Griky",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Fábrica líder de cursos virtuales a la medida para universidades",
+  "slug": "griky"
+ },
+ {
+  "nombre": "Metaqare",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "El criterio de los mejores médicos del mundo al alcance de todos",
+  "slug": "metaqare"
+ },
+ {
+  "nombre": "Functor",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma de datos moderna, para empresas, soberana y privada",
+  "slug": "functor"
+ },
+ {
+  "nombre": "Sykah",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Trabajadores virtuales para la Industria 5.0",
+  "slug": "sykah"
+ },
+ {
+  "nombre": "KISEKI",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "El software de ejecución estratégica para CEOs",
+  "slug": "kiseki"
+ },
+ {
+  "nombre": "MagicPack",
+  "sector": "Alimentación",
+  "cohorte": "SEPT26",
+  "descripcion": "Solución innovadora para el envasado de alimentos.",
+  "slug": "magicpack"
+ },
+ {
+  "nombre": "Filmer",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "SaaS de creadores UGC e influencers impulsado por IA y datos",
+  "slug": "filmer"
+ },
+ {
+  "nombre": "Gaia Camp",
+  "sector": "Educación",
+  "cohorte": "SEPT26",
+  "descripcion": "Campamento de verano",
+  "slug": "gaia-camp"
+ },
+ {
+  "nombre": "Dentista Ideal",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma IA de marketing y gestión para clínicas dentales",
+  "slug": "dentista-ideal"
+ },
+ {
+  "nombre": "Delego",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "La plataforma que optimiza las operaciones de campo.",
+  "slug": "delego"
+ },
+ {
+  "nombre": "Cumpleo",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT26",
+  "descripcion": "Software de cumplimiento normativo para pymes y autónomos",
+  "slug": "cumpleo"
+ },
+ {
+  "nombre": "Crecerank",
+  "sector": "IA",
+  "cohorte": "SEPT26",
+  "descripcion": "Logra que ChatGPT recomiende tu marca.",
+  "slug": "crecerank"
+ },
+ {
+  "nombre": "Koltao",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Te ayudamos a vender y comprar espacios con vídeos.",
+  "slug": "koltao"
+ },
+ {
+  "nombre": "Farmagrow",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma que conecta a la industria farmacéutica.",
+  "slug": "farmagrow"
+ },
+ {
+  "nombre": "Bueno's Instaladores",
+  "sector": "Construcción",
+  "cohorte": "SEPT26",
+  "descripcion": "Empresa instaladora y mantenedora eléctrica, de teleco y de clima",
+  "slug": "buenos-instaladores"
+ },
+ {
+  "nombre": "GlobeArea",
+  "sector": "Sin definir",
+  "cohorte": "SEPT26",
+  "descripcion": "Plataforma de inteligencia geoespacial",
+  "slug": "globearea"
+ },
+ {
+  "nombre": "BRAMBAS",
+  "sector": "Retail",
+  "cohorte": "SEPT26",
+  "descripcion": "Brambas es una marca de calzado barefoot con estilo",
+  "slug": "brambas"
+ },
+ {
+  "nombre": "Bonding",
+  "sector": "Salud",
+  "cohorte": "SEPT26",
+  "descripcion": "Conecta a las familias con actividades, experiencias y cursos.",
+  "slug": "bonding"
+ },
+ {
+  "nombre": "HRBlade",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Herramienta que automatiza los procesos de selección de personal",
+  "slug": "hrblade"
+ },
+ {
+  "nombre": "Algori",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Panel de hogares más grande de España",
+  "slug": "algori"
+ },
+ {
+  "nombre": "CoCircular",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "La solución a la trazabilidad de los residuos",
+  "slug": "cocircular"
+ },
+ {
+  "nombre": "SendingBay",
+  "sector": "Movilidad",
+  "cohorte": "MAR26",
+  "descripcion": "Software de logística modular para tiendas online y agencias",
+  "slug": "sendingbay"
+ },
+ {
+  "nombre": "Aphlora",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Suplementos naturales para la salud hormonal femenina.",
+  "slug": "aphlora"
+ },
+ {
+  "nombre": "STCW Cursos",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "STCW Cursos es un marketplace especializado en formación marítima",
+  "slug": "stcw-cursos"
+ },
+ {
+  "nombre": "LogisPro",
+  "sector": "Movilidad",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma SaaS integrada para optimizar envíos",
+  "slug": "logispro"
+ },
+ {
+  "nombre": "SISMOS",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Visión artificial industrial para calidad cero defectos",
+  "slug": "sismos"
+ },
+ {
+  "nombre": "Sherpa",
+  "sector": "Movilidad",
+  "cohorte": "MAR26",
+  "descripcion": "Sherpa convierte tu viaje en un envío para otra persona.",
+  "slug": "sherpa"
+ },
+ {
+  "nombre": "Select Store",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Concept store especializada en sneakers exclusivos y streetwear",
+  "slug": "select-store"
+ },
+ {
+  "nombre": "Salesdep.ia",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Salesdep automatiza la comunicación con agentes de IA",
+  "slug": "salesdep-ia"
+ },
+ {
+  "nombre": "Soquimat SpA",
+  "sector": "Deeptech",
+  "cohorte": "MAR26",
+  "descripcion": "Valoriza residuos forestales creando aditivos para pinturas",
+  "slug": "soquimat-spa"
+ },
+ {
+  "nombre": "RondoAI",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Agentes de IA que convierten datos de fans en ingresos",
+  "slug": "rondoai"
+ },
+ {
+  "nombre": "Pantallas LED Valencia",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "PLV proporciona soluciones digitales avanzadas para negocios.",
+  "slug": "pantallas-led-valencia"
+ },
+ {
+  "nombre": "Ritmo Studio",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Ritmo gestiona música y anuncios con IA para cadenas retail",
+  "slug": "ritmo-studio"
+ },
+ {
+  "nombre": "SolNow",
+  "sector": "Turismo",
+  "cohorte": "MAR26",
+  "descripcion": "SolNow automatiza ventas y operaciones para empresas de charter.",
+  "slug": "solnow"
+ },
+ {
+  "nombre": "SocialBreak",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Terapia en español de calidad, accesible para todos.",
+  "slug": "socialbreak"
+ },
+ {
+  "nombre": "Remy",
+  "sector": "Alimentación",
+  "cohorte": "MAR26",
+  "descripcion": "IA que transforma la inspiración culinaria en compras recurrentes",
+  "slug": "remy"
+ },
+ {
+  "nombre": "SmartCookie",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Aplicación de gestión y productividad para docentes",
+  "slug": "smartcookie"
+ },
+ {
+  "nombre": "REKO",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "App para descubrir, planificar y recordar tus logros deportivos.",
+  "slug": "reko"
+ },
+ {
+  "nombre": "Rating Sky",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Forja la reputación online que los ecommerce merecen.",
+  "slug": "rating-sky"
+ },
+ {
+  "nombre": "Otrebé",
+  "sector": "Construcción",
+  "cohorte": "MAR26",
+  "descripcion": "La solución circular que transforma residuos plásticos en activos",
+  "slug": "otrebe"
+ },
+ {
+  "nombre": "RYLTY MUSIC",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "RYLTY es una distribuidora musical",
+  "slug": "rylty-music"
+ },
+ {
+  "nombre": "Pronos AI",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Tutores con IA personalizados para formaciones online",
+  "slug": "pronos-ai"
+ },
+ {
+  "nombre": "PRESENCIA",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "La forma más ágil e intuitiva de gestionar los RRHH.",
+  "slug": "presencia"
+ },
+ {
+  "nombre": "OnPack",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Especialistas en embalaje para empresas de comercio electrónico.",
+  "slug": "onpack"
+ },
+ {
+  "nombre": "moviinn",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "moviinn facilita la movilidad internacional de personas y empresas",
+  "slug": "moviinn"
+ },
+ {
+  "nombre": "MERÍA",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Conectar a enfermeros con empresas del sector salud.",
+  "slug": "meria"
+ },
+ {
+  "nombre": "PANDA",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Modelo integral que conecta entrenamiento, salud y bienestar.",
+  "slug": "panda"
+ },
+ {
+  "nombre": "Mediterranean Routes",
+  "sector": "Turismo",
+  "cohorte": "MAR26",
+  "descripcion": "Experiencias turísticas únicas y exclusivas sobre dos ruedas",
+  "slug": "mediterranean-routes"
+ },
+ {
+  "nombre": "Minsenzia",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Objetos para el espacio de trabajo y una app para ordenar el día.",
+  "slug": "minsenzia"
+ },
+ {
+  "nombre": "Maska",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Verifica la comunicación verde de las marcas y evita greenwashing",
+  "slug": "maska"
+ },
+ {
+  "nombre": "Pong City",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Nos vemos en la mesa.",
+  "slug": "pong-city"
+ },
+ {
+  "nombre": "Mi Dirección Europea",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "MDE desarrolla soluciones digitales de forwarding internacional",
+  "slug": "mi-direccion-europea-mde"
+ },
+ {
+  "nombre": "MAS MAYOR TECH",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Tecnología para nuestros mayores que mejora su calidad de vida",
+  "slug": "mas-mayor-tech"
+ },
+ {
+  "nombre": "PM Oposiciones",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Preparación integral de opositoras basada en ciencia y método.",
+  "slug": "pm-oposiciones"
+ },
+ {
+  "nombre": "Lymon",
+  "sector": "HORECA",
+  "cohorte": "MAR26",
+  "descripcion": "Reduce gastos operativos y aumenta las ventas en HORECA.",
+  "slug": "lymon"
+ },
+ {
+  "nombre": "LUYOA",
+  "sector": "Alimentación",
+  "cohorte": "MAR26",
+  "descripcion": "LUYOA permite a restaurantes cobrar con QR en mesa y crecer.",
+  "slug": "luyoa"
+ },
+ {
+  "nombre": "MEDUSA BAY",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Moda masculina hecha para disfrutar",
+  "slug": "medusa-bay"
+ },
+ {
+  "nombre": "Onesto",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma all-in-one de creación de contenido para empresas",
+  "slug": "onesto"
+ },
+ {
+  "nombre": "LICENSEWARE",
+  "sector": "Deeptech",
+  "cohorte": "MAR26",
+  "descripcion": "LICENSEWARE es una plataforma para la gestión de activos software",
+  "slug": "licenseware"
+ },
+ {
+  "nombre": "NOMAAK",
+  "sector": "Construcción",
+  "cohorte": "MAR26",
+  "descripcion": "Conectar empresas con ingenieros y arquitectos.",
+  "slug": "nomaak"
+ },
+ {
+  "nombre": "Platypool",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Innovación eficaz que limpia la superficie de tu piscina",
+  "slug": "platypool"
+ },
+ {
+  "nombre": "Niubiq",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Equipo digital que convierte tus reuniones de venta en un sistema",
+  "slug": "niubiq"
+ },
+ {
+  "nombre": "Zomai",
+  "sector": "Finanzas",
+  "cohorte": "MAR26",
+  "descripcion": "Zomai permite tokenizar y vender servicios jurídicos en créditos",
+  "slug": "zomai"
+ },
+ {
+  "nombre": "Clodei",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Cómputo bajo demanda especializado para IA",
+  "slug": "clodei"
+ },
+ {
+  "nombre": "LaiaDesk",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Automatización con IA para empresas, privada, segura y conectada.",
+  "slug": "laiadesk"
+ },
+ {
+  "nombre": "Muvail Systems",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Automatizaciones con inteligencia artificial",
+  "slug": "muvail-systems"
+ },
+ {
+  "nombre": "kliniKOS",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "KliniKOS es el software que está revolucionando el sector dental",
+  "slug": "klinikos"
+ },
+ {
+  "nombre": "MURISANA",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Mejorar la visibilidad online de profesionales de la salud",
+  "slug": "murisana"
+ },
+ {
+  "nombre": "Kämpe",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Kämpe es una plataforma para entrar y crecer en oficios técnicos",
+  "slug": "kampe"
+ },
+ {
+  "nombre": "Intake",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Software de atención al cliente para startups",
+  "slug": "intake"
+ },
+ {
+  "nombre": "Safefy",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "SaaS con IA que digitaliza la gestión de emergencias y procesos.",
+  "slug": "safefy"
+ },
+ {
+  "nombre": "KALEIDOOK",
+  "sector": "Turismo",
+  "cohorte": "MAR26",
+  "descripcion": "KALEIDOOK optimiza la gestión de pañales en hoteles familiares.",
+  "slug": "kaleidook"
+ },
+ {
+  "nombre": "BY ELENA CARRERA",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Marca de joyería fina creada y fabricada en España.",
+  "slug": "by-elena-carrera"
+ },
+ {
+  "nombre": "Scoutbasketball",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma que unifica estadísticas de baloncesto global",
+  "slug": "scoutbasketball"
+ },
+ {
+  "nombre": "GOODBYE MAMA",
+  "sector": "Construcción",
+  "cohorte": "MAR26",
+  "descripcion": "GOODBYE MAMA permite a jóvenes elegir dónde y con quién convivir.",
+  "slug": "goodbye-mama"
+ },
+ {
+  "nombre": "Fintiq",
+  "sector": "Finanzas",
+  "cohorte": "MAR26",
+  "descripcion": "Fintiq digitaliza la gestión y supervisión de pagos en obra.",
+  "slug": "fintiq"
+ },
+ {
+  "nombre": "Extensa",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma de IA para captación de clientes B2B",
+  "slug": "extensa"
+ },
+ {
+  "nombre": "FARMACOPILOT",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Gestión farmacéutica inteligente ahorrando tiempo y costes",
+  "slug": "farmacopilot"
+ },
+ {
+  "nombre": "Stooner",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Marca de moda basada en el streetwear refinado español",
+  "slug": "stooner"
+ },
+ {
+  "nombre": "ExpertVision AI",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Detección automática de hurto en tienda con cámaras e IA.",
+  "slug": "expertvision-ai"
+ },
+ {
+  "nombre": "El Workshop",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma de distribución de mobiliario de diseño para proyectos",
+  "slug": "el-workshop"
+ },
+ {
+  "nombre": "Hander VET",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Veterinarios a domicilio. Visados y eutanasias de mascotas",
+  "slug": "hander-vet"
+ },
+ {
+  "nombre": "SUNXY",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Marca de gafas de sol de tendencia a precio accesible",
+  "slug": "sunxy"
+ },
+ {
+  "nombre": "Gooers",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Contratación de freelancers creativos y gestión de proyectos.",
+  "slug": "gooers"
+ },
+ {
+  "nombre": "Beetrics",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Detección de talento en grandes empresas",
+  "slug": "beetrics"
+ },
+ {
+  "nombre": "Ekanite",
+  "sector": "Turismo",
+  "cohorte": "MAR26",
+  "descripcion": "Conoce a tu familia a través de la música",
+  "slug": "ekanite"
+ },
+ {
+  "nombre": "Funeral System",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "CRM y ERP con flujos de IA, especializado en sector funerario",
+  "slug": "funeral-system"
+ },
+ {
+  "nombre": "Educ.IA",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Automatización operativa inteligente para centros de formación",
+  "slug": "educ-ia"
+ },
+ {
+  "nombre": "DEUS Crate",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Ecosistema de herramientas y formación para productores musicales",
+  "slug": "deus-crate"
+ },
+ {
+  "nombre": "LUP",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Desarrolla soluciones tecnológicas para la accesibilidad",
+  "slug": "lup"
+ },
+ {
+  "nombre": "HybridWod",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Entrenamiento híbrido en una app: plan, datos y comunidad",
+  "slug": "hybridwod"
+ },
+ {
+  "nombre": "Envezdeflores",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Envezdeflores crea regalos personalizados para cada ocasión.",
+  "slug": "envezdeflores"
+ },
+ {
+  "nombre": "FORIDER",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Ropa streetwear con protección para motorista",
+  "slug": "forider"
+ },
+ {
+  "nombre": "Brainboost",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Agentes de IA para alumnos integrados en campus virtual",
+  "slug": "brainboost"
+ },
+ {
+  "nombre": "Decomind",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Facilitar el día a día de la captación inmobiliaria",
+  "slug": "decomind"
+ },
+ {
+  "nombre": "Happyideas",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Marca de artículos de regalo originales y con personalidad",
+  "slug": "happyideas"
+ },
+ {
+  "nombre": "dataker",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Soberanía de datos y cumplimiento legal en IA",
+  "slug": "dataker"
+ },
+ {
+  "nombre": "BCAPP",
+  "sector": "Gaming",
+  "cohorte": "MAR26",
+  "descripcion": "La plataforma que conecta marcas con comunidades deportivas",
+  "slug": "bcapp"
+ },
+ {
+  "nombre": "Babybelegal",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Gestoría digitalizada especializada en trámites de nacimiento",
+  "slug": "babybelegal"
+ },
+ {
+  "nombre": "Avium",
+  "sector": "Deeptech",
+  "cohorte": "MAR26",
+  "descripcion": "Soluciones autónomas de drones para automatización operativa.",
+  "slug": "avium"
+ },
+ {
+  "nombre": "AulaPay",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "La plataforma de gestión de pagos en centros educativos.",
+  "slug": "aulapay"
+ },
+ {
+  "nombre": "TORRICAMINOS",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Desarrollo de calzado infantil respetuoso, creado por podólogos",
+  "slug": "torricaminos"
+ },
+ {
+  "nombre": "FORGATE",
+  "sector": "Turismo",
+  "cohorte": "MAR26",
+  "descripcion": "Gestión automatizada de objetos perdidos en hoteles",
+  "slug": "forgate"
+ },
+ {
+  "nombre": "Limbium",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Diseño, fabricación y venta de prótesis de miembro superior.",
+  "slug": "limbium"
+ },
+ {
+  "nombre": "Datablocks",
+  "sector": "Cripto",
+  "cohorte": "MAR26",
+  "descripcion": "Plataforma de analítica de datos blockchain para inversores",
+  "slug": "datablocks"
+ },
+ {
+  "nombre": "MystherAI",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Flexibilizan la producción audiovisual con IA generativa 3D.",
+  "slug": "mystherai"
+ },
+ {
+  "nombre": "ZapUp",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "ZapUp impulsa la carga portátil en negocios",
+  "slug": "zapup"
+ },
+ {
+  "nombre": "DARWIN Biomed",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Robótica asistencial con inteligencia avanzada para séniors",
+  "slug": "darwin-biomed"
+ },
+ {
+  "nombre": "Wazoo",
+  "sector": "Movilidad",
+  "cohorte": "MAR26",
+  "descripcion": "Alquiler de coches entre particulares.",
+  "slug": "wazoo"
+ },
+ {
+  "nombre": "ARTIMARK",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Artimark diseña y fabrica ropa personalizada para empresas.",
+  "slug": "artimark"
+ },
+ {
+  "nombre": "Anthale",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Anthale, el cortafuegos para los agentes de IA de las empresas",
+  "slug": "anthale"
+ },
+ {
+  "nombre": "AMAPOLA LAB",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Revelan imágenes y textos sobre tejidos de algodón.",
+  "slug": "amapola-lab"
+ },
+ {
+  "nombre": "Aiscopia",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Diagnóstico de cáncer en biopsias automatizado.",
+  "slug": "aiscopia"
+ },
+ {
+  "nombre": "HomeDock OS",
+  "sector": "Deeptech",
+  "cohorte": "MAR26",
+  "descripcion": "Convierte cualquier ordenador en una nube privada y segura.",
+  "slug": "homedock-os"
+ },
+ {
+  "nombre": "HealthMate",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Empleados digitales impulsados por IA para hospitales y clínicas",
+  "slug": "healthmate"
+ },
+ {
+  "nombre": "CORINTIA",
+  "sector": "Retail",
+  "cohorte": "MAR26",
+  "descripcion": "Marca valenciana de moda para invitadas de talla grande.",
+  "slug": "corintia"
+ },
+ {
+  "nombre": "Voira",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Marca valenciana de abanicos artesanales de lujo asequible",
+  "slug": "voira"
+ },
+ {
+  "nombre": "FoodWeb.AI",
+  "sector": "HORECA",
+  "cohorte": "MAR26",
+  "descripcion": "Optimiza procesos de restaurantes con inteligencia artificial",
+  "slug": "foodweb-ai"
+ },
+ {
+  "nombre": "Cool Pets",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "La solución digital de higiene y peluquería móvil para mascotas",
+  "slug": "cool-pets"
+ },
+ {
+  "nombre": "Enetres",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Servicios de streaming profesional para emisión de eventos.",
+  "slug": "enetres"
+ },
+ {
+  "nombre": "Flynspire",
+  "sector": "Construcción",
+  "cohorte": "MAR26",
+  "descripcion": "Tecnología para biovalorización de residuos agroalimentarios.",
+  "slug": "flynspire"
+ },
+ {
+  "nombre": "Civitphone",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Asistente telefónico con IA para ayuntamientos",
+  "slug": "civitphone"
+ },
+ {
+  "nombre": "CISEC",
+  "sector": "Deeptech",
+  "cohorte": "MAR26",
+  "descripcion": "Consultoría de ciberseguridad con agente ofensivo propio",
+  "slug": "cisec"
+ },
+ {
+  "nombre": "VEVIPRO",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Automatizamos la venta de viviendas para propietarios.",
+  "slug": "vevipro"
+ },
+ {
+  "nombre": "Casita In Spain",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "CIS gestiona programas de educación de estudiantes internacionales",
+  "slug": "casita-in-spain"
+ },
+ {
+  "nombre": "Unidema",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Formar online y certificar en economía y liderazgo",
+  "slug": "unidema"
+ },
+ {
+  "nombre": "Brandy&Co",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Modelo de gestión y sistema operativo para academias de inglés",
+  "slug": "brandyco"
+ },
+ {
+  "nombre": "banAIna Solution",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "banAIna es una plataforma de IA para empresas.",
+  "slug": "banaina-solution"
+ },
+ {
+  "nombre": "BONNEE",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "BONNEE es una app de moda circular",
+  "slug": "bonnee"
+ },
+ {
+  "nombre": "TU ROPA",
+  "sector": "Ecommerce",
+  "cohorte": "MAR26",
+  "descripcion": "Tu Ropa impulsa marcas con producción textil bajo demanda.",
+  "slug": "tu-ropa"
+ },
+ {
+  "nombre": "Cadabit",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "Cadabit desarrolla y escala productos tecnológicos basados en IA",
+  "slug": "cadabit"
+ },
+ {
+  "nombre": "KONKLUA",
+  "sector": "Construcción",
+  "cohorte": "MAR26",
+  "descripcion": "IA para la realización de estudios de mercado de obra nueva",
+  "slug": "konklua"
+ },
+ {
+  "nombre": "Viads Advertising",
+  "sector": "Sin definir",
+  "cohorte": "MAR26",
+  "descripcion": "Optimización de operaciones y monetización para medios digitales.",
+  "slug": "viads-advertising"
+ },
+ {
+  "nombre": "BluPro",
+  "sector": "IA",
+  "cohorte": "MAR26",
+  "descripcion": "BluPro escala el funnel comercial del sector inmobiliario.",
+  "slug": "blupro"
+ },
+ {
+  "nombre": "beLASAI",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "Proporciona servicios de bienestar para empresas y sus empleados.",
+  "slug": "belasai"
+ },
+ {
+  "nombre": "Caldra",
+  "sector": "Salud",
+  "cohorte": "MAR26",
+  "descripcion": "IA clínica que resuelve dudas médicas con evidencia científica.",
+  "slug": "caldra"
+ },
+ {
+  "nombre": "Go Mate",
+  "sector": "Educación",
+  "cohorte": "MAR26",
+  "descripcion": "Go Mate conecta universitarios con su alojamiento ideal",
+  "slug": "go-mate"
+ },
+ {
+  "nombre": "Nidus",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Trazando un camino más verde en la innovación inmobiliaria",
+  "slug": "nidus"
+ },
+ {
+  "nombre": "Sepiia",
+  "sector": "Moda",
+  "cohorte": "Alumni",
+  "descripcion": "Marca de moda inteligente",
+  "slug": "sepiia"
+ },
+ {
+  "nombre": "Gana Energía",
+  "sector": "Energía",
+  "cohorte": "Alumni",
+  "descripcion": "Comercializadora de energía y gas",
+  "slug": "gana-energia"
+ },
+ {
+  "nombre": "Holafly",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Tarjetas eSIM para seguir conectado dondequiera que viajes",
+  "slug": "holafly"
+ },
+ {
+  "nombre": "AISUPPLY",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Soluciones de IA para automatizar y hacer crecer empresas",
+  "slug": "aisupply"
+ },
+ {
+  "nombre": "Evergreen Recycling",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Transformamos y vendemos polietileno reciclado.",
+  "slug": "evergreen-recycling"
+ },
+ {
+  "nombre": "Iwaky",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Tecnología reacondicionada para consumo responsable y sostenible",
+  "slug": "iwaky"
+ },
+ {
+  "nombre": "Zaindari",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Redes inteligentes para hacer de la tecnología una herramienta",
+  "slug": "zaindari"
+ },
+ {
+  "nombre": "Totenart.com",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Venta de materiales, herramientas y maquinaria para Bellas Artes",
+  "slug": "totenart-com"
+ },
+ {
+  "nombre": "MindChef",
+  "sector": "HORECA",
+  "cohorte": "SEPT25",
+  "descripcion": "El asistente digital para chefs y restaurantes",
+  "slug": "mindchef"
+ },
+ {
+  "nombre": "CRS Protection",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Llevamos la experiencia del detailing a cualquier persona.",
+  "slug": "crs-protection"
+ },
+ {
+  "nombre": "Bold Factory",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma para digitalizar las operaciones de las fábricas.",
+  "slug": "bold-factory"
+ },
+ {
+  "nombre": "PASALY",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma de compra y venta de ropa de segunda mano seleccionada",
+  "slug": "pasaly"
+ },
+ {
+  "nombre": "Footbik",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Una red internacional de centros de desarrollo temprano de fútbol",
+  "slug": "footbik"
+ },
+ {
+  "nombre": "SpainU",
+  "sector": "Movilidad",
+  "cohorte": "SEPT25",
+  "descripcion": "La app que simplifica la movilidad internacional",
+  "slug": "spainu"
+ },
+ {
+  "nombre": "Wesolving Finance",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "Análisis de riesgo crediticio a particulares y empresas.",
+  "slug": "wesolving-finance-s-l"
+ },
+ {
+  "nombre": "ChatPol",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "ChatPol, la IA que transforma la labor policial",
+  "slug": "chatpol"
+ },
+ {
+  "nombre": "GalgoSheets",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Software para el cálculo y distribución de pagos a conductores VTC",
+  "slug": "galgosheets"
+ },
+ {
+  "nombre": "PERTICAS",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma que crea looks personalizados con tu propia ropa",
+  "slug": "perticas"
+ },
+ {
+  "nombre": "Kaimok Design",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Accesorios decorativos de almacenamiento de pared.",
+  "slug": "kaimok-design"
+ },
+ {
+  "nombre": "Circu",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Moda sostenible y circular con alma mediterránea.",
+  "slug": "circu"
+ },
+ {
+  "nombre": "tQel",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Moda con estilo: ropa que entiende de verdad a los perros",
+  "slug": "tqel"
+ },
+ {
+  "nombre": "Vinkova",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Diseño, fabricación y venta de maillots de gimnasia rítmica",
+  "slug": "vinkova"
+ },
+ {
+  "nombre": "Trucking Innovation",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Desarrollamos apps para control de obra.",
+  "slug": "trucking-innovation"
+ },
+ {
+  "nombre": "Muntatges Ximo",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Suministro e instalación de puertas automáticas y automatismos",
+  "slug": "muntatges-ximo"
+ },
+ {
+  "nombre": "Cargamos",
+  "sector": "HORECA",
+  "cohorte": "SEPT25",
+  "descripcion": "Alquiler de powerbanks en espacios públicos",
+  "slug": "cargamos"
+ },
+ {
+  "nombre": "ODELYNE TECHNOLOGY",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Dispositivos de fototerapia LED para el cuidado avanzado de la piel",
+  "slug": "odelyne-technology"
+ },
+ {
+  "nombre": "BeAmbassador",
+  "sector": "Deeptech",
+  "cohorte": "SEPT25",
+  "descripcion": "BeAmbassador crea y gestiona redes de embajadores de marca",
+  "slug": "beambassador"
+ },
+ {
+  "nombre": "MAS EVENTS",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Eventos corporativos de alto impacto con producción audiovisual",
+  "slug": "mas-events"
+ },
+ {
+  "nombre": "IONLY",
+  "sector": "Deeptech",
+  "cohorte": "SEPT25",
+  "descripcion": "IONLY diseña y fabrica baterías para almacenamiento fotovoltaico.",
+  "slug": "ionly"
+ },
+ {
+  "nombre": "Nexus",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Sin descripción publicada en la ficha.",
+  "slug": "nexus"
+ },
+ {
+  "nombre": "Archivo Final",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Conectamos tu manuscrito con la editorial que lo está buscando",
+  "slug": "archivo-final"
+ },
+ {
+  "nombre": "Puebli Conecta",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Tu pueblo, tu gente, tu app.",
+  "slug": "puebli-conecta"
+ },
+ {
+  "nombre": "futbolbase.tv",
+  "sector": "Gaming",
+  "cohorte": "SEPT25",
+  "descripcion": "Streaming y profesionalización del club.",
+  "slug": "futbolbase-tv"
+ },
+ {
+  "nombre": "Finne",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Una plataforma que promueve el bienestar laboral en oficinas.",
+  "slug": "finne"
+ },
+ {
+  "nombre": "Oona",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma de actividades de bienestar",
+  "slug": "oona"
+ },
+ {
+  "nombre": "STR Drones",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Diagnóstico automatizado de instalaciones fotovoltaicas grandes.",
+  "slug": "str-drones"
+ },
+ {
+  "nombre": "Rescrito",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma de escritura con IA para la investigación profesional.",
+  "slug": "rescrito"
+ },
+ {
+  "nombre": "Soulei",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca mediterránea de vacaciones",
+  "slug": "soulei"
+ },
+ {
+  "nombre": "Northern Spain Travel",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Northern Spain Travel crea viajes a medida en el norte de España.",
+  "slug": "northern-spain-travel"
+ },
+ {
+  "nombre": "Alder Lab",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Entiende tus datos y conviértelos en decisiones claras.",
+  "slug": "alder-lab"
+ },
+ {
+  "nombre": "Scope AI",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Analítica conversacional de datos para empresas manufactureras",
+  "slug": "scope-ai"
+ },
+ {
+  "nombre": "Kode",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Ofrecer una educación enfocada en las tecnologías del mañana.",
+  "slug": "kode"
+ },
+ {
+  "nombre": "MENTOOR",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Los mejores profesores particulares de España",
+  "slug": "mentoor"
+ },
+ {
+  "nombre": "ProMec 3D",
+  "sector": "Alimentación",
+  "cohorte": "SEPT25",
+  "descripcion": "Sistemas de transporte en espiral para el sector alimentario",
+  "slug": "promec-3d"
+ },
+ {
+  "nombre": "Airway Shield",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Intubación más segura y más fácil en todo el mundo.",
+  "slug": "airway-shield"
+ },
+ {
+  "nombre": "GoToGoal",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Entrena con datos. Compite mejor.",
+  "slug": "gotogoal"
+ },
+ {
+  "nombre": "Eventuy",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Todo lo que tu evento necesita, en un solo lugar",
+  "slug": "eventuy"
+ },
+ {
+  "nombre": "RIDE-ON Riders & Mechanics",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Ride On conecta talleres y ciclistas con gestión y mantenimiento",
+  "slug": "ride-on-riders-mechanics"
+ },
+ {
+  "nombre": "Origrip",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Productos de protección para alto rendimiento y deportistas élite",
+  "slug": "origrip"
+ },
+ {
+  "nombre": "Equanima",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Equanima reduce el estrés y la ansiedad gestionando tus emociones",
+  "slug": "equanima"
+ },
+ {
+  "nombre": "Veiko",
+  "sector": "Movilidad",
+  "cohorte": "SEPT25",
+  "descripcion": "Marketplace B2B de vehículos de ocasión",
+  "slug": "veiko"
+ },
+ {
+  "nombre": "Ola Creators",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Contratación de creadores de contenido y perfiles de RRSS",
+  "slug": "ola-creators"
+ },
+ {
+  "nombre": "Jimmy Lies",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Hacemos únicamente ropa, y muchas cosas más.",
+  "slug": "jimmy-lies"
+ },
+ {
+  "nombre": "FromageClub",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Eventos efímeros que crean comunidad y conexiones reales",
+  "slug": "fromageclub"
+ },
+ {
+  "nombre": "MARNIFIC",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Disfruta de una embarcación con un modelo por suscripción",
+  "slug": "marnific"
+ },
+ {
+  "nombre": "Alpha Rho Technologies",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "Digitalizamos la gestión de fondos de inversión.",
+  "slug": "alpha-rho-technologies"
+ },
+ {
+  "nombre": "Tipi",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Gestiona el restaurante con tu voz",
+  "slug": "tipi"
+ },
+ {
+  "nombre": "Galatea Jewelry",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca de joyas.",
+  "slug": "galatea-jewelry"
+ },
+ {
+  "nombre": "Tu Trámite Fácil",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "Gestión rápida de ayudas públicas",
+  "slug": "tu-tramite-facil"
+ },
+ {
+  "nombre": "PLOOT.AI",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Posicionamos tu empresa en LinkedIn para atraer clientes.",
+  "slug": "ploot-ai"
+ },
+ {
+  "nombre": "Kids&Clouds",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Mejoramos la comunicación de los centros educativos y deportivos",
+  "slug": "kidsclouds"
+ },
+ {
+  "nombre": "Payload",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma de transferencia de medios para profesionales creativos",
+  "slug": "payload"
+ },
+ {
+  "nombre": "TRABEM HEALTH",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "SaaS de automatización de procesos en clínicas de salud.",
+  "slug": "trabem-health"
+ },
+ {
+  "nombre": "SOLUX PROTECCIÓN SOLAR",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Fabricación y venta de productos de protección solar.",
+  "slug": "solux-proteccion-solar"
+ },
+ {
+  "nombre": "Wild Rain Cosmetics",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Wild Rain: eficacia demostrada con la fuerza de lo salvaje",
+  "slug": "wild-rain-cosmetics"
+ },
+ {
+  "nombre": "MUNÉ",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Muné, slippers y calcetines sostenibles",
+  "slug": "mune"
+ },
+ {
+  "nombre": "KOWIIK",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Kowiik es el centro de ayuda de la energía",
+  "slug": "kowiik"
+ },
+ {
+  "nombre": "Koopey Club",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca de ropa con el objetivo de devolver la elegancia.",
+  "slug": "koopey-club"
+ },
+ {
+  "nombre": "OnePool",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "OnePool ofrece pagos flexibles, aumentando las ventas de empresas",
+  "slug": "onepool"
+ },
+ {
+  "nombre": "GBTC FINANCE",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "El exchange cripto que une tiendas físicas y plataforma online",
+  "slug": "gbtc-finance"
+ },
+ {
+  "nombre": "Papira Club",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Transformamos momentos personales en objetos aesthetic",
+  "slug": "papira-club"
+ },
+ {
+  "nombre": "Showee",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma integral para contratación y gestión de artistas",
+  "slug": "showee"
+ },
+ {
+  "nombre": "Vet2Go",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "App pet-care número 1 del mercado",
+  "slug": "vet2go"
+ },
+ {
+  "nombre": "SportCity",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Cadena de tiendas de deporte",
+  "slug": "sportcity"
+ },
+ {
+  "nombre": "LERIUM",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "Simplificamos la inversión inmobiliaria.",
+  "slug": "lerium"
+ },
+ {
+  "nombre": "Quelton",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca de ropa femenina",
+  "slug": "quelton"
+ },
+ {
+  "nombre": "TuParty",
+  "sector": "Gaming",
+  "cohorte": "SEPT25",
+  "descripcion": "La app que conecta DJs y público para elegir la música en fiestas",
+  "slug": "tuparty"
+ },
+ {
+  "nombre": "Vulnerabbit",
+  "sector": "Deeptech",
+  "cohorte": "SEPT25",
+  "descripcion": "Ciberseguridad accesible y automatizada para startups y pymes.",
+  "slug": "vulnerabbit"
+ },
+ {
+  "nombre": "Spanish is cool",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma e-learning de español para extranjeros",
+  "slug": "spanish-is-cool"
+ },
+ {
+  "nombre": "ROLA Music",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Convierte los fans de tu música en ingresos estables para crecer",
+  "slug": "rola-music"
+ },
+ {
+  "nombre": "Nexi Health",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Dispositivo médico software para la salud mental",
+  "slug": "nexi-health"
+ },
+ {
+  "nombre": "Scennio",
+  "sector": "HORECA",
+  "cohorte": "SEPT25",
+  "descripcion": "La plataforma all-in-one que revoluciona la gestión del ocio",
+  "slug": "scennio"
+ },
+ {
+  "nombre": "OPOSPILLS",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Si tienes corazón de profe, oposita y consigue tu sueño",
+  "slug": "opospills"
+ },
+ {
+  "nombre": "MATCH biosystems",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Conservamos compuestos biológicos.",
+  "slug": "match-biosystems"
+ },
+ {
+  "nombre": "ODAS",
+  "sector": "Construcción",
+  "cohorte": "SEPT25",
+  "descripcion": "Servicio especializado en oficinas que une diseño y gestión",
+  "slug": "odas"
+ },
+ {
+  "nombre": "BDEBRUNO",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca de accesorios premium para perros made in Spain",
+  "slug": "bdebruno"
+ },
+ {
+  "nombre": "Cartonlab",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Cartonlab: diseño en cartón para eventos, ferias y retail.",
+  "slug": "cartonlab"
+ },
+ {
+  "nombre": "INGLESPOL",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Academia online de inglés especializada en oposiciones",
+  "slug": "inglespol"
+ },
+ {
+  "nombre": "tuki.fm",
+  "sector": "Ecommerce",
+  "cohorte": "SEPT25",
+  "descripcion": "Crea tu propia ticketera y empieza a vender entradas hoy mismo",
+  "slug": "tuki-fm"
+ },
+ {
+  "nombre": "CANTERA DE EMPRESAS",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Formamos el talento tecnológico que las empresas necesitan",
+  "slug": "cantera-de-empresas"
+ },
+ {
+  "nombre": "treintamástreinta",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "La primera tarjeta cultura para mayores de treinta años.",
+  "slug": "treintamastreinta"
+ },
+ {
+  "nombre": "Pandox",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma de fidelización inteligente para supermercados",
+  "slug": "pandox"
+ },
+ {
+  "nombre": "UXPay Solutions",
+  "sector": "Deeptech",
+  "cohorte": "SEPT25",
+  "descripcion": "La nueva forma de vender: autónoma, segura y eficiente",
+  "slug": "uxpay-solutions"
+ },
+ {
+  "nombre": "HeyThalia",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Thalia, la asistente con IA de tu hotel",
+  "slug": "heythalia"
+ },
+ {
+  "nombre": "Puchades",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Tu partner de maquinaria para la industria del plástico",
+  "slug": "puchades"
+ },
+ {
+  "nombre": "Veriveri",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "Evitamos multas de Verifactu.",
+  "slug": "veriveri"
+ },
+ {
+  "nombre": "Savvy Tech Hotels",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Ayudamos al hotel a fidelizar a los clientes de Booking.",
+  "slug": "savvy-tech-hotels"
+ },
+ {
+  "nombre": "Dipcioso",
+  "sector": "Alimentación",
+  "cohorte": "SEPT25",
+  "descripcion": "Sin descripción publicada en la ficha.",
+  "slug": "dipcioso"
+ },
+ {
+  "nombre": "ENARTI",
+  "sector": "Educación",
+  "cohorte": "SEPT25",
+  "descripcion": "Integra IA en tu empresa de forma legal y personalizada.",
+  "slug": "enarti"
+ },
+ {
+  "nombre": "Bronze",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Reimaginando las operaciones de restaurante",
+  "slug": "bronze"
+ },
+ {
+  "nombre": "Jurium",
+  "sector": "IA",
+  "cohorte": "SEPT25",
+  "descripcion": "Centralizamos la comunicación de despachos con sus clientes.",
+  "slug": "jurium"
+ },
+ {
+  "nombre": "AsFIn",
+  "sector": "Finanzas",
+  "cohorte": "SEPT25",
+  "descripcion": "La plataforma que conecta pymes y asesores financieros",
+  "slug": "asfin"
+ },
+ {
+  "nombre": "Climind",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Software de medición del clima laboral en tiempo real",
+  "slug": "climind"
+ },
+ {
+  "nombre": "ALIO ENERGÍA",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Comercializadora eléctrica para clientes residenciales",
+  "slug": "alio-energia"
+ },
+ {
+  "nombre": "Hundred",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "La mejor burger posible al mejor precio posible.",
+  "slug": "hundred"
+ },
+ {
+  "nombre": "BusUp",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Aliado tecnológico para una movilidad corporativa eficiente",
+  "slug": "busup"
+ },
+ {
+  "nombre": "Internxt",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Internet privado, seguro y sostenible, que respeta a las personas",
+  "slug": "internxt"
+ },
+ {
+  "nombre": "Shakers",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Reinventando el trabajo",
+  "slug": "shakers"
+ },
+ {
+  "nombre": "Singularu",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Firma de joyas accesibles para el día a día",
+  "slug": "singularu"
+ },
+ {
+  "nombre": "Smileat",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "La revolución de la alimentación infantil.",
+  "slug": "smile-eat"
+ },
+ {
+  "nombre": "Waynabox",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Viajes sorpresa en avión o por carretera",
+  "slug": "waynabox"
+ },
+ {
+  "nombre": "Zapato Feroz",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Calzado que respeta la forma y el desarrollo natural del pie.",
+  "slug": "zapato-feroz"
+ },
+ {
+  "nombre": "flowww",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Ecosistema digital líder para salud, belleza y bienestar.",
+  "slug": "flowww"
+ },
+ {
+  "nombre": "Dcycle",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Impulsando a las pymes ante la revolución de la sostenibilidad.",
+  "slug": "dcycle"
+ },
+ {
+  "nombre": "Flip Flow",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "La plataforma de inteligencia y acción más avanzada para retail.",
+  "slug": "flip-flow"
+ },
+ {
+  "nombre": "Saigu Cosmetics",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Maquillaje natural y ecológico de proximidad",
+  "slug": "saigu-cosmetics"
+ },
+ {
+  "nombre": "Pompeii",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Calzado y ropa sostenible para tu día a día.",
+  "slug": "pompeii"
+ },
+ {
+  "nombre": "Quibim",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Transformamos las imágenes médicas en predicciones útiles.",
+  "slug": "quibim"
+ },
+ {
+  "nombre": "Skin Molecule X",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Nutricosmética basada en evidencia científica y resultados reales",
+  "slug": "skin-molecule-x"
+ },
+ {
+  "nombre": "Imperia SCM",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Software de optimización de la cadena de suministro.",
+  "slug": "imperia-scm"
+ },
+ {
+  "nombre": "Fourvenues",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Software de gestión para organizadores de eventos.",
+  "slug": "fourvenues"
+ },
+ {
+  "nombre": "Del Poble",
+  "sector": "Sin definir",
+  "cohorte": "Alumni",
+  "descripcion": "Cadena de pizzerías al horno de leña",
+  "slug": "del-poble"
+ },
+ {
+  "nombre": "Stally",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Solución que ayuda a personas con discapacidad visual.",
+  "slug": "stally"
+ },
+ {
+  "nombre": "RIDE PETAL",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Bicis eléctricas con cargador para iPhone y extracómodas",
+  "slug": "ride-petal"
+ },
+ {
+  "nombre": "Ballify",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Digitalizamos y automatizamos la gestión de escuelas de pádel",
+  "slug": "ballify"
+ },
+ {
+  "nombre": "I Love Ferry",
+  "sector": "Turismo",
+  "cohorte": "SEPT25",
+  "descripcion": "Comparador de billetes de ferry: España, Marruecos, EEUU y Bahamas",
+  "slug": "i-love-ferry"
+ },
+ {
+  "nombre": "CHERUBINA",
+  "sector": "Retail",
+  "cohorte": "SEPT25",
+  "descripcion": "Marca referente en moda femenina de invitadas.",
+  "slug": "cherubina"
+ },
+ {
+  "nombre": "Nexa",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Robot de entrenamiento y readaptación muscular",
+  "slug": "nexa"
+ },
+ {
+  "nombre": "ADN CANINO",
+  "sector": "Salud",
+  "cohorte": "SEPT25",
+  "descripcion": "Identificación de animales por ADN para mejorar el civismo.",
+  "slug": "adn-canino"
+ },
+ {
+  "nombre": "Raw Coffee",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Cadena de gimnasios de verdad",
+  "slug": "raw-coffee"
+ },
+ {
+  "nombre": "NovaHiring",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Software para automatizar procesos de selección",
+  "slug": "novahiring"
+ },
+ {
+  "nombre": "Evenergía",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Distribuidor, instalador y plataforma de cargadores eléctricos.",
+  "slug": "evenergia"
+ },
+ {
+  "nombre": "Volup",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Marketplace de comida gourmet",
+  "slug": "volup"
+ },
+ {
+  "nombre": "Azulblanco Bagno",
+  "sector": "Construcción",
+  "cohorte": "MAR25",
+  "descripcion": "Pavimentos y revestimientos cerámicos para profesionales",
+  "slug": "azulblanco-bagno"
+ },
+ {
+  "nombre": "Profes Nómadas",
+  "sector": "Educación",
+  "cohorte": "MAR25",
+  "descripcion": "Inserción laboral de docentes españoles en el extranjero.",
+  "slug": "profes-nomadas"
+ },
+ {
+  "nombre": "Colorai",
+  "sector": "IA",
+  "cohorte": "MAR25",
+  "descripcion": "La tecnología que revela los colores que te favorecen",
+  "slug": "colorai"
+ },
+ {
+  "nombre": "Futura Tickets",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Control de entradas falsas para eventos.",
+  "slug": "futura-tickets"
+ },
+ {
+  "nombre": "ruit",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Ofrecen un software a retailers de la segunda mano",
+  "slug": "ruit"
+ },
+ {
+  "nombre": "DataQu",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Transforma datos en decisiones estratégicas",
+  "slug": "dataqu"
+ },
+ {
+  "nombre": "Cuico Health",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Startup de salud digital para monitoreo remoto de pacientes",
+  "slug": "cuico-health"
+ },
+ {
+  "nombre": "Preciso",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para mejorar la gestión del absentismo laboral.",
+  "slug": "preciso"
+ },
+ {
+  "nombre": "Tetsuo",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Fabricación de componentes de fibra de carbono.",
+  "slug": "tetsuo"
+ },
+ {
+  "nombre": "Massa Greens",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Microvegetales gourmet al alcance de todos.",
+  "slug": "massa-greens"
+ },
+ {
+  "nombre": "DVELAS",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Reutilización de velas náuticas para el diseño.",
+  "slug": "dvelas"
+ },
+ {
+  "nombre": "Smusix",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "App que descubre canciones antes de que sean virales",
+  "slug": "smusix"
+ },
+ {
+  "nombre": "Querubín Bordado",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Talleres y venta de kits de bordado.",
+  "slug": "querubin-bordado"
+ },
+ {
+  "nombre": "KeepCool",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Innovación para la conservación de alimentos",
+  "slug": "keepcool"
+ },
+ {
+  "nombre": "Ainovis",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Motor de imagen médica impulsado por IA generativa",
+  "slug": "ainovis"
+ },
+ {
+  "nombre": "PideFácil",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Gestionar los pedidos entre restaurantes y proveedores alimentarios",
+  "slug": "pidefacil"
+ },
+ {
+  "nombre": "RedEco",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Desarrollar y medir estrategias de sostenibilidad en manufactura",
+  "slug": "redeco"
+ },
+ {
+  "nombre": "Signos IoT",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Seguridad y datos en almacenes logísticos",
+  "slug": "signos-iot"
+ },
+ {
+  "nombre": "TerraceLab",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Democratiza el acceso al poder de la naturaleza.",
+  "slug": "terracelab"
+ },
+ {
+  "nombre": "Virtua Broker",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para enviar pagos internacionales con blockchain.",
+  "slug": "virtua-broker"
+ },
+ {
+  "nombre": "Nexafirma",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma tecnológica especializada en firma electrónica",
+  "slug": "mensajero-digital-nexafirma"
+ },
+ {
+  "nombre": "Zoundroom",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Agregador de herramientas para músicos.",
+  "slug": "zoundroom"
+ },
+ {
+  "nombre": "Samo Sports",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Revolucionando el pádel con estilo",
+  "slug": "samo-sports"
+ },
+ {
+  "nombre": "Labia",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Productividad y formación de equipos de televenta.",
+  "slug": "labia"
+ },
+ {
+  "nombre": "Coliviner",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma de casas compartidas.",
+  "slug": "coliviner"
+ },
+ {
+  "nombre": "Hangover of Fashion",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Hangover of Fashion es una marca de bolsos made in Spain.",
+  "slug": "hangover-of-fashion"
+ },
+ {
+  "nombre": "Plaspy",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Tecnología de rastreo inteligente para empresas y usuarios",
+  "slug": "plaspy"
+ },
+ {
+  "nombre": "Geoleads",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Automatiza la búsqueda y envío de emails a contactos objetivo",
+  "slug": "geoleads"
+ },
+ {
+  "nombre": "Agrointel",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Monitorización de cultivos para optimización de riegos.",
+  "slug": "agrointel"
+ },
+ {
+  "nombre": "Maat Impact",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Plataforma para facilitar la gestión y fomentar el voluntariado",
+  "slug": "maat-impact"
+ },
+ {
+  "nombre": "Jaippy",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Herramienta para mejorar las valoraciones online de los hoteles.",
+  "slug": "jaippy"
+ },
+ {
+  "nombre": "Amiqa Tech",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Automatización inteligente para hoteleros pequeños",
+  "slug": "amiqa-tech"
+ },
+ {
+  "nombre": "Fitai Labs",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Innovación para una vida saludable",
+  "slug": "fitai-labs"
+ },
+ {
+  "nombre": "Friendog Labs",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "App integral para el bienestar canino",
+  "slug": "friendog-labs"
+ },
+ {
+  "nombre": "Liceia.ai",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Genera test y casos prácticos para academias de oposiciones.",
+  "slug": "liceia-ai"
+ },
+ {
+  "nombre": "Bewoman360",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Suelo pélvico y entrenamiento online",
+  "slug": "bewoman360"
+ },
+ {
+  "nombre": "IGM Facilities Management",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para la gestión de empresas de servicios.",
+  "slug": "igm-facilities-management"
+ },
+ {
+  "nombre": "Moradai",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "La primera solución de certificación de residencia del mercado.",
+  "slug": "moradai"
+ },
+ {
+  "nombre": "Vico",
+  "sector": "Finanzas",
+  "cohorte": "SEPT24",
+  "descripcion": "Optimiza tus gastos y gestiona todo desde una única app",
+  "slug": "vico"
+ },
+ {
+  "nombre": "Roomeo",
+  "sector": "Turismo",
+  "cohorte": "MAR25",
+  "descripcion": "Opciones de alojamiento y una experiencia más real para viajeros",
+  "slug": "roomeo"
+ },
+ {
+  "nombre": "Neety",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Agente de automatización all-in-one para marketing y ventas",
+  "slug": "neety"
+ },
+ {
+  "nombre": "Biotasmart",
+  "sector": "Salud",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma de bienestar",
+  "slug": "biotasmart"
+ },
+ {
+  "nombre": "CaranvaSports",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Una plataforma para alquilar material deportivo donde quieras.",
+  "slug": "caranvasports"
+ },
+ {
+  "nombre": "Ocbo",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Automatiza la documentación para transporte de carga",
+  "slug": "ocbo"
+ },
+ {
+  "nombre": "Tokencrowd",
+  "sector": "Finanzas",
+  "cohorte": "MAR25",
+  "descripcion": "Wealthtech de inversión alternativa tokenizada.",
+  "slug": "tokencrowd"
+ },
+ {
+  "nombre": "Innzpira",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Reducimos tiempo y costes en recursos humanos",
+  "slug": "innzpira"
+ },
+ {
+  "nombre": "Hi Beauty",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Suscripciones de belleza y skin care",
+  "slug": "hi-beauty"
+ },
+ {
+  "nombre": "Encuentra tu Fisio",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de fisioterapia especializada a domicilio.",
+  "slug": "encuentra-tu-fisio"
+ },
+ {
+  "nombre": "Mydance",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma social de baile.",
+  "slug": "mydance"
+ },
+ {
+  "nombre": "Vandalstop",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "VandalStop: en tu seguridad vale más prevenir que curar.",
+  "slug": "vandalstop"
+ },
+ {
+  "nombre": "Elevall Grúas",
+  "sector": "Construcción",
+  "cohorte": "MAR25",
+  "descripcion": "Grúa plegable de elevación por fachada.",
+  "slug": "elevall-gruas"
+ },
+ {
+  "nombre": "ELdeS",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para aprender lengua de signos.",
+  "slug": "eldes"
+ },
+ {
+  "nombre": "Fliinow",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma para comprar y pagar vuelos a plazos.",
+  "slug": "fliinow"
+ },
+ {
+  "nombre": "HERMES",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Optimizar el rendimiento de vehículos en competición.",
+  "slug": "hermes"
+ },
+ {
+  "nombre": "Gradhoc",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Refrigeración inteligente para un futuro más frío.",
+  "slug": "gradhoc"
+ },
+ {
+  "nombre": "FETĒN",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Cosmética masculina premium y sostenible.",
+  "slug": "feten"
+ },
+ {
+  "nombre": "Nob 166",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Investigación y desarrollo de soluciones biocidas antimicrobianas",
+  "slug": "nob-166"
+ },
+ {
+  "nombre": "Alaska Circular",
+  "sector": "Retail",
+  "cohorte": "MAR25",
+  "descripcion": "Ayudamos a fabricantes a vender sus excedentes de muebles y deco.",
+  "slug": "alaska-circular"
+ },
+ {
+  "nombre": "Sanicoach",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de apoyo psicológico y académico para sanitarios.",
+  "slug": "sanicoach"
+ },
+ {
+  "nombre": "Life Challenge",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma digital de retos y juegos",
+  "slug": "life-challenge"
+ },
+ {
+  "nombre": "CodeCrypto",
+  "sector": "Educación",
+  "cohorte": "SEPT24",
+  "descripcion": "Formación online para programadores en IA, blockchain y Web3",
+  "slug": "codecrypto"
+ },
+ {
+  "nombre": "Tattoonie",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Accesorios temporales para la piel: moda y activación de marca.",
+  "slug": "tattoonie"
+ },
+ {
+  "nombre": "Dialgo",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de agentes inteligentes para la automatización de tareas",
+  "slug": "dialgo-antes-carton"
+ },
+ {
+  "nombre": "Onorato AI",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Dispositivo inteligente en forma de loro para cuidado de mayores",
+  "slug": "onorato-ai"
+ },
+ {
+  "nombre": "Hotlist",
+  "sector": "HORECA",
+  "cohorte": "SEPT24",
+  "descripcion": "Externalización del área de recursos humanos para hostelería",
+  "slug": "hotlist"
+ },
+ {
+  "nombre": "TailorDoc",
+  "sector": "Salud",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma internacional para tratamientos de cirugía ortopédica.",
+  "slug": "tailordoc"
+ },
+ {
+  "nombre": "Bubbl3s",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Aire puro para tu bienestar diario",
+  "slug": "bubbl3s"
+ },
+ {
+  "nombre": "Portales Ocho",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Venta física y online de muebles y productos de decoración.",
+  "slug": "portales-ocho"
+ },
+ {
+  "nombre": "Archiff",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Formación online para el sector creativo",
+  "slug": "archiff"
+ },
+ {
+  "nombre": "Hodrop",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Soluciones para el hidrógeno renovable",
+  "slug": "hodrop"
+ },
+ {
+  "nombre": "Madrid Content School",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Una comunidad vibrante y dinámica.",
+  "slug": "madrid-content-school"
+ },
+ {
+  "nombre": "Bodhi",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Elevando el bienestar con respiración y frío.",
+  "slug": "bodhi"
+ },
+ {
+  "nombre": "Yorsio",
+  "sector": "Construcción",
+  "cohorte": "MAR25",
+  "descripcion": "Alquiler con opción a compra por habitaciones",
+  "slug": "yorsio"
+ },
+ {
+  "nombre": "World Challenge Game",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Desarrolladora de videojuegos y entretenimiento",
+  "slug": "world-challenge-game"
+ },
+ {
+  "nombre": "Bujia",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para gestión integral de talleres.",
+  "slug": "bujia"
+ },
+ {
+  "nombre": "Auth4Art",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Trazabilidad de obras de arte.",
+  "slug": "auth4art"
+ },
+ {
+  "nombre": "Wend",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "La red social del futuro",
+  "slug": "wend"
+ },
+ {
+  "nombre": "Oxinity",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Academia de idiomas online.",
+  "slug": "oxinity"
+ },
+ {
+  "nombre": "Omek Biotech",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma para evaluación de riesgos y prevención de enfermedades",
+  "slug": "omek-biotech"
+ },
+ {
+  "nombre": "Clover",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Tu propio transporte, sin complicaciones.",
+  "slug": "clover"
+ },
+ {
+  "nombre": "Mube",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para compartir coche y gastos.",
+  "slug": "mube"
+ },
+ {
+  "nombre": "WeSpeak",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Asistente virtual para hotelería",
+  "slug": "wespeak"
+ },
+ {
+  "nombre": "LetterBucket",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para crear, gestionar y monetizar newsletters.",
+  "slug": "letterbucket"
+ },
+ {
+  "nombre": "Sopa",
+  "sector": "IA",
+  "cohorte": "MAR25",
+  "descripcion": "Sopa automatiza el posicionamiento en Google y en LLMs.",
+  "slug": "sopa"
+ },
+ {
+  "nombre": "StockerAI",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para la gestión de la demanda y control de inventarios.",
+  "slug": "stockerai"
+ },
+ {
+  "nombre": "Oxygen Gaming",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Club de esports",
+  "slug": "oxygen-gaming"
+ },
+ {
+  "nombre": "Instituto Seguridad y Futuro",
+  "sector": "Educación",
+  "cohorte": "MAR25",
+  "descripcion": "EdTech para seguridad, emergencias y defensa",
+  "slug": "instituto-seguridad-y-futuro"
+ },
+ {
+  "nombre": "CraniaMed",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Detectar asimetrías craneales en bebés.",
+  "slug": "craniamed"
+ },
+ {
+  "nombre": "Fastfest",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Cerveza self-service: cero personal, cero colas y cero mermas.",
+  "slug": "fastfest"
+ },
+ {
+  "nombre": "Kodikas Developers",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Herramienta para la gestión de acreditaciones en eventos.",
+  "slug": "kodikas-developers"
+ },
+ {
+  "nombre": "Tekocino",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Reparto de comida del día a día para empresas",
+  "slug": "tekocino"
+ },
+ {
+  "nombre": "Hutrit",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Conectamos empresas con talento de calidad de Latinoamérica",
+  "slug": "hutrit"
+ },
+ {
+  "nombre": "Masco Beauty",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Cosméticos de alta calidad para perros y gatos.",
+  "slug": "masco-beauty"
+ },
+ {
+  "nombre": "Balteus",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Redefiniendo el mercado de los cinturones",
+  "slug": "balteus"
+ },
+ {
+  "nombre": "The Truth",
+  "sector": "Educación",
+  "cohorte": "MAR25",
+  "descripcion": "Verifica credenciales y experiencia laboral, impulsa empleo.",
+  "slug": "the-truth"
+ },
+ {
+  "nombre": "Kpophub",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Dinamizadora de la comunidad de fans por la cultura coreana.",
+  "slug": "kpophub"
+ },
+ {
+  "nombre": "Simbionte",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Ayuda a compañías del sector biotech a crecer en digital.",
+  "slug": "simbionte"
+ },
+ {
+  "nombre": "Healmind",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Datos del día a día de pacientes de salud mental para terapeutas",
+  "slug": "healmind"
+ },
+ {
+  "nombre": "matil",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Estructura cualquier fuente de información: del caos al orden",
+  "slug": "matil"
+ },
+ {
+  "nombre": "TU ARROCERO",
+  "sector": "Alimentación",
+  "cohorte": "SEPT24",
+  "descripcion": "Elaboración de paellas para entrega y recogida a domicilio.",
+  "slug": "tu-arrocero"
+ },
+ {
+  "nombre": "Testualia",
+  "sector": "Educación",
+  "cohorte": "SEPT24",
+  "descripcion": "Software de evaluación: exámenes ilimitados desde tu material.",
+  "slug": "testualia"
+ },
+ {
+  "nombre": "Sumar Inversión",
+  "sector": "Finanzas",
+  "cohorte": "MAR25",
+  "descripcion": "Fintech que conecta ahorro con inversión inmobiliaria desde 100 €",
+  "slug": "sumar-inversion"
+ },
+ {
+  "nombre": "FixUP!",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Nueva forma de aprovechar y proteger tu tecnología.",
+  "slug": "fixup"
+ },
+ {
+  "nombre": "Kenko Imalytics",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "IA al servicio de la radiología para el diagnóstico del cáncer",
+  "slug": "kenko-imalytics"
+ },
+ {
+  "nombre": "Bioinfile",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Servimos datos biomédicos.",
+  "slug": "bioinfile"
+ },
+ {
+  "nombre": "Dataris",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Unifica datos de cultivos extensivos: maquinaria, sensores y predicciones",
+  "slug": "dataris"
+ },
+ {
+  "nombre": "Tu Plaza Oposiciones",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Academia de preparación de oposiciones de magisterio y secundaria",
+  "slug": "tu-plaza-oposiciones"
+ },
+ {
+  "nombre": "La Diez Milanesa",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Elaboración de milanesa para consumir en local o a domicilio",
+  "slug": "la-diez-milanesa"
+ },
+ {
+  "nombre": "LEMA",
+  "sector": "Turismo",
+  "cohorte": "MAR25",
+  "descripcion": "La página de quienes organizan eventos.",
+  "slug": "lema"
+ },
+ {
+  "nombre": "Additium 3D",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Additium 3D es un servicio integral de fabricación 3D",
+  "slug": "additium-3d"
+ },
+ {
+  "nombre": "Sobox Store",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Venta online de sofás envasados al vacío.",
+  "slug": "sobox-sotre"
+ },
+ {
+  "nombre": "Inertial",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Ayudar a las personas a mejorar su estado de salud física",
+  "slug": "inertial"
+ },
+ {
+  "nombre": "CatalogueFlow",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Potencia el comercio digital.",
+  "slug": "catalogueflow"
+ },
+ {
+  "nombre": "Tryners",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Software para entrenadores de fuerza",
+  "slug": "tryners"
+ },
+ {
+  "nombre": "NeuroBlock",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Herramienta para implementar el uso de la inteligencia artificial",
+  "slug": "neuroblock"
+ },
+ {
+  "nombre": "Marinerob",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Ingeniería e innovación marina al máximo nivel.",
+  "slug": "marinerob"
+ },
+ {
+  "nombre": "SCIENTISTS360",
+  "sector": "Educación",
+  "cohorte": "MAR25",
+  "descripcion": "SCIENTISTS360 fortalece el talento que sostiene la innovación.",
+  "slug": "scientists360"
+ },
+ {
+  "nombre": "PsAIcoTools",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "IA para potenciar la terapia",
+  "slug": "psaicotools"
+ },
+ {
+  "nombre": "MyUrbanScoot",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Todo para patinetes eléctricos",
+  "slug": "myurbanscoot"
+ },
+ {
+  "nombre": "Eara",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de tokenización regulada global.",
+  "slug": "eara"
+ },
+ {
+  "nombre": "Wilapp",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Control de gestión para centros de belleza.",
+  "slug": "wilapp"
+ },
+ {
+  "nombre": "Muemue Home",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Muebles y decoración para los más pequeños.",
+  "slug": "muemue-home"
+ },
+ {
+  "nombre": "Komvo",
+  "sector": "HORECA",
+  "cohorte": "MAR25",
+  "descripcion": "Software para atraer y gestionar planes de grupo en restaurantes",
+  "slug": "komvo"
+ },
+ {
+  "nombre": "HASLAP",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Una app que conecta a runners con clubs y eventos de running.",
+  "slug": "haslap"
+ },
+ {
+  "nombre": "Stamp",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Marketplace que conecta a comercios con turistas internacionales",
+  "slug": "stamp"
+ },
+ {
+  "nombre": "Wedify",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Software de gestión comercial para organizadores de bodas",
+  "slug": "wedify"
+ },
+ {
+  "nombre": "QuantumDrive",
+  "sector": "Deeptech",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de optimización de rutas para vehículos eléctricos.",
+  "slug": "quantumdrive"
+ },
+ {
+  "nombre": "Instalzeco",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Venta de soluciones de energía renovable para hogares.",
+  "slug": "instalzeco"
+ },
+ {
+  "nombre": "Mind Makers",
+  "sector": "IA",
+  "cohorte": "MAR25",
+  "descripcion": "Aprendizaje para profesionales hiperpersonalizado con IA",
+  "slug": "mind-makers"
+ },
+ {
+  "nombre": "Nextbit",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Nextbit simplifica el acceso a modelos de inteligencia artificial",
+  "slug": "nextbit"
+ },
+ {
+  "nombre": "Projectum",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Formulario para hacer cotizaciones de obras de forma automática",
+  "slug": "projectum"
+ },
+ {
+  "nombre": "Fut.ing",
+  "sector": "Salud",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de desarrollo para futbolistas",
+  "slug": "fut-ing"
+ },
+ {
+  "nombre": "Automix",
+  "sector": "Alimentación",
+  "cohorte": "MAR25",
+  "descripcion": "Máquina para automatizar el servicio de bebidas en eventos.",
+  "slug": "automix"
+ },
+ {
+  "nombre": "ButterflAI",
+  "sector": "IA",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma de IA que crea contenido optimizado para ecommerce",
+  "slug": "butterflai"
+ },
+ {
+  "nombre": "Ajax DNA",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Medicina personalizada para cada paciente",
+  "slug": "ajax-dna"
+ },
+ {
+  "nombre": "Anaimo",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Empleados y asistentes virtuales con IA y visión artificial",
+  "slug": "anaimo"
+ },
+ {
+  "nombre": "Tralli",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Servicio de facturación de maletas desde casa.",
+  "slug": "tralli"
+ },
+ {
+  "nombre": "Llum Social",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Digitalizar la ayuda, multiplicar el impacto.",
+  "slug": "llum-social"
+ },
+ {
+  "nombre": "Huming Music",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Facilita el proceso de contratación de actuaciones",
+  "slug": "huming-music"
+ },
+ {
+  "nombre": "Knockout Couture",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Marca de ropa centrada en artes marciales.",
+  "slug": "knockout-couture"
+ },
+ {
+  "nombre": "Aipha G",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Optimización industrial con XR e IA.",
+  "slug": "aipha-g"
+ },
+ {
+  "nombre": "Me Renta",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Servicio de adelanto de alquileres",
+  "slug": "me-renta"
+ },
+ {
+  "nombre": "Lithosport",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Mezcla única de algas para la mejora del rendimiento deportivo",
+  "slug": "lithosport"
+ },
+ {
+  "nombre": "Lealtad Verde",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Implementación de máquinas biorrecicladoras SDDR",
+  "slug": "lealtad-verde"
+ },
+ {
+  "nombre": "Packar Technologies",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Solución digital que unifica cotización y seguimiento logístico B2B",
+  "slug": "packar-technologies"
+ },
+ {
+  "nombre": "De flores y floreros",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Calzado femenino made in Spain",
+  "slug": "de-flores-y-floreros"
+ },
+ {
+  "nombre": "Tornasol Energy",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Ecommerce de kits solares plug and play.",
+  "slug": "tornasol-energy"
+ },
+ {
+  "nombre": "OnGres",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "OnGres: plataforma para Postgres en producción",
+  "slug": "ongres"
+ },
+ {
+  "nombre": "Dam Squad",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Soluciones enfocadas en talentos remotos altamente cualificados.",
+  "slug": "dam-squad"
+ },
+ {
+  "nombre": "Keemetrix",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Automatización de gestión para empresas de trasteros",
+  "slug": "keemetrix"
+ },
+ {
+  "nombre": "Silverlight",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Red que conecta profesionales con especialistas",
+  "slug": "silverlight"
+ },
+ {
+  "nombre": "La Folie",
+  "sector": "Retail",
+  "cohorte": "SEPT24",
+  "descripcion": "Nuestra misión es vestir a las mujeres",
+  "slug": "la-folie"
+ },
+ {
+  "nombre": "Clipbeat",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Plataforma para crear oportunidades musicales",
+  "slug": "clipbeat"
+ },
+ {
+  "nombre": "MealLink",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Pases diarios todo incluido para viajeros",
+  "slug": "meallink"
+ },
+ {
+  "nombre": "Single and Jam",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Marketplace de participaciones en royalties.",
+  "slug": "single-and-jam"
+ },
+ {
+  "nombre": "AWA Sunglasses",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Marca de gafas de sol que flotan",
+  "slug": "awa-sunglasses"
+ },
+ {
+  "nombre": "Barco Compartido",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Tu propio barco en multipropiedad",
+  "slug": "barco-compartido"
+ },
+ {
+  "nombre": "TOLVIA",
+  "sector": "IA",
+  "cohorte": "MAR25",
+  "descripcion": "Agentes de voz para atención al cliente y procesos comerciales",
+  "slug": "tolvia"
+ },
+ {
+  "nombre": "Cloosely",
+  "sector": "Ecommerce",
+  "cohorte": "MAR25",
+  "descripcion": "Conoce a tus clientes, personaliza cada mensaje y escala ventas con IA",
+  "slug": "cloosely"
+ },
+ {
+  "nombre": "Live Fresh Biotech",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Soluciones de frío confort sostenibles de alta duración",
+  "slug": "live-fresh-biotech"
+ },
+ {
+  "nombre": "Connect24",
+  "sector": "Deeptech",
+  "cohorte": "MAR25",
+  "descripcion": "Monitorización de instalaciones en tiempo real",
+  "slug": "connect24"
+ },
+ {
+  "nombre": "Nomad Bee",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Agencia de viajes en grupo",
+  "slug": "nomad-bee"
+ },
+ {
+  "nombre": "Dymo",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Infraestructura de pagos internacionales.",
+  "slug": "dymo"
+ },
+ {
+  "nombre": "Neare Clothes",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Marca vintage y comunidad de moda consciente y sostenible",
+  "slug": "neare-clothes"
+ },
+ {
+  "nombre": "La Pizarra del DT",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Cursos para convertirte en un profesional del mundo del fútbol",
+  "slug": "la-pizarra-del-dt"
+ },
+ {
+  "nombre": "coLanguage",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Clases de conversación con materiales didácticos para idiomas",
+  "slug": "colanguage"
+ },
+ {
+  "nombre": "Teal AI",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Plataforma para encontrar perfiles técnicos.",
+  "slug": "teal-ai"
+ },
+ {
+  "nombre": "ActivH20",
+  "sector": "Sin definir",
+  "cohorte": "SEPT25",
+  "descripcion": "Marketplace B2B de muebles con impacto",
+  "slug": "activh20"
+ },
+ {
+  "nombre": "Procedural Games",
+  "sector": "Gaming",
+  "cohorte": "MAR25",
+  "descripcion": "Desarrollo de videojuegos innovadores para plataformas móviles",
+  "slug": "procedural-games"
+ },
+ {
+  "nombre": "Psicología y Fútbol",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Psicología deportiva para futbolistas",
+  "slug": "psicologia-y-futbol"
+ },
+ {
+  "nombre": "Hemon Sock",
+  "sector": "Sin definir",
+  "cohorte": "SEPT24",
+  "descripcion": "Desarrollo, personalización y producción de textil deportivo.",
+  "slug": "hemon-sock"
+ },
+ {
+  "nombre": "Valencia Violins",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Venta y reparación de instrumentos de cuerda.",
+  "slug": "valencia-violins"
+ },
+ {
+  "nombre": "Simpling",
+  "sector": "Sin definir",
+  "cohorte": "MAR25",
+  "descripcion": "Expertos en sampling segmentado",
+  "slug": "simpling"
+ }
+]

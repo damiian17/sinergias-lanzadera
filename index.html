@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Motor de compatibilidad entre las startups del portfolio de Lanzadera.">
+<style>
+  :root{color-scheme:light dark}
+  body{margin:0;font:14px system-ui,sans-serif}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>Radar de Sinergias Lanzadera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F2F5F4; --surface:#FFFFFF; --sunken:#E7EDEB;
+  --ink:#111C1A; --ink-2:#3C4B49; --muted:#677977;
+  --line:#D3DCDA; --line-strong:#B6C4C1;
+  --accent:#0C6558; --accent-soft:#DCEFEA;
+  --amber:#8F5D12; --amber-soft:#F5E9D4;
+  --coral:#A8413A; --coral-soft:#F6E0DD;
+  --violet:#5A4A8F; --violet-soft:#E6E2F3;
+  --slate:#4A5F6D; --slate-soft:#E1E9ED;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C1413; --surface:#141E1D; --sunken:#0F1817;
+    --ink:#E7EEEC; --ink-2:#BECBC8; --muted:#8B9E9B;
+    --line:#25322F; --line-strong:#3A4A47;
+    --accent:#57D3B9; --accent-soft:#12332C;
+    --amber:#E2AC5C; --amber-soft:#33260F;
+    --coral:#E68A80; --coral-soft:#331916;
+    --violet:#AFA2E0; --violet-soft:#221D33;
+    --slate:#9FB6C2; --slate-soft:#1A2429;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C1413; --surface:#141E1D; --sunken:#0F1817;
+  --ink:#E7EEEC; --ink-2:#BECBC8; --muted:#8B9E9B;
+  --line:#25322F; --line-strong:#3A4A47;
+  --accent:#57D3B9; --accent-soft:#12332C;
+  --amber:#E2AC5C; --amber-soft:#33260F;
+  --coral:#E68A80; --coral-soft:#331916;
+  --violet:#AFA2E0; --violet-soft:#221D33;
+  --slate:#9FB6C2; --slate-soft:#1A2429;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px 90px}
+button,input,select{font:inherit}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+/* header */
+header{padding:38px 0 22px;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between}
+.brand{display:flex;flex-direction:column;gap:7px;max-width:56ch}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted)}
+h1{font-family:"Bricolage Grotesque","Helvetica Neue",sans-serif;font-weight:800;
+  font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.03;letter-spacing:-.022em;margin:0}
+.sub{margin:0;color:var(--ink-2);font-size:1rem}
+
+/* picker */
+.picker{position:relative;flex:1 1 320px;max-width:400px}
+.picker label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+#q{width:100%;padding:11px 14px;border:1.5px solid var(--accent);border-radius:3px;
+  background:var(--surface);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13px}
+#q:focus{outline:2px solid var(--accent);outline-offset:1px}
+#sug{position:absolute;z-index:20;left:0;right:0;top:100%;margin-top:4px;
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:3px;
+  max-height:320px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.14)}
+#sug[hidden]{display:none!important}
+#sug button{display:block;width:100%;text-align:left;border:0;background:transparent;
+  color:var(--ink);padding:9px 13px;cursor:pointer;border-bottom:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.35}
+#sug button:last-child{border-bottom:0}
+#sug button:hover,#sug button.on{background:var(--accent-soft);color:var(--accent)}
+#sug button span{display:block;color:var(--muted);font-size:10.5px;letter-spacing:.05em;margin-top:2px}
+#sug button:hover span,#sug button.on span{color:var(--accent)}
+
+/* layout */
+.cols{display:grid;grid-template-columns:288px 1fr;gap:34px;align-items:start;padding-top:28px}
+aside{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:17px 18px}
+.card h3{font-family:"Bricolage Grotesque",sans-serif;font-size:1.18rem;font-weight:700;
+  letter-spacing:-.015em;margin:0 0 3px}
+.card .cmeta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.card p.desc{margin:0 0 14px;color:var(--ink-2);font-size:.94rem}
+.legendttl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.tagrow{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.tagrow:last-child{margin-bottom:0}
+.tg{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.06em;
+  padding:3px 7px;border-radius:2px;background:var(--sunken);color:var(--ink-2);
+  border:1px solid var(--line)}
+.tg.aud{background:var(--slate-soft);color:var(--slate);border-color:transparent}
+.tg.cap{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+
+.dist{display:flex;flex-direction:column;gap:7px}
+.dist button{display:grid;grid-template-columns:11px 1fr auto;gap:9px;align-items:center;
+  width:100%;background:transparent;border:0;padding:3px 0;cursor:pointer;color:var(--ink-2);
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;text-align:left;
+  border-radius:2px}
+.dist button:hover{color:var(--ink)}
+.dist button[aria-pressed="true"]{color:var(--ink);font-weight:600}
+.dist button[aria-pressed="false"]{opacity:.5}
+.sw{width:11px;height:11px;border-radius:2px}
+.dist .n{font-variant-numeric:tabular-nums;color:var(--muted)}
+.how{font-size:.85rem;color:var(--muted);margin:0;line-height:1.5}
+.how b{color:var(--ink-2);font-weight:600}
+
+/* results */
+.rhead{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:14px}
+.rhead h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem;
+  letter-spacing:-.015em;margin:0}
+.rhead .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);
+  letter-spacing:.07em;margin-left:auto}
+
+.list{display:flex;flex-direction:column;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.item{background:var(--surface);display:grid;grid-template-columns:52px 1fr;gap:16px;
+  padding:14px 18px 15px;align-items:start}
+.scorebox{display:flex;flex-direction:column;align-items:center;gap:5px;padding-top:2px}
+.sval{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.22rem;
+  line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.sbar{width:100%;height:3px;background:var(--sunken);border-radius:2px;overflow:hidden}
+.sbar i{display:block;height:100%}
+.main{min-width:0;display:flex;flex-direction:column;gap:5px}
+.top{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.02rem;
+  letter-spacing:-.012em}
+.nm a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.nm a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+.mt{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted)}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 7px;border-radius:2px}
+.p-aliado{background:var(--accent-soft);color:var(--accent)}
+.p-competidor{background:var(--coral-soft);color:var(--coral)}
+.p-proveedor{background:var(--violet-soft);color:var(--violet)}
+.p-espejo{background:var(--slate-soft);color:var(--slate)}
+.p-cliente{background:var(--amber-soft);color:var(--amber)}
+.dsc{margin:0;color:var(--ink-2);font-size:.94rem}
+.why{margin:0;font-size:.9rem;padding-left:12px;border-left:2px solid var(--line-strong)}
+.why em{font-style:normal;color:var(--muted)}
+.setbase{border:0;background:transparent;color:var(--muted);cursor:pointer;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.09em;
+  text-transform:uppercase;padding:0;text-align:left;width:fit-content}
+.setbase:hover{color:var(--accent)}
+.empty{padding:34px;text-align:center;color:var(--muted);background:var(--surface);
+  border:1px solid var(--line);border-radius:3px}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--muted);line-height:1.8}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:860px){
+  .cols{grid-template-columns:1fr;gap:22px}
+  aside{position:static}
+  .picker{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="kicker">549 startups · Lanzadera · motor de compatibilidad</div>
+    <h1>Radar de Sinergias</h1>
+    <p class="sub">Elige una empresa base y el motor puntúa las otras 548 contra ella: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
+  </div>
+  <div class="picker">
+    <label for="q">Empresa base</label>
+    <input id="q" type="text" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sug" placeholder="escribe un nombre…">
+    <div id="sug" role="listbox" hidden></div>
+  </div>
+</header>
+
+<div class="cols">
+  <aside>
+    <div class="card" id="ficha"></div>
+    <div class="card">
+      <p class="legendttl">Tipo de relación</p>
+      <div class="dist" id="dist"></div>
+    </div>
+    <div class="card">
+      <p class="legendttl">Cómo se calcula</p>
+      <p class="how">Cada ficha se etiqueta por <b>público</b> (a quién vende) y por <b>función</b> (qué hace), leyendo su descripción pública. La puntuación suma público compartido, complementariedad de función, encaje proveedor-cliente y cercanía de cohorte; el solapamiento total de función sobre el mismo público cambia la etiqueta a competidor en vez de restar. Es un cribado heurístico sobre una frase por empresa, no un análisis de la compañía.</p>
+    </div>
+  </aside>
+
+  <main>
+    <div class="rhead">
+      <h2 id="rttl">Coincidencias</h2>
+      <span class="n" id="rn"></span>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="empty" id="empty" hidden>Ningún resultado con ese filtro.</div>
+  </main>
+</div>
+
+<footer>
+  Fuente: directorio público de startups de Lanzadera, 549 fichas leídas de su API el 09/09/2026. Descripciones literales de cada ficha.<br>
+  Cohortes: MAR24 · SEPT24 · MAR25 · SEPT25 · MAR26 · SEPT26 · Alumni (sin cohorte asignada en la ficha).
+</footer>
+</div>
+
+<script>
+const RAW = [["Suncast","IA","SEPT26","Suncast entrega pronósticos de generación de energías renovables","suncast"],["TuFinca","Construcción","SEPT26","El software que transforma la administración de fincas","tufinca"],["MiFood","IA","SEPT26","MiFood comercializa robots para la automatización agrícola.","mifood"],["OFFLOVIN","Salud","SEPT26","El futuro de la gestión y la operativa de las clínicas privadas.","offlovin"],["Fraktal Software","IA","SEPT26","Plataforma de ejecución de proyectos software para empresas","fraktal-software"],["Coach Court","IA","SEPT26","Coach Court centraliza el baloncesto en una sola plataforma.","coach-court"],["Misclub.es","Salud","SEPT26","Misclub conecta a personas con centros deportivos de su ciudad","misclub-es"],["FIDEX","Cripto","SEPT26","Banca privada especializada en activos digitales estables.","fidex"],["SuperSocial","Retail","SEPT26","SuperSocial es una plataforma de IA para ecommerce","supersocial"],["Project Robin","Educación","SEPT26","Robin es una plataforma tecnológica de orientación universitaria","project-robin"],["Upcars","Movilidad","SEPT26","Gestión de flotas de renting especializado para PYMES.","upcars"],["Isla23","Educación","SEPT26","Convierte eventos presenciales en el canal de ventas más rentable","isla23"],["Solvia","Salud","SEPT26","Solvia es el billete del talento sanitario hacia Europa","solvia"],["Kylia","IA","SEPT26","Kylia democratiza el campo con IA y satélites sin usar hardware.","kylia"],["LOVEOBSESSED","Ecommerce","SEPT26","LOVEOBSESSED viste a una nueva generación que busca estilo propio","loveobsessed"],["Anzy Home","Ecommerce","SEPT26","Decoración para el hogar y productos infantiles","anzy-home"],["ABNER","Movilidad","SEPT26","Soluciones de negocio para escalar operaciones en el sector VTC","abner"],["Versedia","Salud","SEPT26","Versedia evita que se pierdan las historias de nuestros mayores.","versedia"],["Ace Serve","Ecommerce","SEPT26","Ace Serve impulsa el voleibol a través de soluciones innovadoras.","ace-serve"],["837CRAFTS","Movilidad","SEPT26","Barcos que vuelan, literalmente","837crafts"],["Aithority","IA","SEPT26","Automatiza el cumplimiento de AI Act de manera continua","aithority"],["SymBiontics","Deeptech","SEPT26","Biológicos más eficientes que los agroquímicos","symbiontics"],["FIBTRAY","Alimentación","SEPT26","Fibtray desarrolla envases alimentarios de papel.","fibtray"],["For You Print","Retail","SEPT26","Aporta soluciones de impresión al sector de la personalización","for-you-print"],["Wellbeinn","Salud","SEPT26","Wellbeinn es una startup de tecnología para la longevidad","wellbeinn"],["Aurvex AI","IA","SEPT26","Agentes de voz con IA para la gestión comercial de inmobiliarias.","aurvex-ai"],["Revista FIUM","Ecommerce","SEPT26","FIUM publica una revista trimestral de historia de la Fórmula 1","revista-fium"],["ARP Certificate","Educación","SEPT26","ARP Certificate audita y certifica programas de formación online.","arp-certificate"],["Kora","IA","SEPT26","Kora, el cerebro de la energía del hogar","kora"],["Persianas Online","Construcción","SEPT26","Aporta automatización, bienestar y seguridad a los hogares","persianas-online"],["Pilotium","Salud","SEPT26","Automatiza con IA la captación de socios para gimnasios y fitness","pilotium"],["vonsel","Deeptech","SEPT26","Convierte Google Maps en tu máquina de ventas con IA","vonsel"],["Datawifi","IA","SEPT26","Location analytics que convierte datos de visitantes en acción.","datawifi"],["X-Emotos","Movilidad","SEPT26","El HUB de las motos eléctricas off road.","x-emotos"],["Windfit","Salud","SEPT26","Windfit une entrenamiento, bienestar y longevidad en sus centros.","windfit"],["Verdecer","Alimentación","SEPT26","Pastoreo autónomo: menos pienso y más animales por hectárea.","verdecer"],["Datadope","IA","SEPT26","Datadope: IA operacional autónoma para infraestructuras críticas","datadope"],["Ventor Innovations","Deeptech","SEPT26","Drones biomiméticos para control aviar y vigilancia ecointegrada","ventor-innovations"],["TRATO","IA","SEPT26","TRATO transforma los contratos en activos vivos","trato"],["Aerth Labs","Deeptech","SEPT26","Great for humans, tech for evolution.","aerth-labs"],["AdinHub","Educación","SEPT26","Plataforma de creación y distribución de contenidos formativos","adinhub"],["Systratec","Sin definir","SEPT26","Instrumentos avanzados para medir el peso y el centro de gravedad","systratec"],["Esquí Sarrios","Salud","SEPT26","Escuela de esquí alpino en Pirineos y centro indoor en Madrid","esqui-sarrios"],["OTAI Akham","IA","SEPT26","OTAI, monitorización de ciberseguridad industrial incorporando IA","otai-akham"],["Golsmedia","Gaming","SEPT26","Medio de comunicación digital especializado en el fútbol regional","golsmedia"],["WatermelonCo","Sin definir","SEPT26","WMCO recauda regalías de música globales de forma transparente.","watermelonco"],["Suplai Sales","IA","SEPT26","Transforma distribuidoras tradicionales en inteligentes con IA","suplai-sales-ia-para-distribuidores-inteligentes"],["Caos Brand","Retail","SEPT26","Marca de bolsos atemporales y en tendencia, para el día a día.","caos-brand"],["VYNE","IA","SEPT26","La consultora que reinventa la selección de talento cualificado.","vyne"],["Billber","Sin definir","SEPT26","Agencia de growth en transición hacia un producto digital.","billber"],["Voone","IA","SEPT26","Voone conecta voz, chat, CRM y automatización en un solo sistema","voone"],["STILARO","Ecommerce","SEPT26","Stilaro es un probador virtual para tiendas de ropa online","stilaro"],["A3D Building","Construcción","SEPT26","A3D imprime edificios en 3D con hormigón y tecnología propia","a3d-building"],["CIS Robotics","Deeptech","SEPT26","CIS Robotics crea robots a medida para retos complejos.","cis-robotics"],["SIYA","Educación","SEPT26","SIYA es una plataforma de IA para evaluación en colegios.","siya"],["Crosscheck Verificación","IA","SEPT26","Plataforma de verificación de inquilinos para inmobiliarias","crosscheck-verificacion"],["THEKER","Sin definir","SEPT26","Sin descripción publicada en la ficha.","theker"],["Reglapp","IA","SEPT26","Reglapp desarrolla IA para automatizar la gestión de autónomos.","reglapp"],["HackBlock","Sin definir","SEPT26","HackBlock reduce el riesgo humano en ciberseguridad para empresas","hackblock"],["Ploid AI","IA","SEPT26","Agente de IA para la investigación en biotecnología.","ploid-ai"],["MOWLabs","Salud","SEPT26","Fabricamos incubadoras neonatales para países en desarrollo.","mowlabs"],["TuriaDesign AI","IA","SEPT26","Despliega agentes de IA en producción para PyMEs, en semanas.","turiadesign-ai"],["Singular Things","Deeptech","SEPT26","Ingeniería electrónica soberana para una Industria 5.0 confiable","singular-things"],["Picuco","Turismo","SEPT26","Toda experiencia turística, descubrible y reservable online","picuco"],["Outs World","Construcción","SEPT26","Outs World empresa de diseño y construcción de exteriores premium","outs-world"],["TalentAds","IA","SEPT26","Captación de talento mediante publicidad digital","talentads"],["QURE","Salud","SEPT26","QURE es un centro sanitario de entrenamiento y fisioterapia.","qure"],["Olorama","Deeptech","SEPT26","Olorama Technology sincroniza aromas con imagen y sonido.","olorama"],["Weekend Solutions","Salud","SEPT26","Soluciones inteligentes para transformar procesos complejos.","weekend-solutions"],["Obelance","IA","SEPT26","Obelance automatiza tareas manuales de pymes mediante IA","obelance"],["NOUS","Deeptech","SEPT26","Infraestructura de gobernanza de sistemas de IA","nous"],["Trika App","IA","SEPT26","Entrenamiento, nutrición e IA. Todo en una app.","trika-app"],["Sherpapp","Educación","SEPT26","Mide el estudio fuera de clase y anticipa el abandono.","sherpapp"],["NasApp","Deeptech","SEPT26","NasApp monitoriza, gestiona y reduce el impacto de los olores","nasapp"],["Saca","Finanzas","SEPT26","Saca simplifica la burocracia en España desde una sola plataforma","saca"],["PanaVoIP","IA","SEPT26","La solución de las telecomunicaciones en tu empresa","panavoip"],["NanoFreeze Inc","Deeptech","SEPT26","Una nueva forma de refrigerar naturalmente","nanofreeze-inc"],["MUTE Garage","Movilidad","SEPT26","MUTE ofrece motos eléctricas por suscripción mensual flexible.","mute-garage"],["Stadio","Turismo","SEPT26","Stadio es una startup danesa de turismo deportivo","stadio"],["Monolegal","IA","SEPT26","Agentes de inteligencia artificial para abogados","monolegal"],["Momento Guitarra","Educación","SEPT26","Escuela online de guitarra clásica para adultos.","momento-guitarra"],["Mobbiz","Sin definir","SEPT26","Mobbiz gobierna la ejecución de tus procesos operativos","mobbiz"],["Mimosa Blu","Ecommerce","SEPT26","Estudio y marca de diseño de joyería","mimosa-blu"],["Miinta","Salud","SEPT26","Mejoramos el bienestar emocional de las nuevas generaciones.","miinta"],["Tapstar","IA","SEPT26","Tapstar aumenta y gestiona las reseñas de negocios físicos","tapstar"],["Midatec","Deeptech","SEPT26","Diseña y fabrica sensores industriales en España.","midatec"],["ThinRemote","IA","SEPT26","Es una plataforma de mantenimiento remoto de equipos conectados","thinremote"],["QCSolutions","Deeptech","SEPT26","QCSolutions protege a las empresas frente al riesgo cuántico.","qcsolutions"],["Wemigo","Salud","SEPT26","Wemigo conecta adultos para crear amistades genuinas en persona.","wemigo"],["Marina García","Retail","SEPT26","Marina García crea tendencia y moda en joyería.","marina-garcia"],["Kensight","IA","SEPT26","Kensight transforma datos industriales en decisiones inteligentes","kensight"],["EnergyApp","Sin definir","SEPT26","EnergyApp analiza facturas de luz para ayudarte a ahorrar.","energyapp"],["Noetia","IA","SEPT26","SaaS para gestionar y redactar licitaciones públicas","noetia"],["International Medicine Group","Salud","SEPT26","IMG da acceso al grado de Medicina en inglés sin nota de corte","international-medicine-group"],["iaLicitaciones","IA","SEPT26","Plataforma para encontrar y preparar licitaciones públicas con IA","ialicitaciones"],["Instrumentomania","Retail","SEPT26","Transforma la compra de un instrumento en una experiencia única.","instrumentomania"],["Hi European Youth","IA","SEPT26","Ayuda a entidades socioeducativas a acceder a financiación europea","hi-european-youth-hey"],["Innovare Genetics","Deeptech","SEPT26","Innovare Genetics convierte genomas en decisiones clínicas","innovare-genetics"],["Modoru Biotech","Deeptech","SEPT26","Protección de cultivos frente a virus con biopesticidas de ARN","modoru-biotech"],["HistARy","Turismo","SEPT26","HistARy convierte el turismo cultural en experiencias inmersivas.","histary"],["DiscoRuta","Turismo","SEPT26","Plataforma para descubrir el mejor ocio nocturno de España.","discoruta"],["LLUQUIIIIII","Ecommerce","SEPT26","Puzzles dignos de enmarcar, y un packaging que no se tira.","lluquiiiiii"],["Bektor","IA","SEPT26","Plantilla digital de IA que opera negocios de alquiler.","bektor"],["Zerion","Ecommerce","SEPT26","Dan el control a las empresas de su evolución con tecnología","zerion"],["Autix","Movilidad","SEPT26","Autix es el ERP SaaS con IA que digitaliza el taller mecánico.","autix"],["Griky","Educación","SEPT26","Fábrica líder de cursos virtuales a la medida para universidades","griky"],["Metaqare","Salud","SEPT26","El criterio de los mejores médicos del mundo al alcance de todos","metaqare"],["Functor","IA","SEPT26","Plataforma de datos moderna, para empresas, soberana y privada","functor"],["Sykah","IA","SEPT26","Trabajadores virtuales para la Industria 5.0","sykah"],["KISEKI","IA","SEPT26","El software de ejecución estratégica para CEOs","kiseki"],["MagicPack","Alimentación","SEPT26","Solución innovadora para el envasado de alimentos.","magicpack"],["Filmer","Ecommerce","SEPT26","SaaS de creadores UGC e influencers impulsado por IA y datos","filmer"],["Gaia Camp","Educación","SEPT26","Campamento de verano","gaia-camp"],["Dentista Ideal","Salud","SEPT26","Plataforma IA de marketing y gestión para clínicas dentales","dentista-ideal"],["Delego","Retail","SEPT26","La plataforma que optimiza las operaciones de campo.","delego"],["Cumpleo","Ecommerce","SEPT26","Software de cumplimiento normativo para pymes y autónomos","cumpleo"],["Crecerank","IA","SEPT26","Logra que ChatGPT recomiende tu marca.","crecerank"],["Koltao","Sin definir","SEPT26","Te ayudamos a vender y comprar espacios con vídeos.","koltao"],["Farmagrow","Salud","SEPT26","Plataforma que conecta a la industria farmacéutica.","farmagrow"],["Bueno's Instaladores","Construcción","SEPT26","Empresa instaladora y mantenedora eléctrica, de teleco y de clima","buenos-instaladores"],["GlobeArea","Sin definir","SEPT26","Plataforma de inteligencia geoespacial","globearea"],["BRAMBAS","Retail","SEPT26","Brambas es una marca de calzado barefoot con estilo","brambas"],["Bonding","Salud","SEPT26","Conecta a las familias con actividades, experiencias y cursos.","bonding"],["HRBlade","Sin definir","SEPT24","Herramienta que automatiza los procesos de selección de personal","hrblade"],["Algori","Sin definir","SEPT24","Panel de hogares más grande de España","algori"],["CoCircular","Sin definir","MAR26","La solución a la trazabilidad de los residuos","cocircular"],["SendingBay","Movilidad","MAR26","Software de logística modular para tiendas online y agencias","sendingbay"],["Aphlora","Salud","MAR26","Suplementos naturales para la salud hormonal femenina.","aphlora"],["STCW Cursos","Educación","MAR26","STCW Cursos es un marketplace especializado en formación marítima","stcw-cursos"],["LogisPro","Movilidad","MAR26","Plataforma SaaS integrada para optimizar envíos","logispro"],["SISMOS","IA","MAR26","Visión artificial industrial para calidad cero defectos","sismos"],["Sherpa","Movilidad","MAR26","Sherpa convierte tu viaje en un envío para otra persona.","sherpa"],["Select Store","Retail","MAR26","Concept store especializada en sneakers exclusivos y streetwear","select-store"],["Salesdep.ia","IA","MAR26","Salesdep automatiza la comunicación con agentes de IA","salesdep-ia"],["Soquimat SpA","Deeptech","MAR26","Valoriza residuos forestales creando aditivos para pinturas","soquimat-spa"],["RondoAI","IA","MAR26","Agentes de IA que convierten datos de fans en ingresos","rondoai"],["Pantallas LED Valencia","Sin definir","MAR26","PLV proporciona soluciones digitales avanzadas para negocios.","pantallas-led-valencia"],["Ritmo Studio","Retail","MAR26","Ritmo gestiona música y anuncios con IA para cadenas retail","ritmo-studio"],["SolNow","Turismo","MAR26","SolNow automatiza ventas y operaciones para empresas de charter.","solnow"],["SocialBreak","Salud","MAR26","Terapia en español de calidad, accesible para todos.","socialbreak"],["Remy","Alimentación","MAR26","IA que transforma la inspiración culinaria en compras recurrentes","remy"],["SmartCookie","Educación","MAR26","Aplicación de gestión y productividad para docentes","smartcookie"],["REKO","Salud","MAR26","App para descubrir, planificar y recordar tus logros deportivos.","reko"],["Rating Sky","IA","MAR26","Forja la reputación online que los ecommerce merecen.","rating-sky"],["Otrebé","Construcción","MAR26","La solución circular que transforma residuos plásticos en activos","otrebe"],["RYLTY MUSIC","Ecommerce","MAR26","RYLTY es una distribuidora musical","rylty-music"],["Pronos AI","IA","MAR26","Tutores con IA personalizados para formaciones online","pronos-ai"],["PRESENCIA","Sin definir","MAR26","La forma más ágil e intuitiva de gestionar los RRHH.","presencia"],["OnPack","Sin definir","MAR26","Especialistas en embalaje para empresas de comercio electrónico.","onpack"],["moviinn","Sin definir","MAR26","moviinn facilita la movilidad internacional de personas y empresas","moviinn"],["MERÍA","Salud","MAR26","Conectar a enfermeros con empresas del sector salud.","meria"],["PANDA","Salud","MAR26","Modelo integral que conecta entrenamiento, salud y bienestar.","panda"],["Mediterranean Routes","Turismo","MAR26","Experiencias turísticas únicas y exclusivas sobre dos ruedas","mediterranean-routes"],["Minsenzia","Ecommerce","MAR26","Objetos para el espacio de trabajo y una app para ordenar el día.","minsenzia"],["Maska","Retail","MAR26","Verifica la comunicación verde de las marcas y evita greenwashing","maska"],["Pong City","Retail","MAR26","Nos vemos en la mesa.","pong-city"],["Mi Dirección Europea","Ecommerce","MAR26","MDE desarrolla soluciones digitales de forwarding internacional","mi-direccion-europea-mde"],["MAS MAYOR TECH","Salud","MAR26","Tecnología para nuestros mayores que mejora su calidad de vida","mas-mayor-tech"],["PM Oposiciones","Educación","MAR26","Preparación integral de opositoras basada en ciencia y método.","pm-oposiciones"],["Lymon","HORECA","MAR26","Reduce gastos operativos y aumenta las ventas en HORECA.","lymon"],["LUYOA","Alimentación","MAR26","LUYOA permite a restaurantes cobrar con QR en mesa y crecer.","luyoa"],["MEDUSA BAY","Retail","MAR26","Moda masculina hecha para disfrutar","medusa-bay"],["Onesto","Retail","MAR26","Plataforma all-in-one de creación de contenido para empresas","onesto"],["LICENSEWARE","Deeptech","MAR26","LICENSEWARE es una plataforma para la gestión de activos software","licenseware"],["NOMAAK","Construcción","MAR26","Conectar empresas con ingenieros y arquitectos.","nomaak"],["Platypool","Ecommerce","MAR26","Innovación eficaz que limpia la superficie de tu piscina","platypool"],["Niubiq","IA","MAR26","Equipo digital que convierte tus reuniones de venta en un sistema","niubiq"],["Zomai","Finanzas","MAR26","Zomai permite tokenizar y vender servicios jurídicos en créditos","zomai"],["Clodei","IA","MAR26","Cómputo bajo demanda especializado para IA","clodei"],["LaiaDesk","IA","MAR26","Automatización con IA para empresas, privada, segura y conectada.","laiadesk"],["Muvail Systems","IA","MAR26","Automatizaciones con inteligencia artificial","muvail-systems"],["kliniKOS","Salud","MAR26","KliniKOS es el software que está revolucionando el sector dental","klinikos"],["MURISANA","Salud","MAR26","Mejorar la visibilidad online de profesionales de la salud","murisana"],["Kämpe","Educación","MAR26","Kämpe es una plataforma para entrar y crecer en oficios técnicos","kampe"],["Intake","IA","MAR26","Software de atención al cliente para startups","intake"],["Safefy","IA","MAR26","SaaS con IA que digitaliza la gestión de emergencias y procesos.","safefy"],["KALEIDOOK","Turismo","MAR26","KALEIDOOK optimiza la gestión de pañales en hoteles familiares.","kaleidook"],["BY ELENA CARRERA","Retail","MAR26","Marca de joyería fina creada y fabricada en España.","by-elena-carrera"],["Scoutbasketball","Sin definir","MAR26","Plataforma que unifica estadísticas de baloncesto global","scoutbasketball"],["GOODBYE MAMA","Construcción","MAR26","GOODBYE MAMA permite a jóvenes elegir dónde y con quién convivir.","goodbye-mama"],["Fintiq","Finanzas","MAR26","Fintiq digitaliza la gestión y supervisión de pagos en obra.","fintiq"],["Extensa","IA","MAR26","Plataforma de IA para captación de clientes B2B","extensa"],["FARMACOPILOT","Salud","MAR26","Gestión farmacéutica inteligente ahorrando tiempo y costes","farmacopilot"],["Stooner","Ecommerce","MAR26","Marca de moda basada en el streetwear refinado español","stooner"],["ExpertVision AI","IA","MAR26","Detección automática de hurto en tienda con cámaras e IA.","expertvision-ai"],["El Workshop","Ecommerce","MAR26","Plataforma de distribución de mobiliario de diseño para proyectos","el-workshop"],["Hander VET","Salud","MAR26","Veterinarios a domicilio. Visados y eutanasias de mascotas","hander-vet"],["SUNXY","Retail","MAR26","Marca de gafas de sol de tendencia a precio accesible","sunxy"],["Gooers","Sin definir","MAR26","Contratación de freelancers creativos y gestión de proyectos.","gooers"],["Beetrics","Salud","MAR26","Detección de talento en grandes empresas","beetrics"],["Ekanite","Turismo","MAR26","Conoce a tu familia a través de la música","ekanite"],["Funeral System","IA","MAR26","CRM y ERP con flujos de IA, especializado en sector funerario","funeral-system"],["Educ.IA","IA","MAR26","Automatización operativa inteligente para centros de formación","educ-ia"],["DEUS Crate","Ecommerce","MAR26","Ecosistema de herramientas y formación para productores musicales","deus-crate"],["LUP","IA","MAR26","Desarrolla soluciones tecnológicas para la accesibilidad","lup"],["HybridWod","Salud","MAR26","Entrenamiento híbrido en una app: plan, datos y comunidad","hybridwod"],["Envezdeflores","Ecommerce","MAR26","Envezdeflores crea regalos personalizados para cada ocasión.","envezdeflores"],["FORIDER","Retail","MAR26","Ropa streetwear con protección para motorista","forider"],["Brainboost","Educación","MAR26","Agentes de IA para alumnos integrados en campus virtual","brainboost"],["Decomind","IA","MAR26","Facilitar el día a día de la captación inmobiliaria","decomind"],["Happyideas","Ecommerce","MAR26","Marca de artículos de regalo originales y con personalidad","happyideas"],["dataker","IA","MAR26","Soberanía de datos y cumplimiento legal en IA","dataker"],["BCAPP","Gaming","MAR26","La plataforma que conecta marcas con comunidades deportivas","bcapp"],["Babybelegal","Sin definir","MAR26","Gestoría digitalizada especializada en trámites de nacimiento","babybelegal"],["Avium","Deeptech","MAR26","Soluciones autónomas de drones para automatización operativa.","avium"],["AulaPay","Educación","MAR26","La plataforma de gestión de pagos en centros educativos.","aulapay"],["TORRICAMINOS","Ecommerce","MAR26","Desarrollo de calzado infantil respetuoso, creado por podólogos","torricaminos"],["FORGATE","Turismo","MAR26","Gestión automatizada de objetos perdidos en hoteles","forgate"],["Limbium","Salud","MAR26","Diseño, fabricación y venta de prótesis de miembro superior.","limbium"],["Datablocks","Cripto","MAR26","Plataforma de analítica de datos blockchain para inversores","datablocks"],["MystherAI","IA","MAR26","Flexibilizan la producción audiovisual con IA generativa 3D.","mystherai"],["ZapUp","Retail","MAR26","ZapUp impulsa la carga portátil en negocios","zapup"],["DARWIN Biomed","Salud","MAR26","Robótica asistencial con inteligencia avanzada para séniors","darwin-biomed"],["Wazoo","Movilidad","MAR26","Alquiler de coches entre particulares.","wazoo"],["ARTIMARK","Retail","MAR26","Artimark diseña y fabrica ropa personalizada para empresas.","artimark"],["Anthale","IA","MAR26","Anthale, el cortafuegos para los agentes de IA de las empresas","anthale"],["AMAPOLA LAB","Ecommerce","MAR26","Revelan imágenes y textos sobre tejidos de algodón.","amapola-lab"],["Aiscopia","Salud","MAR26","Diagnóstico de cáncer en biopsias automatizado.","aiscopia"],["HomeDock OS","Deeptech","MAR26","Convierte cualquier ordenador en una nube privada y segura.","homedock-os"],["HealthMate","IA","MAR26","Empleados digitales impulsados por IA para hospitales y clínicas","healthmate"],["CORINTIA","Retail","MAR26","Marca valenciana de moda para invitadas de talla grande.","corintia"],["Voira","Ecommerce","MAR26","Marca valenciana de abanicos artesanales de lujo asequible","voira"],["FoodWeb.AI","HORECA","MAR26","Optimiza procesos de restaurantes con inteligencia artificial","foodweb-ai"],["Cool Pets","Salud","MAR26","La solución digital de higiene y peluquería móvil para mascotas","cool-pets"],["Enetres","IA","MAR26","Servicios de streaming profesional para emisión de eventos.","enetres"],["Flynspire","Construcción","MAR26","Tecnología para biovalorización de residuos agroalimentarios.","flynspire"],["Civitphone","IA","MAR26","Asistente telefónico con IA para ayuntamientos","civitphone"],["CISEC","Deeptech","MAR26","Consultoría de ciberseguridad con agente ofensivo propio","cisec"],["VEVIPRO","Sin definir","MAR26","Automatizamos la venta de viviendas para propietarios.","vevipro"],["Casita In Spain","Educación","MAR26","CIS gestiona programas de educación de estudiantes internacionales","casita-in-spain"],["Unidema","Educación","MAR26","Formar online y certificar en economía y liderazgo","unidema"],["Brandy&Co","Educación","MAR26","Modelo de gestión y sistema operativo para academias de inglés","brandyco"],["banAIna Solution","IA","MAR26","banAIna es una plataforma de IA para empresas.","banaina-solution"],["BONNEE","Ecommerce","MAR26","BONNEE es una app de moda circular","bonnee"],["TU ROPA","Ecommerce","MAR26","Tu Ropa impulsa marcas con producción textil bajo demanda.","tu-ropa"],["Cadabit","IA","MAR26","Cadabit desarrolla y escala productos tecnológicos basados en IA","cadabit"],["KONKLUA","Construcción","MAR26","IA para la realización de estudios de mercado de obra nueva","konklua"],["Viads Advertising","Sin definir","MAR26","Optimización de operaciones y monetización para medios digitales.","viads-advertising"],["BluPro","IA","MAR26","BluPro escala el funnel comercial del sector inmobiliario.","blupro"],["beLASAI","Salud","MAR26","Proporciona servicios de bienestar para empresas y sus empleados.","belasai"],["Caldra","Salud","MAR26","IA clínica que resuelve dudas médicas con evidencia científica.","caldra"],["Go Mate","Educación","MAR26","Go Mate conecta universitarios con su alojamiento ideal","go-mate"],["Nidus","Sin definir","Alumni","Trazando un camino más verde en la innovación inmobiliaria","nidus"],["Sepiia","Moda","Alumni","Marca de moda inteligente","sepiia"],["Gana Energía","Energía","Alumni","Comercializadora de energía y gas","gana-energia"],["Holafly","Sin definir","Alumni","Tarjetas eSIM para seguir conectado dondequiera que viajes","holafly"],["AISUPPLY","IA","SEPT25","Soluciones de IA para automatizar y hacer crecer empresas","aisupply"],["Evergreen Recycling","Retail","SEPT25","Transformamos y vendemos polietileno reciclado.","evergreen-recycling"],["Iwaky","Retail","SEPT25","Tecnología reacondicionada para consumo responsable y sostenible","iwaky"],["Zaindari","Salud","SEPT25","Redes inteligentes para hacer de la tecnología una herramienta","zaindari"],["Totenart.com","Educación","SEPT25","Venta de materiales, herramientas y maquinaria para Bellas Artes","totenart-com"],["MindChef","HORECA","SEPT25","El asistente digital para chefs y restaurantes","mindchef"],["CRS Protection","Sin definir","SEPT25","Llevamos la experiencia del detailing a cualquier persona.","crs-protection"],["Bold Factory","IA","SEPT25","Plataforma para digitalizar las operaciones de las fábricas.","bold-factory"],["PASALY","Ecommerce","SEPT25","Plataforma de compra y venta de ropa de segunda mano seleccionada","pasaly"],["Footbik","Educación","SEPT25","Una red internacional de centros de desarrollo temprano de fútbol","footbik"],["SpainU","Movilidad","SEPT25","La app que simplifica la movilidad internacional","spainu"],["Wesolving Finance","Finanzas","SEPT25","Análisis de riesgo crediticio a particulares y empresas.","wesolving-finance-s-l"],["ChatPol","IA","SEPT25","ChatPol, la IA que transforma la labor policial","chatpol"],["GalgoSheets","IA","SEPT25","Software para el cálculo y distribución de pagos a conductores VTC","galgosheets"],["PERTICAS","IA","SEPT25","Plataforma que crea looks personalizados con tu propia ropa","perticas"],["Kaimok Design","Ecommerce","SEPT25","Accesorios decorativos de almacenamiento de pared.","kaimok-design"],["Circu","Ecommerce","SEPT25","Moda sostenible y circular con alma mediterránea.","circu"],["tQel","Ecommerce","SEPT25","Moda con estilo: ropa que entiende de verdad a los perros","tqel"],["Vinkova","Ecommerce","SEPT25","Diseño, fabricación y venta de maillots de gimnasia rítmica","vinkova"],["Trucking Innovation","Construcción","SEPT25","Desarrollamos apps para control de obra.","trucking-innovation"],["Muntatges Ximo","Construcción","SEPT25","Suministro e instalación de puertas automáticas y automatismos","muntatges-ximo"],["Cargamos","HORECA","SEPT25","Alquiler de powerbanks en espacios públicos","cargamos"],["ODELYNE TECHNOLOGY","Ecommerce","SEPT25","Dispositivos de fototerapia LED para el cuidado avanzado de la piel","odelyne-technology"],["BeAmbassador","Deeptech","SEPT25","BeAmbassador crea y gestiona redes de embajadores de marca","beambassador"],["MAS EVENTS","Turismo","SEPT25","Eventos corporativos de alto impacto con producción audiovisual","mas-events"],["IONLY","Deeptech","SEPT25","IONLY diseña y fabrica baterías para almacenamiento fotovoltaico.","ionly"],["Nexus","Construcción","SEPT25","Sin descripción publicada en la ficha.","nexus"],["Archivo Final","IA","SEPT25","Conectamos tu manuscrito con la editorial que lo está buscando","archivo-final"],["Puebli Conecta","Turismo","SEPT25","Tu pueblo, tu gente, tu app.","puebli-conecta"],["futbolbase.tv","Gaming","SEPT25","Streaming y profesionalización del club.","futbolbase-tv"],["Finne","Salud","SEPT25","Una plataforma que promueve el bienestar laboral en oficinas.","finne"],["Oona","Salud","SEPT25","Plataforma de actividades de bienestar","oona"],["STR Drones","Construcción","SEPT25","Diagnóstico automatizado de instalaciones fotovoltaicas grandes.","str-drones"],["Rescrito","Educación","SEPT25","Plataforma de escritura con IA para la investigación profesional.","rescrito"],["Soulei","Retail","SEPT25","Marca mediterránea de vacaciones","soulei"],["Northern Spain Travel","Turismo","SEPT25","Northern Spain Travel crea viajes a medida en el norte de España.","northern-spain-travel"],["Alder Lab","IA","SEPT25","Entiende tus datos y conviértelos en decisiones claras.","alder-lab"],["Scope AI","IA","SEPT25","Analítica conversacional de datos para empresas manufactureras","scope-ai"],["Kode","Educación","SEPT25","Ofrecer una educación enfocada en las tecnologías del mañana.","kode"],["MENTOOR","Educación","SEPT25","Los mejores profesores particulares de España","mentoor"],["ProMec 3D","Alimentación","SEPT25","Sistemas de transporte en espiral para el sector alimentario","promec-3d"],["Airway Shield","Salud","SEPT25","Intubación más segura y más fácil en todo el mundo.","airway-shield"],["GoToGoal","Salud","SEPT25","Entrena con datos. Compite mejor.","gotogoal"],["Eventuy","Turismo","SEPT25","Todo lo que tu evento necesita, en un solo lugar","eventuy"],["RIDE-ON Riders & Mechanics","Salud","SEPT25","Ride On conecta talleres y ciclistas con gestión y mantenimiento","ride-on-riders-mechanics"],["Origrip","Salud","SEPT25","Productos de protección para alto rendimiento y deportistas élite","origrip"],["Equanima","Salud","SEPT25","Equanima reduce el estrés y la ansiedad gestionando tus emociones","equanima"],["Veiko","Movilidad","SEPT25","Marketplace B2B de vehículos de ocasión","veiko"],["Ola Creators","Retail","SEPT25","Contratación de creadores de contenido y perfiles de RRSS","ola-creators"],["Jimmy Lies","Ecommerce","SEPT25","Hacemos únicamente ropa, y muchas cosas más.","jimmy-lies"],["FromageClub","Turismo","SEPT25","Eventos efímeros que crean comunidad y conexiones reales","fromageclub"],["MARNIFIC","Turismo","SEPT25","Disfruta de una embarcación con un modelo por suscripción","marnific"],["Alpha Rho Technologies","Finanzas","SEPT25","Digitalizamos la gestión de fondos de inversión.","alpha-rho-technologies"],["Tipi","IA","SEPT25","Gestiona el restaurante con tu voz","tipi"],["Galatea Jewelry","Ecommerce","SEPT25","Marca de joyas.","galatea-jewelry"],["Tu Trámite Fácil","Finanzas","SEPT25","Gestión rápida de ayudas públicas","tu-tramite-facil"],["PLOOT.AI","IA","SEPT25","Posicionamos tu empresa en LinkedIn para atraer clientes.","ploot-ai"],["Kids&Clouds","Educación","SEPT25","Mejoramos la comunicación de los centros educativos y deportivos","kidsclouds"],["Payload","Ecommerce","SEPT25","Plataforma de transferencia de medios para profesionales creativos","payload"],["TRABEM HEALTH","Salud","SEPT25","SaaS de automatización de procesos en clínicas de salud.","trabem-health"],["SOLUX PROTECCIÓN SOLAR","Construcción","SEPT25","Fabricación y venta de productos de protección solar.","solux-proteccion-solar"],["Wild Rain Cosmetics","Ecommerce","SEPT25","Wild Rain: eficacia demostrada con la fuerza de lo salvaje","wild-rain-cosmetics"],["MUNÉ","Ecommerce","SEPT25","Muné, slippers y calcetines sostenibles","mune"],["KOWIIK","Ecommerce","SEPT25","Kowiik es el centro de ayuda de la energía","kowiik"],["Koopey Club","Ecommerce","SEPT25","Marca de ropa con el objetivo de devolver la elegancia.","koopey-club"],["OnePool","Finanzas","SEPT25","OnePool ofrece pagos flexibles, aumentando las ventas de empresas","onepool"],["GBTC FINANCE","Finanzas","SEPT25","El exchange cripto que une tiendas físicas y plataforma online","gbtc-finance"],["Papira Club","Ecommerce","SEPT25","Transformamos momentos personales en objetos aesthetic","papira-club"],["Showee","Ecommerce","SEPT25","Plataforma integral para contratación y gestión de artistas","showee"],["Vet2Go","Salud","SEPT25","App pet-care número 1 del mercado","vet2go"],["SportCity","Retail","SEPT25","Cadena de tiendas de deporte","sportcity"],["LERIUM","Finanzas","SEPT25","Simplificamos la inversión inmobiliaria.","lerium"],["Quelton","Ecommerce","SEPT25","Marca de ropa femenina","quelton"],["TuParty","Gaming","SEPT25","La app que conecta DJs y público para elegir la música en fiestas","tuparty"],["Vulnerabbit","Deeptech","SEPT25","Ciberseguridad accesible y automatizada para startups y pymes.","vulnerabbit"],["Spanish is cool","Educación","SEPT25","Plataforma e-learning de español para extranjeros","spanish-is-cool"],["ROLA Music","Sin definir","SEPT25","Convierte los fans de tu música en ingresos estables para crecer","rola-music"],["Nexi Health","Salud","SEPT25","Dispositivo médico software para la salud mental","nexi-health"],["Scennio","HORECA","SEPT25","La plataforma all-in-one que revoluciona la gestión del ocio","scennio"],["OPOSPILLS","Educación","SEPT25","Si tienes corazón de profe, oposita y consigue tu sueño","opospills"],["MATCH biosystems","Salud","SEPT25","Conservamos compuestos biológicos.","match-biosystems"],["ODAS","Construcción","SEPT25","Servicio especializado en oficinas que une diseño y gestión","odas"],["BDEBRUNO","Ecommerce","SEPT25","Marca de accesorios premium para perros made in Spain","bdebruno"],["Cartonlab","Retail","SEPT25","Cartonlab: diseño en cartón para eventos, ferias y retail.","cartonlab"],["INGLESPOL","Educación","SEPT25","Academia online de inglés especializada en oposiciones","inglespol"],["tuki.fm","Ecommerce","SEPT25","Crea tu propia ticketera y empieza a vender entradas hoy mismo","tuki-fm"],["CANTERA DE EMPRESAS","Educación","SEPT25","Formamos el talento tecnológico que las empresas necesitan","cantera-de-empresas"],["treintamástreinta","Turismo","SEPT25","La primera tarjeta cultura para mayores de treinta años.","treintamastreinta"],["Pandox","Retail","SEPT25","Plataforma de fidelización inteligente para supermercados","pandox"],["UXPay Solutions","Deeptech","SEPT25","La nueva forma de vender: autónoma, segura y eficiente","uxpay-solutions"],["HeyThalia","IA","SEPT25","Thalia, la asistente con IA de tu hotel","heythalia"],["Puchades","Retail","SEPT25","Tu partner de maquinaria para la industria del plástico","puchades"],["Veriveri","Finanzas","SEPT25","Evitamos multas de Verifactu.","veriveri"],["Savvy Tech Hotels","Turismo","SEPT25","Ayudamos al hotel a fidelizar a los clientes de Booking.","savvy-tech-hotels"],["Dipcioso","Alimentación","SEPT25","Sin descripción publicada en la ficha.","dipcioso"],["ENARTI","Educación","SEPT25","Integra IA en tu empresa de forma legal y personalizada.","enarti"],["Bronze","IA","SEPT25","Reimaginando las operaciones de restaurante","bronze"],["Jurium","IA","SEPT25","Centralizamos la comunicación de despachos con sus clientes.","jurium"],["AsFIn","Finanzas","SEPT25","La plataforma que conecta pymes y asesores financieros","asfin"],["Climind","Salud","SEPT25","Software de medición del clima laboral en tiempo real","climind"],["ALIO ENERGÍA","Retail","SEPT25","Comercializadora eléctrica para clientes residenciales","alio-energia"],["Hundred","Sin definir","Alumni","La mejor burger posible al mejor precio posible.","hundred"],["BusUp","Sin definir","Alumni","Aliado tecnológico para una movilidad corporativa eficiente","busup"],["Internxt","Sin definir","Alumni","Internet privado, seguro y sostenible, que respeta a las personas","internxt"],["Shakers","Sin definir","Alumni","Reinventando el trabajo","shakers"],["Singularu","Sin definir","Alumni","Firma de joyas accesibles para el día a día","singularu"],["Smileat","Sin definir","Alumni","La revolución de la alimentación infantil.","smile-eat"],["Waynabox","Sin definir","Alumni","Viajes sorpresa en avión o por carretera","waynabox"],["Zapato Feroz","Sin definir","Alumni","Calzado que respeta la forma y el desarrollo natural del pie.","zapato-feroz"],["flowww","Sin definir","Alumni","Ecosistema digital líder para salud, belleza y bienestar.","flowww"],["Dcycle","Sin definir","Alumni","Impulsando a las pymes ante la revolución de la sostenibilidad.","dcycle"],["Flip Flow","Sin definir","Alumni","La plataforma de inteligencia y acción más avanzada para retail.","flip-flow"],["Saigu Cosmetics","Sin definir","Alumni","Maquillaje natural y ecológico de proximidad","saigu-cosmetics"],["Pompeii","Sin definir","Alumni","Calzado y ropa sostenible para tu día a día.","pompeii"],["Quibim","Sin definir","Alumni","Transformamos las imágenes médicas en predicciones útiles.","quibim"],["Skin Molecule X","Sin definir","Alumni","Nutricosmética basada en evidencia científica y resultados reales","skin-molecule-x"],["Imperia SCM","Sin definir","Alumni","Software de optimización de la cadena de suministro.","imperia-scm"],["Fourvenues","Sin definir","Alumni","Software de gestión para organizadores de eventos.","fourvenues"],["Del Poble","Sin definir","Alumni","Cadena de pizzerías al horno de leña","del-poble"],["Stally","Salud","SEPT25","Solución que ayuda a personas con discapacidad visual.","stally"],["RIDE PETAL","Salud","SEPT25","Bicis eléctricas con cargador para iPhone y extracómodas","ride-petal"],["Ballify","Sin definir","SEPT25","Digitalizamos y automatizamos la gestión de escuelas de pádel","ballify"],["I Love Ferry","Turismo","SEPT25","Comparador de billetes de ferry: España, Marruecos, EEUU y Bahamas","i-love-ferry"],["CHERUBINA","Retail","SEPT25","Marca referente en moda femenina de invitadas.","cherubina"],["Nexa","Salud","SEPT25","Robot de entrenamiento y readaptación muscular","nexa"],["ADN CANINO","Salud","SEPT25","Identificación de animales por ADN para mejorar el civismo.","adn-canino"],["Raw Coffee","Sin definir","MAR25","Cadena de gimnasios de verdad","raw-coffee"],["NovaHiring","Sin definir","SEPT24","Software para automatizar procesos de selección","novahiring"],["Evenergía","Sin definir","MAR25","Distribuidor, instalador y plataforma de cargadores eléctricos.","evenergia"],["Volup","Sin definir","MAR25","Marketplace de comida gourmet","volup"],["Azulblanco Bagno","Construcción","MAR25","Pavimentos y revestimientos cerámicos para profesionales","azulblanco-bagno"],["Profes Nómadas","Educación","MAR25","Inserción laboral de docentes españoles en el extranjero.","profes-nomadas"],["Colorai","IA","MAR25","La tecnología que revela los colores que te favorecen","colorai"],["Futura Tickets","Sin definir","SEPT24","Control de entradas falsas para eventos.","futura-tickets"],["ruit","Sin definir","SEPT24","Ofrecen un software a retailers de la segunda mano","ruit"],["DataQu","Sin definir","MAR25","Transforma datos en decisiones estratégicas","dataqu"],["Cuico Health","Salud","MAR25","Startup de salud digital para monitoreo remoto de pacientes","cuico-health"],["Preciso","Sin definir","MAR25","Plataforma para mejorar la gestión del absentismo laboral.","preciso"],["Tetsuo","Sin definir","SEPT24","Fabricación de componentes de fibra de carbono.","tetsuo"],["Massa Greens","Sin definir","MAR25","Microvegetales gourmet al alcance de todos.","massa-greens"],["DVELAS","Sin definir","SEPT24","Reutilización de velas náuticas para el diseño.","dvelas"],["Smusix","Sin definir","MAR25","App que descubre canciones antes de que sean virales","smusix"],["Querubín Bordado","Sin definir","MAR25","Talleres y venta de kits de bordado.","querubin-bordado"],["KeepCool","Sin definir","MAR25","Innovación para la conservación de alimentos","keepcool"],["Ainovis","Sin definir","SEPT24","Motor de imagen médica impulsado por IA generativa","ainovis"],["PideFácil","Sin definir","SEPT24","Gestionar los pedidos entre restaurantes y proveedores alimentarios","pidefacil"],["RedEco","Sin definir","SEPT24","Desarrollar y medir estrategias de sostenibilidad en manufactura","redeco"],["Signos IoT","Sin definir","MAR25","Seguridad y datos en almacenes logísticos","signos-iot"],["TerraceLab","Sin definir","SEPT24","Democratiza el acceso al poder de la naturaleza.","terracelab"],["Virtua Broker","Sin definir","MAR25","Plataforma para enviar pagos internacionales con blockchain.","virtua-broker"],["Nexafirma","Sin definir","SEPT24","Plataforma tecnológica especializada en firma electrónica","mensajero-digital-nexafirma"],["Zoundroom","Sin definir","MAR25","Agregador de herramientas para músicos.","zoundroom"],["Samo Sports","Sin definir","MAR25","Revolucionando el pádel con estilo","samo-sports"],["Labia","Sin definir","SEPT24","Productividad y formación de equipos de televenta.","labia"],["Coliviner","Sin definir","SEPT24","Plataforma de casas compartidas.","coliviner"],["Hangover of Fashion","Sin definir","SEPT24","Hangover of Fashion es una marca de bolsos made in Spain.","hangover-of-fashion"],["Plaspy","Sin definir","MAR25","Tecnología de rastreo inteligente para empresas y usuarios","plaspy"],["Geoleads","Sin definir","MAR25","Automatiza la búsqueda y envío de emails a contactos objetivo","geoleads"],["Agrointel","Sin definir","SEPT24","Monitorización de cultivos para optimización de riegos.","agrointel"],["Maat Impact","Sin definir","SEPT25","Plataforma para facilitar la gestión y fomentar el voluntariado","maat-impact"],["Jaippy","Sin definir","MAR25","Herramienta para mejorar las valoraciones online de los hoteles.","jaippy"],["Amiqa Tech","Sin definir","MAR25","Automatización inteligente para hoteleros pequeños","amiqa-tech"],["Fitai Labs","Sin definir","SEPT24","Innovación para una vida saludable","fitai-labs"],["Friendog Labs","Sin definir","MAR25","App integral para el bienestar canino","friendog-labs"],["Liceia.ai","Sin definir","MAR25","Genera test y casos prácticos para academias de oposiciones.","liceia-ai"],["Bewoman360","Sin definir","SEPT24","Suelo pélvico y entrenamiento online","bewoman360"],["IGM Facilities Management","Sin definir","MAR25","Plataforma para la gestión de empresas de servicios.","igm-facilities-management"],["Moradai","Sin definir","SEPT24","La primera solución de certificación de residencia del mercado.","moradai"],["Vico","Finanzas","SEPT24","Optimiza tus gastos y gestiona todo desde una única app","vico"],["Roomeo","Turismo","MAR25","Opciones de alojamiento y una experiencia más real para viajeros","roomeo"],["Neety","Sin definir","SEPT24","Agente de automatización all-in-one para marketing y ventas","neety"],["Biotasmart","Salud","SEPT24","Plataforma de bienestar","biotasmart"],["CaranvaSports","Sin definir","SEPT24","Una plataforma para alquilar material deportivo donde quieras.","caranvasports"],["Ocbo","Sin definir","MAR25","Automatiza la documentación para transporte de carga","ocbo"],["Tokencrowd","Finanzas","MAR25","Wealthtech de inversión alternativa tokenizada.","tokencrowd"],["Innzpira","Sin definir","SEPT24","Reducimos tiempo y costes en recursos humanos","innzpira"],["Hi Beauty","Sin definir","SEPT24","Suscripciones de belleza y skin care","hi-beauty"],["Encuentra tu Fisio","Salud","MAR25","Plataforma de fisioterapia especializada a domicilio.","encuentra-tu-fisio"],["Mydance","Sin definir","SEPT24","Plataforma social de baile.","mydance"],["Vandalstop","Sin definir","MAR25","VandalStop: en tu seguridad vale más prevenir que curar.","vandalstop"],["Elevall Grúas","Construcción","MAR25","Grúa plegable de elevación por fachada.","elevall-gruas"],["ELdeS","Sin definir","MAR25","Plataforma para aprender lengua de signos.","eldes"],["Fliinow","Sin definir","SEPT24","Plataforma para comprar y pagar vuelos a plazos.","fliinow"],["HERMES","Sin definir","SEPT24","Optimizar el rendimiento de vehículos en competición.","hermes"],["Gradhoc","Sin definir","SEPT24","Refrigeración inteligente para un futuro más frío.","gradhoc"],["FETĒN","Sin definir","SEPT24","Cosmética masculina premium y sostenible.","feten"],["Nob 166","Sin definir","SEPT24","Investigación y desarrollo de soluciones biocidas antimicrobianas","nob-166"],["Alaska Circular","Retail","MAR25","Ayudamos a fabricantes a vender sus excedentes de muebles y deco.","alaska-circular"],["Sanicoach","Sin definir","MAR25","Plataforma de apoyo psicológico y académico para sanitarios.","sanicoach"],["Life Challenge","Sin definir","MAR25","Plataforma digital de retos y juegos","life-challenge"],["CodeCrypto","Educación","SEPT24","Formación online para programadores en IA, blockchain y Web3","codecrypto"],["Tattoonie","Sin definir","MAR25","Accesorios temporales para la piel: moda y activación de marca.","tattoonie"],["Dialgo","Sin definir","MAR25","Plataforma de agentes inteligentes para la automatización de tareas","dialgo-antes-carton"],["Onorato AI","Sin definir","SEPT25","Dispositivo inteligente en forma de loro para cuidado de mayores","onorato-ai"],["Hotlist","HORECA","SEPT24","Externalización del área de recursos humanos para hostelería","hotlist"],["TailorDoc","Salud","SEPT24","Plataforma internacional para tratamientos de cirugía ortopédica.","tailordoc"],["Bubbl3s","Sin definir","MAR25","Aire puro para tu bienestar diario","bubbl3s"],["Portales Ocho","Sin definir","MAR25","Venta física y online de muebles y productos de decoración.","portales-ocho"],["Archiff","Sin definir","SEPT24","Formación online para el sector creativo","archiff"],["Hodrop","Sin definir","MAR25","Soluciones para el hidrógeno renovable","hodrop"],["Madrid Content School","Sin definir","MAR25","Una comunidad vibrante y dinámica.","madrid-content-school"],["Bodhi","Sin definir","MAR25","Elevando el bienestar con respiración y frío.","bodhi"],["Yorsio","Construcción","MAR25","Alquiler con opción a compra por habitaciones","yorsio"],["World Challenge Game","Sin definir","SEPT24","Desarrolladora de videojuegos y entretenimiento","world-challenge-game"],["Bujia","Sin definir","MAR25","Plataforma para gestión integral de talleres.","bujia"],["Auth4Art","Sin definir","MAR25","Trazabilidad de obras de arte.","auth4art"],["Wend","Sin definir","MAR25","La red social del futuro","wend"],["Oxinity","Sin definir","SEPT24","Academia de idiomas online.","oxinity"],["Omek Biotech","Sin definir","SEPT24","Plataforma para evaluación de riesgos y prevención de enfermedades","omek-biotech"],["Clover","Sin definir","MAR25","Tu propio transporte, sin complicaciones.","clover"],["Mube","Sin definir","MAR25","Plataforma para compartir coche y gastos.","mube"],["WeSpeak","Sin definir","SEPT24","Asistente virtual para hotelería","wespeak"],["LetterBucket","Sin definir","MAR25","Plataforma para crear, gestionar y monetizar newsletters.","letterbucket"],["Sopa","IA","MAR25","Sopa automatiza el posicionamiento en Google y en LLMs.","sopa"],["StockerAI","Sin definir","MAR25","Plataforma para la gestión de la demanda y control de inventarios.","stockerai"],["Oxygen Gaming","Sin definir","SEPT24","Club de esports","oxygen-gaming"],["Instituto Seguridad y Futuro","Educación","MAR25","EdTech para seguridad, emergencias y defensa","instituto-seguridad-y-futuro"],["CraniaMed","Salud","MAR25","Detectar asimetrías craneales en bebés.","craniamed"],["Fastfest","Sin definir","MAR25","Cerveza self-service: cero personal, cero colas y cero mermas.","fastfest"],["Kodikas Developers","Sin definir","MAR25","Herramienta para la gestión de acreditaciones en eventos.","kodikas-developers"],["Tekocino","Sin definir","SEPT24","Reparto de comida del día a día para empresas","tekocino"],["Hutrit","Sin definir","MAR25","Conectamos empresas con talento de calidad de Latinoamérica","hutrit"],["Masco Beauty","Sin definir","MAR25","Cosméticos de alta calidad para perros y gatos.","masco-beauty"],["Balteus","Sin definir","MAR25","Redefiniendo el mercado de los cinturones","balteus"],["The Truth","Educación","MAR25","Verifica credenciales y experiencia laboral, impulsa empleo.","the-truth"],["Kpophub","Sin definir","MAR25","Dinamizadora de la comunidad de fans por la cultura coreana.","kpophub"],["Simbionte","Sin definir","SEPT24","Ayuda a compañías del sector biotech a crecer en digital.","simbionte"],["Healmind","Sin definir","SEPT24","Datos del día a día de pacientes de salud mental para terapeutas","healmind"],["matil","Sin definir","MAR25","Estructura cualquier fuente de información: del caos al orden","matil"],["TU ARROCERO","Alimentación","SEPT24","Elaboración de paellas para entrega y recogida a domicilio.","tu-arrocero"],["Testualia","Educación","SEPT24","Software de evaluación: exámenes ilimitados desde tu material.","testualia"],["Sumar Inversión","Finanzas","MAR25","Fintech que conecta ahorro con inversión inmobiliaria desde 100 €","sumar-inversion"],["FixUP!","Sin definir","MAR25","Nueva forma de aprovechar y proteger tu tecnología.","fixup"],["Kenko Imalytics","Sin definir","SEPT24","IA al servicio de la radiología para el diagnóstico del cáncer","kenko-imalytics"],["Bioinfile","Salud","MAR25","Servimos datos biomédicos.","bioinfile"],["Dataris","Sin definir","MAR25","Unifica datos de cultivos extensivos: maquinaria, sensores y predicciones","dataris"],["Tu Plaza Oposiciones","Sin definir","SEPT24","Academia de preparación de oposiciones de magisterio y secundaria","tu-plaza-oposiciones"],["La Diez Milanesa","Sin definir","SEPT24","Elaboración de milanesa para consumir en local o a domicilio","la-diez-milanesa"],["LEMA","Turismo","MAR25","La página de quienes organizan eventos.","lema"],["Additium 3D","Sin definir","MAR25","Additium 3D es un servicio integral de fabricación 3D","additium-3d"],["Sobox Store","Sin definir","MAR25","Venta online de sofás envasados al vacío.","sobox-sotre"],["Inertial","Sin definir","SEPT24","Ayudar a las personas a mejorar su estado de salud física","inertial"],["CatalogueFlow","Sin definir","SEPT24","Potencia el comercio digital.","catalogueflow"],["Tryners","Salud","MAR25","Software para entrenadores de fuerza","tryners"],["NeuroBlock","Sin definir","MAR25","Herramienta para implementar el uso de la inteligencia artificial","neuroblock"],["Marinerob","Sin definir","MAR25","Ingeniería e innovación marina al máximo nivel.","marinerob"],["SCIENTISTS360","Educación","MAR25","SCIENTISTS360 fortalece el talento que sostiene la innovación.","scientists360"],["PsAIcoTools","Sin definir","MAR25","IA para potenciar la terapia","psaicotools"],["MyUrbanScoot","Sin definir","MAR25","Todo para patinetes eléctricos","myurbanscoot"],["Eara","Sin definir","MAR25","Plataforma de tokenización regulada global.","eara"],["Wilapp","Sin definir","SEPT24","Control de gestión para centros de belleza.","wilapp"],["Muemue Home","Sin definir","MAR25","Muebles y decoración para los más pequeños.","muemue-home"],["Komvo","HORECA","MAR25","Software para atraer y gestionar planes de grupo en restaurantes","komvo"],["HASLAP","Sin definir","SEPT24","Una app que conecta a runners con clubs y eventos de running.","haslap"],["Stamp","Sin definir","MAR25","Marketplace que conecta a comercios con turistas internacionales","stamp"],["Wedify","Sin definir","MAR25","Software de gestión comercial para organizadores de bodas","wedify"],["QuantumDrive","Deeptech","MAR25","Plataforma de optimización de rutas para vehículos eléctricos.","quantumdrive"],["Instalzeco","Sin definir","MAR25","Venta de soluciones de energía renovable para hogares.","instalzeco"],["Mind Makers","IA","MAR25","Aprendizaje para profesionales hiperpersonalizado con IA","mind-makers"],["Nextbit","Sin definir","MAR25","Nextbit simplifica el acceso a modelos de inteligencia artificial","nextbit"],["Projectum","Sin definir","SEPT24","Formulario para hacer cotizaciones de obras de forma automática","projectum"],["Fut.ing","Salud","MAR25","Plataforma de desarrollo para futbolistas","fut-ing"],["Automix","Alimentación","MAR25","Máquina para automatizar el servicio de bebidas en eventos.","automix"],["ButterflAI","IA","MAR25","Plataforma de IA que crea contenido optimizado para ecommerce","butterflai"],["Ajax DNA","Sin definir","MAR25","Medicina personalizada para cada paciente","ajax-dna"],["Anaimo","Sin definir","MAR25","Empleados y asistentes virtuales con IA y visión artificial","anaimo"],["Tralli","Sin definir","SEPT24","Servicio de facturación de maletas desde casa.","tralli"],["Llum Social","Sin definir","MAR25","Digitalizar la ayuda, multiplicar el impacto.","llum-social"],["Huming Music","Sin definir","SEPT24","Facilita el proceso de contratación de actuaciones","huming-music"],["Knockout Couture","Sin definir","MAR25","Marca de ropa centrada en artes marciales.","knockout-couture"],["Aipha G","Sin definir","SEPT24","Optimización industrial con XR e IA.","aipha-g"],["Me Renta","Sin definir","SEPT24","Servicio de adelanto de alquileres","me-renta"],["Lithosport","Sin definir","SEPT24","Mezcla única de algas para la mejora del rendimiento deportivo","lithosport"],["Lealtad Verde","Sin definir","MAR25","Implementación de máquinas biorrecicladoras SDDR","lealtad-verde"],["Packar Technologies","Sin definir","SEPT24","Solución digital que unifica cotización y seguimiento logístico B2B","packar-technologies"],["De flores y floreros","Sin definir","SEPT24","Calzado femenino made in Spain","de-flores-y-floreros"],["Tornasol Energy","Sin definir","MAR25","Ecommerce de kits solares plug and play.","tornasol-energy"],["OnGres","Sin definir","SEPT24","OnGres: plataforma para Postgres en producción","ongres"],["Dam Squad","Sin definir","MAR25","Soluciones enfocadas en talentos remotos altamente cualificados.","dam-squad"],["Keemetrix","Sin definir","MAR25","Automatización de gestión para empresas de trasteros","keemetrix"],["Silverlight","Sin definir","SEPT24","Red que conecta profesionales con especialistas","silverlight"],["La Folie","Retail","SEPT24","Nuestra misión es vestir a las mujeres","la-folie"],["Clipbeat","Sin definir","SEPT24","Plataforma para crear oportunidades musicales","clipbeat"],["MealLink","Sin definir","MAR25","Pases diarios todo incluido para viajeros","meallink"],["Single and Jam","Sin definir","MAR25","Marketplace de participaciones en royalties.","single-and-jam"],["AWA Sunglasses","Sin definir","SEPT24","Marca de gafas de sol que flotan","awa-sunglasses"],["Barco Compartido","Sin definir","MAR25","Tu propio barco en multipropiedad","barco-compartido"],["TOLVIA","IA","MAR25","Agentes de voz para atención al cliente y procesos comerciales","tolvia"],["Cloosely","Ecommerce","MAR25","Conoce a tus clientes, personaliza cada mensaje y escala ventas con IA","cloosely"],["Live Fresh Biotech","Sin definir","MAR25","Soluciones de frío confort sostenibles de alta duración","live-fresh-biotech"],["Connect24","Deeptech","MAR25","Monitorización de instalaciones en tiempo real","connect24"],["Nomad Bee","Sin definir","SEPT24","Agencia de viajes en grupo","nomad-bee"],["Dymo","Sin definir","MAR25","Infraestructura de pagos internacionales.","dymo"],["Neare Clothes","Sin definir","MAR25","Marca vintage y comunidad de moda consciente y sostenible","neare-clothes"],["La Pizarra del DT","Sin definir","SEPT24","Cursos para convertirte en un profesional del mundo del fútbol","la-pizarra-del-dt"],["coLanguage","Sin definir","SEPT24","Clases de conversación con materiales didácticos para idiomas","colanguage"],["Teal AI","Sin definir","MAR25","Plataforma para encontrar perfiles técnicos.","teal-ai"],["ActivH20","Sin definir","SEPT25","Marketplace B2B de muebles con impacto","activh20"],["Procedural Games","Gaming","MAR25","Desarrollo de videojuegos innovadores para plataformas móviles","procedural-games"],["Psicología y Fútbol","Sin definir","MAR25","Psicología deportiva para futbolistas","psicologia-y-futbol"],["Hemon Sock","Sin definir","SEPT24","Desarrollo, personalización y producción de textil deportivo.","hemon-sock"],["Valencia Violins","Sin definir","MAR25","Venta y reparación de instrumentos de cuerda.","valencia-violins"],["Simpling","Sin definir","MAR25","Expertos en sampling segmentado","simpling"]];
+
+/* ---------- taxonomía ---------- */
+const AUD = {
+  clinica:      ["Clínicas y sanidad", /cl[íi]nic|dental|odont|paciente|hospital|sanitari|m[ée]dic[oa]s?\\b|medicina|fisioterap|farmac|enfermer|quir[úu]rg|biopsia|radiolog|pr[óo]tesis|neonatal|veterinari|intubaci|c[áa]ncer|biom[ée]dic|gen[óo]mic|historia cl[íi]nica/i],
+  bienestar:    ["Bienestar personal", /bienestar|longevidad|salud mental|emocional|terapia|psic[óo]|nutric|suplemento|meditaci|estr[ée]s|ansiedad|belleza|skin ?care|cosm[ée]t/i],
+  mascotas:     ["Mascotas", /mascota|perro|gato|canino|veterinari|pet-?care|felin/i],
+  negocioLocal: ["Negocio de calle", /pyme|aut[óo]nomo|taller|gimnas|comercio|tienda f[íi]sica|negocios? f[íi]sico|peluquer|sal[óo]n|centro deportivo|centros? de belleza|trastero|supermercado|academia|local/i],
+  horeca:       ["Hostelería", /restaurante|hosteler|horeca|chef|cocina|cerveza|pizzer|comida|paella|milanesa|bebida|ocio nocturno/i],
+  turismo:      ["Turismo y hoteles", /hotel|turis|viaje|ferry|alojamiento|charter|n[áa]utic|barco|embarcaci[óo]n|vacacion|crucero/i],
+  eventos:      ["Eventos", /evento|boda|feria|festival|entrada|ticket|concierto|\bDJ\b|artista|fiesta|acreditaci|campamento/i],
+  marcaRetail:  ["Marca de consumo", /marca (de|valenciana|referente)|\bmoda\b|calzado|joyer|\bropa\b|bolso|gafas|mueble|decoraci[óo]n|regalo|accesorio|puzzle|sneaker|streetwear|maquillaje|abanico/i],
+  ecommerce:    ["Ecommerce", /ecommerce|e-?commerce|comercio (electr[óo]nico|digital)|tienda online|marketplace|venta online|retail|dropship/i],
+  industria:    ["Industria", /industri|f[áa]brica|fabricaci[óo]n|maquinaria|planta|manufactur|soldadur|pl[áa]stico|cer[áa]mic|electr[óo]nic|distribuidora/i],
+  logistica:    ["Logística y flotas", /log[íi]stic|env[íi]o|transporte|paquet|almac[ée]n|flota|reparto|cadena de suministro|forwarding|embalaje|\brutas\b|conductor|\bVTC\b/i],
+  inmobiliaria: ["Inmobiliario y obra", /inmobiliari|vivienda|alquiler|finca|\bobra\b|construcci[óo]n|arquitect|\bpiso\b|habitacion|hogar|inquilino|convivir|fachada/i],
+  educacion:    ["Educación", /educa|formaci[óo]n|colegio|universi|docente|alumno|\bcurso|oposici|estudiante|profesor|aprender|e-?learning|escuela|campus|acad[ée]mic/i],
+  finanzas:     ["Finanzas", /inversi[óo]n|\bfondo|banca|cr[ée]dito|financ|fiscal|contab|seguro|tokeniz|cripto|wealth|patrimonio|exchange|ahorro/i],
+  rrhh:         ["RRHH y talento", /talento|selecci[óo]n de personal|recursos humanos|empleado|contrataci[óo]n|n[óo]mina|absentismo|freelance|candidat|opositor|reclut/i],
+  legal:        ["Legal y trámites", /abogado|despacho|jur[íi]dic|contrato|licitacion|firma electr[óo]nica|gestor[íi]a|tr[áa]mite|burocracia|notari|pericial/i],
+  publico:      ["Sector público", /ayuntamiento|sector p[úu]blico|administraci[óo]n p[úu]blica|policial|emergencia|defensa|municipal|ayudas? p[úu]blicas?|subvenci|financiaci[óo]n europea|funerario/i],
+  deporte:      ["Deporte", /deport|f[úu]tbol|baloncesto|p[áa]del|entrenamiento|entrena|fitness|ciclista|running|atleta|voleibol|esqu[íi]|gimnasia|\bclub\b|maillot/i],
+  agro:         ["Agro y alimentación", /agr[íi]cola|\bagro|cultivo|ganader|pastoreo|riego|forestal|alimentari|aliment[oa]s?\b|envase|microveget/i],
+  energia:      ["Energía", /energ[íi]a|solar|fotovoltaic|el[ée]ctric|hidr[óo]geno|bater[íi]a|renovable|factura de luz|refrigera|carga port[áa]til/i],
+  cultura:      ["Cultura y medios", /m[úu]sic|canci[óo]n|discogr[áa]fic|royalt|guitarra|editorial|manuscrito|\barte\b|audiovisual|videojuego|streaming|revista|medio de comunicaci/i],
+  empresaB2B:   ["Empresa B2B", /para empresas|empresarial|corporativ|\bB2B\b|organizaciones|compa[ñn][íi]as|\bpymes\b|startups/i],
+  consumidor:   ["Consumidor final", /personas|usuario|familia|consumidor|mayores|ni[ñn]os|adultos|j[óo]venes|particulares|mujeres|s[ée]nior/i]
+};
+const CAP = {
+  ia:          ["IA y agentes", /\bIA\b|inteligencia artificial|agente|\bGPT\b|\bLLM\b|visi[óo]n artificial|generativa|algoritm|asistente|empleados? digital|trabajadores? virtual/i],
+  automat:     ["Automatización", /automatiz|autom[áa]tic|\bflujos?\b|workflow|digitaliza|optimiza (procesos|operaciones|la gesti)/i],
+  voz:         ["Voz y teléfono", /\bvoz\b|telef[óo]n|llamada|telecomunicaciones|VoIP|conversacional/i],
+  marketing:   ["Marketing y captación", /marketing|captaci[óo]n|\bleads?\b|publicidad|\bSEO\b|posicionamiento|rese[ñn]as|reputaci[óo]n|visibilidad|contenido|redes sociales|campa[ñn]|creadores|influencer|\bUGC\b|anuncios|growth|fideliza|valoraciones online|embajadores/i],
+  ventas:      ["Ventas y CRM", /\bCRM\b|ventas|comercial|funnel|prospec|vender|monetiz|\bcompra y venta\b/i],
+  gestion:     ["Gestión y operativa", /gesti[óo]n|gestiona|\bERP\b|operativa|administraci[óo]n de|agenda|reserva|control de|inventario|planifica|ejecuci[óo]n de/i],
+  datos:       ["Datos y analítica", /\bdatos\b|anal[íi]tic|analytics|m[ée]trica|predicc|informes?\b|dashboard|estad[íi]stic|monitoriza|pron[óo]stico|medici[óo]n|diagn[óo]stico/i],
+  infra:       ["Infraestructura", /cloud|\bnube\b|c[óo]mputo|infraestructura|servidor|plataforma de datos|soberan|Postgres|acceso a modelos|streaming profesional|geoespacial/i],
+  seguridad:   ["Seguridad", /cibersegur|vulnerab|cortafuegos|pentest|fraude|verifica|vigilancia|hurto|\brobo\b|riesgo|protecci[óo]n|seguridad/i],
+  compliance:  ["Cumplimiento", /cumplimiento|normativ|\bRGPD\b|AI Act|auditor?[ií]?a?\b|certifica|verifactu|trazabilidad|gobernanza|\blegal\b|acredita|multas/i],
+  pagos:       ["Pagos y financiación", /\bpagos?\b|cobr[oa]|factura|financiaci[óo]n|cr[ée]dito|plazos|tokeniz|adelanto|ticketera/i],
+  personas:    ["Personas y RRHH", /selecci[óo]n de personal|\btalento\b|n[óo]mina|horario|clima laboral|recursos humanos|absentismo|contrataci[óo]n/i],
+  marketplace: ["Marketplace", /marketplace|conecta|plataforma que conecta|red que conecta|comparador/i],
+  hardware:    ["Hardware", /robot|dispositivo|sensor|dron|fabrica|m[áa]quina|impres|bater[íi]a|pr[óo]tesis|instrumento|incubadora|gr[úu]a|\b3D\b|pantalla/i],
+  producto:    ["Producto físico", /marca (de|valenciana)|\bropa\b|calzado|joyer|cosm[ée]t|mueble|bolso|gafas|regalo|accesorio|puzzle|suplemento|envase|textil|elaboraci[óo]n de/i],
+  formacion:   ["Formación", /formaci[óo]n|\bcursos?\b|academia|aprender|escuela|e-?learning|tutor|capacita|talleres/i],
+  servicios:   ["Servicios y consultoría", /consultor|agencia|\bservicios?\b|estudio de|instalador|mantenedor|asesor|a domicilio/i],
+  comunidad:   ["Comunidad", /comunidad|red social|conecta a personas|\bfans\b|amistades|voluntariado/i],
+  sostenible:  ["Sostenibilidad", /sostenib|residuo|recicl|circular|huella|ecol[óo]gic|segunda mano|reacondicionad|excedente/i],
+  software:    ["Software / plataforma", /software|plataforma|\bSaaS\b|\bapps?\b|aplicaci[óo]n|herramienta|\bsistema\b|soluci[óo]n digital/i]
+};
+const PROVEEDOR = ["infra","seguridad","compliance","pagos","personas","datos"];
+const SOFTWARE  = ["ia","automat","gestion","marketing","ventas","datos","marketplace","voz","infra","software"];
+const COHORTS = ["MAR24","SEPT24","MAR25","SEPT25","MAR26","SEPT26"];
+const SECTOR_AUD = {"Salud":"clinica","Ecommerce":"ecommerce","Retail":"marcaRetail","HORECA":"horeca",
+  "Turismo":"turismo","Educación":"educacion","Finanzas":"finanzas","Construcción":"inmobiliaria",
+  "Movilidad":"logistica","Alimentación":"agro","Gaming":"cultura","Cripto":"finanzas",
+  "Energía":"energia","Moda":"marcaRetail"};
+
+/* ---------- construcción ---------- */
+const CO = RAW.map((r,i)=>{
+  const [name,sector,batch,desc,slug] = r;
+  const hay = name+" "+desc;                       // el sector NO se usa para etiquetar: sesgaría todo
+  let aud = Object.keys(AUD).filter(k=>AUD[k][1].test(hay));
+  const cap = Object.keys(CAP).filter(k=>CAP[k][1].test(hay));
+  let fb = false;
+  if(!aud.length){ aud = [SECTOR_AUD[sector] || "empresaB2B"]; fb = true; }  // respaldo por sector: señal débil
+  return {i,name,sector,batch,desc,slug,aud,cap,fb,
+          key:(name+" "+sector+" "+desc).toLowerCase()};
+});
+
+/* peso por especificidad: una etiqueta que llevan 200 empresas informa menos que una de 20 */
+const N = CO.length;
+const W = {};
+[...Object.keys(AUD),...Object.keys(CAP)].forEach(k=>{
+  const df = CO.filter(c=>c.aud.includes(k)||c.cap.includes(k)).length || 1;
+  W[k] = Math.log(N/df);
+});
+const sumW = a => a.reduce((t,k)=>t+(W[k]||1),0);
+
+/* léxico de nicho: palabras poco frecuentes que dos fichas comparten literalmente */
+const STOP = new Set(["plataf","soluci","empres","servic","sistem","tecnol","digita","produc","negoci","client","mercad","nuestr","traves","primer","mejora","person","gestio","softwa","automa","permit","ofrece","conect","transf","proces","herram","aplica","inteli","artifi","genera","manera","format","proyec","desarr","comple","especi","median","basado","travez","calida","facili","tiempo","modelo","reduci","aument","optimi","mundo","valenc","espana","online","global","nuevos","nueva"]);
+const deacc = t => t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function stemsOf(t){
+  const raw = deacc(t).match(/[a-z0-9]{5,}/g) || [];
+  const out = new Map();
+  raw.forEach(w=>{ const st=w.slice(0,6); if(!STOP.has(st) && !out.has(st)) out.set(st,w); });
+  return out;
+}
+CO.forEach(c=>{ c.stm = stemsOf(c.name+" "+c.desc); });
+const SDF = {};
+CO.forEach(c=>c.stm.forEach((_,st)=>SDF[st]=(SDF[st]||0)+1));
+const RARE = st => (SDF[st]||0) <= 45;
+const inter = (a,b)=>a.filter(x=>b.includes(x));
+const cohortGap=(a,b)=>{
+  const ia=COHORTS.indexOf(a), ib=COHORTS.indexOf(b);
+  return (ia<0||ib<0) ? null : Math.abs(ia-ib);
+};
+const MULT = {competidor:1, aliado:1, proveedor:.94, cliente:.76, espejo:.8, debil:.5};
+
+function evaluate(B,C){
+  const audS = inter(B.aud,C.aud);
+  const capS = inter(B.cap,C.cap);
+  const capUnion = [...new Set([...B.cap,...C.cap])];
+  const conf = (B.fb||C.fb) ? 0.55 : 1;           // audiencia inferida del sector pesa menos
+  const audFit = B.aud.length ? conf*sumW(audS)/sumW(B.aud) : 0;
+  const nicho = [...B.stm.keys()].filter(st=>C.stm.has(st) && RARE(st)).slice(0,3)
+                  .map(st=>B.stm.get(st));
+  const capJ   = capUnion.length ? sumW(capS)/sumW(capUnion) : 0;
+  const Bsoft = B.cap.some(c=>SOFTWARE.includes(c));
+  const Csoft = C.cap.some(c=>SOFTWARE.includes(c));
+  const aporta = C.cap.filter(c=>!B.cap.includes(c));
+  const prov   = aporta.filter(c=>PROVEEDOR.includes(c));
+
+  let rel;
+  if(audFit>=0.5 && capJ>=0.5) rel="competidor";
+  else if(audFit>0 && Bsoft && !Csoft) rel="cliente";
+  else if(audFit>0 && !Bsoft && Csoft) rel="proveedor";
+  else if(audFit>0) rel="aliado";
+  else if(Bsoft && prov.length>=2) rel="proveedor";
+  else if(capJ>=0.34) rel="espejo";
+  else rel="debil";
+
+  let s = 38*audFit;
+  if(audFit>0 && capJ<0.5)   // complementar solo cuenta si de verdad comparten comprador
+    s += audFit * (10 + Math.min(14, 5*aporta.filter(c=>SOFTWARE.includes(c)||PROVEEDOR.includes(c)).length));
+  if(Bsoft && Csoft) s += 10;
+  if(Bsoft) s += Math.min(16, 8*prov.length) * (0.4 + 0.6*audFit);
+  if(!audFit && capJ>=0.34) s += 20;
+  if(B.sector===C.sector && B.sector!=="Sin definir") s += 6;
+  s += 7*nicho.length;
+  const gap = cohortGap(B.batch,C.batch);
+  if(gap===0) s += 9; else if(gap===1) s += 4;
+
+  s = Math.round(Math.min(100, s*MULT[rel]));
+  return {s,rel,audS,capS,aporta,prov,gap,audFit,capJ,nicho};
+}
+
+const REL = {
+  competidor:{t:"Competidor", c:"var(--coral)",  cls:"p-competidor",
+    h:"Mismo público y función muy solapada: o pactáis frontera, o competís por la misma cuenta."},
+  aliado:{t:"Aliado comercial", c:"var(--accent)", cls:"p-aliado",
+    h:"Comparten comprador y cubren funciones distintas: paquete conjunto o integración."},
+  proveedor:{t:"Proveedor", c:"var(--violet)", cls:"p-proveedor",
+    h:"Vende una pieza que el otro consume: infraestructura, cumplimiento, pagos, datos o personas."},
+  espejo:{t:"Espejo de modelo", c:"var(--slate)", cls:"p-espejo",
+    h:"Misma jugada en otro vertical: playbook transferible, cero solapamiento de cliente."},
+  cliente:{t:"Cliente potencial", c:"var(--amber)", cls:"p-cliente",
+    h:"Negocio del mismo público que no fabrica software: candidato a comprarlo."},
+  debil:{t:"Encaje débil", c:"var(--line-strong)", cls:"p-espejo",
+    h:"Sin público ni función en común."}
+};
+const ORDER = ["competidor","aliado","proveedor","cliente","espejo","debil"];
+
+function phrase(B,C,e){
+  const n=k=>((AUD[k]||CAP[k])||["?"])[0];
+  const list=a=>a.map(n).join(", ").toLowerCase();
+  const p=[];
+  if(e.audS.length) p.push(`Mismo público: ${list(e.audS)}.`);
+  else p.push("Sin público en común.");
+  const solap=e.capS.filter(k=>k!=="software");
+  if(solap.length) p.push(`Se solapan en ${list(solap)}.`);
+  const add=e.aporta.filter(c=>PROVEEDOR.includes(c)||["marketing","ventas","voz","formacion","automat","ia"].includes(c));
+  if(add.length && e.rel!=="competidor") p.push(`Aportan ${list(add.slice(0,3))} que ${B.name} no cubre.`);
+  if(e.nicho.length) p.push(`Las dos fichas hablan de ${e.nicho.join(", ")}.`);
+  if(e.gap===0) p.push(`Misma cohorte ${B.batch}: están a un café.`);
+  return p.join(" ");
+}
+
+/* ---------- estado y render ---------- */
+let base = CO.find(c=>c.name==="Dentista Ideal") || CO[0];
+let relFilter = null;
+let scored = [];
+
+function compute(){
+  scored = CO.filter(c=>c.i!==base.i)
+    .map(c=>({c,e:evaluate(base,c)}))
+    .filter(x=>x.e.s>=22)
+    .sort((a,b)=>b.e.s-a.e.s || ORDER.indexOf(a.e.rel)-ORDER.indexOf(b.e.rel));
+}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+function renderFicha(){
+  const tags = (arr,dict,cls)=> arr.length
+    ? `<div class="tagrow">${arr.map(k=>`<span class="tg ${cls}">${esc(dict[k][0])}</span>`).join("")}</div>`
+    : `<div class="tagrow"><span class="tg">sin señal clara</span></div>`;
+  document.getElementById("ficha").innerHTML =
+    `<h3>${esc(base.name)}</h3>
+     <div class="cmeta">${esc(base.sector)} · ${esc(base.batch)}</div>
+     <p class="desc">${esc(base.desc)}</p>
+     <p class="legendttl">Público detectado</p>${tags(base.aud,AUD,"aud")}
+     <p class="legendttl">Función detectada</p>${tags(base.cap,CAP,"cap")}`;
+}
+
+function renderDist(){
+  const counts={};
+  ORDER.forEach(k=>counts[k]=0);
+  scored.forEach(x=>counts[x.e.rel]++);
+  document.getElementById("dist").innerHTML = ORDER.filter(k=>counts[k]>0).map(k=>
+    `<button data-rel="${k}" aria-pressed="${relFilter===null||relFilter===k}" title="${esc(REL[k].h)}">
+       <span class="sw" style="background:${REL[k].c}"></span>
+       <span>${REL[k].t}</span><span class="n">${counts[k]}</span>
+     </button>`).join("");
+  document.querySelectorAll("#dist button").forEach(b=>b.onclick=()=>{
+    relFilter = (relFilter===b.dataset.rel) ? null : b.dataset.rel;
+    renderDist(); renderList();
+  });
+}
+
+function renderList(){
+  const rows = scored.filter(x=>!relFilter||x.e.rel===relFilter).slice(0,60);
+  document.getElementById("rttl").textContent = `Con quién encaja ${base.name}`;
+  document.getElementById("rn").textContent =
+    `${rows.length} mostradas · ${scored.length} con señal de ${CO.length-1} analizadas`;
+  document.getElementById("empty").hidden = rows.length>0;
+  document.getElementById("list").innerHTML = rows.map(({c,e})=>{
+    const r=REL[e.rel];
+    return `<article class="item">
+      <div class="scorebox">
+        <span class="sval" style="color:${r.c}">${e.s}</span>
+        <span class="sbar"><i style="width:${e.s}%;background:${r.c}"></i></span>
+      </div>
+      <div class="main">
+        <div class="top">
+          <span class="nm"><a href="https://lanzadera.es/startups/${esc(c.slug)}/" target="_blank" rel="noopener">${esc(c.name)}</a></span>
+          <span class="pill ${r.cls}">${r.t}</span>
+          <span class="mt">${esc(c.sector)} · ${esc(c.batch)}</span>
+        </div>
+        <p class="dsc">${esc(c.desc)}</p>
+        <p class="why">${esc(phrase(base,c,e))}</p>
+        <button class="setbase" data-i="${c.i}">↳ analizar ${esc(c.name)} como base</button>
+      </div>
+    </article>`;
+  }).join("");
+  document.querySelectorAll(".setbase").forEach(b=>b.onclick=()=>{
+    setBase(CO.find(c=>c.i===+b.dataset.i));
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+}
+
+function setBase(c){
+  if(!c) return;
+  base=c; relFilter=null;
+  document.getElementById("q").value="";
+  compute(); renderFicha(); renderDist(); renderList();
+}
+
+/* ---------- combobox ---------- */
+const q=document.getElementById("q"), sug=document.getElementById("sug");
+let cur=-1, hits=[];
+function closeSug(){sug.hidden=true;q.setAttribute("aria-expanded","false");cur=-1;}
+function openSug(){
+  const v=q.value.trim().toLowerCase();
+  if(!v){closeSug();return;}
+  hits=CO.filter(c=>c.key.includes(v)).slice(0,40);
+  if(!hits.length){closeSug();return;}
+  sug.innerHTML=hits.map((c,j)=>
+    `<button role="option" data-j="${j}" aria-selected="false">${esc(c.name)}<span>${esc(c.sector)} · ${esc(c.batch)}</span></button>`).join("");
+  sug.querySelectorAll("button").forEach(b=>b.onclick=()=>{closeSug();setBase(hits[+b.dataset.j]);});
+  sug.hidden=false;q.setAttribute("aria-expanded","true");cur=-1;
+}
+q.addEventListener("input",openSug);
+q.addEventListener("keydown",ev=>{
+  if(sug.hidden) return;
+  const bs=[...sug.querySelectorAll("button")];
+  if(ev.key==="ArrowDown"||ev.key==="ArrowUp"){
+    ev.preventDefault();
+    cur = ev.key==="ArrowDown" ? Math.min(bs.length-1,cur+1) : Math.max(0,cur-1);
+    bs.forEach((b,j)=>{b.classList.toggle("on",j===cur);b.setAttribute("aria-selected",String(j===cur));});
+    bs[cur].scrollIntoView({block:"nearest"});
+  } else if(ev.key==="Enter"){
+    ev.preventDefault(); closeSug(); setBase(hits[cur<0?0:cur]);
+  } else if(ev.key==="Escape"){ closeSug(); }
+});
+document.addEventListener("click",ev=>{if(!ev.target.closest(".picker"))closeSug();});
+
+compute(); renderFicha(); renderDist(); renderList();
+</script>
+
+</body>
+</html>
