@@ -108,6 +108,16 @@ aside{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px}
 .tg.aud{background:var(--slate-soft);color:var(--slate);border-color:transparent}
 .tg.cap{background:var(--accent-soft);color:var(--accent);border-color:transparent}
 
+.levels{display:flex;flex-direction:column;gap:2px}
+.levels button{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  width:100%;background:transparent;border:0;border-radius:2px;padding:6px 8px;cursor:pointer;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;
+  color:var(--ink-2);text-align:left}
+.levels button em{font-style:normal;color:var(--muted);font-size:10px}
+.levels button:hover{background:var(--sunken)}
+.levels button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.levels button[aria-pressed="true"] em{color:var(--ground);opacity:.6}
+
 .dist{display:flex;flex-direction:column;gap:7px}
 .dist button{display:grid;grid-template-columns:11px 1fr auto;gap:9px;align-items:center;
   width:100%;background:transparent;border:0;padding:3px 0;cursor:pointer;color:var(--ink-2);
@@ -194,12 +204,21 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
   <aside>
     <div class="card" id="ficha"></div>
     <div class="card">
+      <p class="legendttl">Fuerza mínima</p>
+      <div class="levels" id="levels">
+        <button data-min="60" aria-pressed="false">Solo fuerte<em>60+</em></button>
+        <button data-min="45" aria-pressed="true">Media-alta<em>45+</em></button>
+        <button data-min="22" aria-pressed="false">Todas<em>22+</em></button>
+      </div>
+    </div>
+
+    <div class="card">
       <p class="legendttl">Tipo de relación</p>
       <div class="dist" id="dist"></div>
     </div>
     <div class="card">
       <p class="legendttl">Cómo se calcula</p>
-      <p class="how">Cada ficha se etiqueta por <b>público</b> (a quién vende) y por <b>función</b> (qué hace), leyendo su descripción pública. La puntuación suma público compartido, complementariedad de función, encaje proveedor-cliente y cercanía de cohorte; el solapamiento total de función sobre el mismo público cambia la etiqueta a competidor en vez de restar. Es un cribado heurístico sobre una frase por empresa, no un análisis de la compañía.</p>
+      <p class="how">Cada ficha se etiqueta por <b>público</b> (a quién vende) y por <b>función</b> (qué hace), leyendo su descripción pública. La puntuación suma público compartido, complementariedad de función, encaje proveedor-cliente y cercanía de cohorte; el solapamiento total de función sobre el mismo público cambia la etiqueta a competidor en vez de restar. Solo se listan los encajes que llegan a la fuerza mínima: un público compartido vago, o inferido del sector en las dos fichas, no cuenta como coincidencia. Es un cribado heurístico sobre una frase por empresa, no un análisis de la compañía.</p>
     </div>
   </aside>
 
@@ -338,8 +357,13 @@ function evaluate(B,C){
   const audS = inter(B.aud,C.aud);
   const capS = inter(B.cap,C.cap);
   const capUnion = [...new Set([...B.cap,...C.cap])];
-  const conf = (B.fb||C.fb) ? 0.55 : 1;           // audiencia inferida del sector pesa menos
-  const audFit = B.aud.length ? conf*sumW(audS)/sumW(B.aud) : 0;
+  // Dos públicos inferidos del sector no son una coincidencia: son dos incógnitas.
+  // Y "empresa B2B" es un cajón de sastre, no un comprador concreto.
+  const conf = (B.fb && C.fb) ? 0
+             : (B.fb || C.fb) ? 0.45
+             : 1;
+  const soloB2B = audS.length===1 && audS[0]==="empresaB2B";
+  const audFit = B.aud.length ? conf*(soloB2B?0.35:1)*sumW(audS)/sumW(B.aud) : 0;
   const nicho = [...B.stm.keys()].filter(st=>C.stm.has(st) && RARE(st)).slice(0,3)
                   .map(st=>B.stm.get(st));
   const capJ   = capUnion.length ? sumW(capS)/sumW(capUnion) : 0;
@@ -349,10 +373,11 @@ function evaluate(B,C){
   const prov   = aporta.filter(c=>PROVEEDOR.includes(c));
 
   let rel;
-  if(audFit>=0.5 && capJ>=0.5) rel="competidor";
-  else if(audFit>0 && Bsoft && !Csoft) rel="cliente";
-  else if(audFit>0 && !Bsoft && Csoft) rel="proveedor";
-  else if(audFit>0) rel="aliado";
+  const MISMO_PUBLICO = audFit >= 0.30;
+  if(MISMO_PUBLICO && capJ>=0.5) rel="competidor";
+  else if(MISMO_PUBLICO && Bsoft && !Csoft) rel="cliente";
+  else if(MISMO_PUBLICO && !Bsoft && Csoft) rel="proveedor";
+  else if(MISMO_PUBLICO) rel="aliado";
   else if(Bsoft && prov.length>=2) rel="proveedor";
   else if(capJ>=0.34) rel="espejo";
   else rel="debil";
@@ -406,12 +431,13 @@ function phrase(B,C,e){
 /* ---------- estado y render ---------- */
 let base = CO.find(c=>c.name==="Dentista Ideal") || CO[0];
 let relFilter = null;
+let minScore = 45;        // media-alta por defecto
 let scored = [];
 
 function compute(){
   scored = CO.filter(c=>c.i!==base.i)
     .map(c=>({c,e:evaluate(base,c)}))
-    .filter(x=>x.e.s>=22)
+    .filter(x=>x.e.s>=minScore)
     .sort((a,b)=>b.e.s-a.e.s || ORDER.indexOf(a.e.rel)-ORDER.indexOf(b.e.rel));
 }
 
@@ -477,11 +503,17 @@ function renderList(){
     `Con quién encaja <b>${esc(base.name)}</b>. Los dos catálogos van por separado a propósito: ` +
     `no es lo mismo una empresa que está en el edificio que una que pasó por aquí hace seis años.`;
 
+  const motivoVacio = base.fb
+    ? `La ficha de ${base.name} en Lanzadera no dice a quién vende, así que el motor no tiene público con el que cruzar. Baja la fuerza mínima para ver encajes sueltos por función, o parte de una empresa con ficha más explícita.`
+    : `Nada llega a ${minScore} puntos. Baja la fuerza mínima si quieres ver también los encajes flojos.`;
+
   const fill = (sufijo, list, total) => {
     const shown = list.slice(0, TOPN);
     document.getElementById("n-"+sufijo).textContent =
-      `${shown.length} de ${list.length} con señal · ${total} analizadas`;
-    document.getElementById("empty-"+sufijo).hidden = shown.length>0;
+      `${shown.length} de ${list.length} · ${total} analizadas`;
+    const vacio = document.getElementById("empty-"+sufijo);
+    vacio.hidden = shown.length>0;
+    if(!shown.length) vacio.textContent = motivoVacio;
     document.getElementById("list-"+sufijo).innerHTML = shown.map(card).join("");
   };
   fill("act", act, nAct);
@@ -533,6 +565,14 @@ const NH = CO.filter(c=>c.batch==="Histórico").length;
 document.getElementById("kicker").textContent =
   `${CO.length} empresas · ${CO.length-NH} activas + ${NH} del histórico · Lanzadera`;
 document.getElementById("nrest").textContent = `las otras ${CO.length-1}`;
+
+document.querySelectorAll("#levels button").forEach(b=>b.onclick=()=>{
+  minScore = +b.dataset.min;
+  document.querySelectorAll("#levels button").forEach(x=>
+    x.setAttribute("aria-pressed", String(x===b)));
+  relFilter = null;
+  compute(); renderDist(); renderList();
+});
 
 compute(); renderFicha(); renderDist(); renderList();
 </script>
