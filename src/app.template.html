@@ -159,9 +159,9 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
 <div class="wrap">
 <header>
   <div class="brand">
-    <div class="kicker">549 startups · Lanzadera · motor de compatibilidad</div>
+    <div class="kicker" id="kicker">Lanzadera · motor de compatibilidad</div>
     <h1>Radar de Sinergias <span style="font-size:.38em;font-weight:400;opacity:.55;vertical-align:middle;margin-left:.3em">by Dentista Ideal</span></h1>
-    <p class="sub">Elige una empresa base y el motor puntúa las otras 548 contra ella: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
+    <p class="sub">Elige una empresa base y el motor puntúa <span id="nrest">el resto del portfolio</span> contra ella: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
   </div>
   <div class="picker">
     <label for="q">Empresa base</label>
@@ -194,8 +194,8 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
 </div>
 
 <footer>
-  Fuente: directorio público de startups de Lanzadera, 549 fichas leídas de su API el 09/09/2026. Descripciones literales de cada ficha.<br>
-  Cohortes: MAR24 · SEPT24 · MAR25 · SEPT25 · MAR26 · SEPT26 · Alumni (sin cohorte asignada en la ficha).
+  Fuente: directorio público de Lanzadera. 549 fichas del catálogo activo (/startups/, vía su API REST, 09/09/2026) más 947 del histórico (/proyecto/, vía sus sitemaps, 18/09/2026). Descripciones literales de cada ficha.<br>
+  Cohortes: MAR24 · SEPT24 · MAR25 · SEPT25 · MAR26 · SEPT26 · Alumni (activas sin cohorte) · Histórico (portfolio antiguo, sin sector ni cohorte publicados).
 </footer>
 </div>
 
@@ -424,7 +424,7 @@ function renderList(){
       </div>
       <div class="main">
         <div class="top">
-          <span class="nm"><a href="https://lanzadera.es/startups/${esc(c.slug)}/" target="_blank" rel="noopener">${esc(c.name)}</a></span>
+          <span class="nm"><a href="https://lanzadera.es/${c.batch==='Histórico'?'proyecto':'startups'}/${esc(c.slug)}/" target="_blank" rel="noopener">${esc(c.name)}</a></span>
           <span class="pill ${r.cls}">${r.t}</span>
           <span class="mt">${esc(c.sector)} · ${esc(c.batch)}</span>
         </div>
@@ -475,6 +475,11 @@ q.addEventListener("keydown",ev=>{
   } else if(ev.key==="Escape"){ closeSug(); }
 });
 document.addEventListener("click",ev=>{if(!ev.target.closest(".picker"))closeSug();});
+
+const NH = CO.filter(c=>c.batch==="Histórico").length;
+document.getElementById("kicker").textContent =
+  `${CO.length} empresas · ${CO.length-NH} activas + ${NH} del histórico · Lanzadera`;
+document.getElementById("nrest").textContent = `las otras ${CO.length-1}`;
 
 compute(); renderFicha(); renderDist(); renderList();
 </script>

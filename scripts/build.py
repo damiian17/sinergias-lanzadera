@@ -12,6 +12,8 @@ SHELL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{desc}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
 <style>
   :root{{color-scheme:light dark}}
   body{{margin:0;font:14px system-ui,sans-serif}}
