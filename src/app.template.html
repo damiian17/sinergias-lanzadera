@@ -46,12 +46,14 @@ button,input,select{font:inherit}
 /* header */
 header{padding:38px 0 22px;border-bottom:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between}
-.brand{display:flex;flex-direction:column;gap:7px;max-width:56ch}
+.brand{display:flex;flex-direction:column;gap:7px;flex:1 1 440px}
 .kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.15em;
   text-transform:uppercase;color:var(--muted)}
 h1{font-family:"Bricolage Grotesque","Helvetica Neue",sans-serif;font-weight:800;
   font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.03;letter-spacing:-.022em;margin:0}
-.sub{margin:0;color:var(--ink-2);font-size:1rem}
+.byline{font-size:.38em;font-weight:400;opacity:.55;vertical-align:middle;
+  margin-left:.35em;white-space:nowrap;display:inline-block}
+.sub{margin:0;color:var(--ink-2);font-size:1rem;max-width:56ch}
 
 /* picker */
 .picker{position:relative;flex:1 1 320px;max-width:400px}
@@ -174,7 +176,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
 <header>
   <div class="brand">
     <div class="kicker" id="kicker">Lanzadera · motor de compatibilidad</div>
-    <h1>Radar de Sinergias <span style="font-size:.38em;font-weight:400;opacity:.55;vertical-align:middle;margin-left:.3em">by Dentista Ideal</span></h1>
+    <h1>Radar de Sinergias <span class="byline">by Dentista Ideal</span></h1>
     <p class="sub">Elige una empresa base y el motor puntúa <span id="nrest">el resto del portfolio</span> contra ella, en dos listas separadas: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
   </div>
   <div class="picker">
