@@ -22,6 +22,8 @@ Con esas etiquetas, para cada par (base → candidata) se suma:
 | Léxico de nicho | hasta 21 | Palabras poco frecuentes que las dos fichas usan literalmente («dental», «licitaciones») |
 | Mismo sector / cohorte | 6 / 9 | La cohorte compartida importa: son gente a la que puedes ver esta semana |
 
+Los resultados salen en **dos listas separadas**, catálogo activo e histórico, y nunca mezclados en un mismo ranking: las fichas del histórico traen más texto y por eso puntúan algo más alto de lo que merecen, y además muchas de esas empresas ya no operan. Comparar un vecino de cohorte con una empresa que cerró hace cinco años en la misma tabla no ayuda a decidir nada.
+
 El total se multiplica por un factor según el tipo de relación, de modo que un «cliente potencial» no compite en la lista con un «aliado comercial». Un solapamiento de función alto sobre el mismo público **no resta**: cambia la etiqueta a competidor, que es igual de accionable.
 
 Toda la lógica está en `src/app.template.html`, en los bloques `AUD`, `CAP` y la función `evaluate()`.

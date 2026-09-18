@@ -122,6 +122,10 @@ aside{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px}
 .how b{color:var(--ink-2);font-weight:600}
 
 /* results */
+.lead{margin:0 0 22px;color:var(--ink-2);font-size:1.02rem}
+.lead b{font-weight:600;color:var(--ink)}
+.res + .res{margin-top:40px}
+.rnote{margin:-6px 0 14px;color:var(--muted);font-size:.9rem;max-width:72ch}
 .rhead{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:14px}
 .rhead h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.3rem;
   letter-spacing:-.015em;margin:0}
@@ -177,7 +181,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
   <div class="brand">
     <div class="kicker" id="kicker">Lanzadera · motor de compatibilidad</div>
     <h1>Radar de Sinergias <span style="font-size:.38em;font-weight:400;opacity:.55;vertical-align:middle;margin-left:.3em">by Dentista Ideal</span></h1>
-    <p class="sub">Elige una empresa base y el motor puntúa <span id="nrest">el resto del portfolio</span> contra ella: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
+    <p class="sub">Elige una empresa base y el motor puntúa <span id="nrest">el resto del portfolio</span> contra ella, en dos listas separadas: con quién comparte cliente, quién le vende, a quién le vende y quién le pisa el terreno.</p>
   </div>
   <div class="picker">
     <label for="q">Empresa base</label>
@@ -200,12 +204,27 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
   </aside>
 
   <main>
-    <div class="rhead">
-      <h2 id="rttl">Coincidencias</h2>
-      <span class="n" id="rn"></span>
-    </div>
-    <div class="list" id="list"></div>
-    <div class="empty" id="empty" hidden>Ningún resultado con ese filtro.</div>
+    <p class="lead" id="lead"></p>
+
+    <section class="res" id="sec-act">
+      <div class="rhead">
+        <h2>Catálogo activo</h2>
+        <span class="n" id="n-act"></span>
+      </div>
+      <p class="rnote">En el programa ahora o en una cohorte reciente. Es la gente con la que puedes quedar esta semana.</p>
+      <div class="list" id="list-act"></div>
+      <div class="empty" id="empty-act" hidden>Ninguna del catálogo activo con ese filtro.</div>
+    </section>
+
+    <section class="res" id="sec-his">
+      <div class="rhead">
+        <h2>Histórico</h2>
+        <span class="n" id="n-his"></span>
+      </div>
+      <p class="rnote">Portfolio antiguo, ya fuera del programa. Sus fichas traen más texto, así que puntúan algo más alto de lo que merecen; y muchas de estas empresas ya no operan. Úsalo como precedente — quién intentó esto antes y qué pasó — no como agenda de contactos.</p>
+      <div class="list" id="list-his"></div>
+      <div class="empty" id="empty-his" hidden>Ninguna del histórico con ese filtro.</div>
+    </section>
   </main>
 </div>
 
@@ -425,13 +444,9 @@ function renderDist(){
   });
 }
 
-function renderList(){
-  const rows = scored.filter(x=>!relFilter||x.e.rel===relFilter).slice(0,60);
-  document.getElementById("rttl").textContent = `Con quién encaja ${base.name}`;
-  document.getElementById("rn").textContent =
-    `${rows.length} mostradas · ${scored.length} con señal de ${CO.length-1} analizadas`;
-  document.getElementById("empty").hidden = rows.length>0;
-  document.getElementById("list").innerHTML = rows.map(({c,e})=>{
+const TOPN = 40;   // máximo de filas por sección
+
+function card({c,e}){
     const r=REL[e.rel];
     return `<article class="item">
       <div class="scorebox">
@@ -442,14 +457,36 @@ function renderList(){
         <div class="top">
           <span class="nm"><a href="https://lanzadera.es/${c.batch==='Histórico'?'proyecto':'startups'}/${esc(c.slug)}/" target="_blank" rel="noopener">${esc(c.name)}</a></span>
           <span class="pill ${r.cls}">${r.t}</span>
-          <span class="mt">${esc(c.sector)} · ${esc(c.batch)}</span>
+          <span class="mt">${c.sector==="Sin definir"?"":esc(c.sector)+" · "}${esc(c.batch)}</span>
         </div>
         <p class="dsc">${esc(c.desc)}</p>
         <p class="why">${esc(phrase(base,c,e))}</p>
         <button class="setbase" data-i="${c.i}">↳ analizar ${esc(c.name)} como base</button>
       </div>
     </article>`;
-  }).join("");
+}
+
+function renderList(){
+  const hit = scored.filter(x=>!relFilter||x.e.rel===relFilter);
+  const act = hit.filter(x=>x.c.batch!=="Histórico");
+  const his = hit.filter(x=>x.c.batch==="Histórico");
+  const nAct = CO.filter(c=>c.batch!=="Histórico").length - (base.batch!=="Histórico"?1:0);
+  const nHis = CO.filter(c=>c.batch==="Histórico").length - (base.batch==="Histórico"?1:0);
+
+  document.getElementById("lead").innerHTML =
+    `Con quién encaja <b>${esc(base.name)}</b>. Los dos catálogos van por separado a propósito: ` +
+    `no es lo mismo una empresa que está en el edificio que una que pasó por aquí hace seis años.`;
+
+  const fill = (sufijo, list, total) => {
+    const shown = list.slice(0, TOPN);
+    document.getElementById("n-"+sufijo).textContent =
+      `${shown.length} de ${list.length} con señal · ${total} analizadas`;
+    document.getElementById("empty-"+sufijo).hidden = shown.length>0;
+    document.getElementById("list-"+sufijo).innerHTML = shown.map(card).join("");
+  };
+  fill("act", act, nAct);
+  fill("his", his, nHis);
+
   document.querySelectorAll(".setbase").forEach(b=>b.onclick=()=>{
     setBase(CO.find(c=>c.i===+b.dataset.i));
     window.scrollTo({top:0,behavior:"smooth"});
