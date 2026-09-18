@@ -134,6 +134,18 @@ aside{position:sticky;top:20px;display:flex;flex-direction:column;gap:18px}
 .how b{color:var(--ink-2);font-weight:600}
 
 /* results */
+.start{background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:30px 32px 32px;display:flex;flex-direction:column;gap:12px}
+.start-k{margin:0;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.start h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:1.45rem;letter-spacing:-.018em;margin:0;text-wrap:balance}
+.start p{margin:0;color:var(--ink-2);max-width:60ch}
+.start p.start-min{color:var(--muted);font-size:.9rem;padding-top:6px;
+  border-top:1px solid var(--line);margin-top:6px}
+body[data-base] .start{display:none}
+body:not([data-base]) .need-base{display:none}
+
 .lead{margin:0 0 22px;color:var(--ink-2);font-size:1.02rem}
 .lead b{font-weight:600;color:var(--ink)}
 .res + .res{margin-top:40px}
@@ -204,7 +216,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
 
 <div class="cols">
   <aside>
-    <div class="card" id="ficha"></div>
+    <div class="card need-base" id="ficha"></div>
     <div class="card">
       <p class="legendttl">Fuerza mínima</p>
       <div class="levels" id="levels">
@@ -214,7 +226,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
       </div>
     </div>
 
-    <div class="card">
+    <div class="card need-base">
       <p class="legendttl">Tipo de relación</p>
       <div class="dist" id="dist"></div>
     </div>
@@ -225,9 +237,20 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
   </aside>
 
   <main>
-    <p class="lead" id="lead"></p>
+    <div class="start" id="start">
+      <p class="start-k">Empieza por aquí</p>
+      <h2>Escribe una empresa en «empresa base»</h2>
+      <p>El motor la compara contra <span id="nother">las demás</span> fichas del portfolio y te
+         devuelve dos listas: quién encaja dentro del catálogo activo y quién
+         en el histórico.</p>
+      <p class="start-min">Cada ficha se etiqueta por a quién vende y por qué hace, leyendo su
+         descripción pública en Lanzadera. Si una ficha no dice a quién vende,
+         el motor lo dirá en vez de inventarse coincidencias.</p>
+    </div>
 
-    <section class="res" id="sec-act">
+    <p class="lead need-base" id="lead"></p>
+
+    <section class="res need-base" id="sec-act">
       <div class="rhead">
         <h2>Catálogo activo</h2>
         <span class="n" id="n-act"></span>
@@ -237,7 +260,7 @@ footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
       <div class="empty" id="empty-act" hidden>Ninguna del catálogo activo con ese filtro.</div>
     </section>
 
-    <section class="res" id="sec-his">
+    <section class="res need-base" id="sec-his">
       <div class="rhead">
         <h2>Histórico</h2>
         <span class="n" id="n-his"></span>
@@ -431,12 +454,13 @@ function phrase(B,C,e){
 }
 
 /* ---------- estado y render ---------- */
-let base = CO.find(c=>c.name==="Dentista Ideal") || CO[0];
+let base = null;          // la página arranca en blanco: se elige empresa a mano
 let relFilter = null;
 let minScore = 45;        // media-alta por defecto
 let scored = [];
 
 function compute(){
+  if(!base){ scored = []; return; }
   scored = CO.filter(c=>c.i!==base.i)
     .map(c=>({c,e:evaluate(base,c)}))
     .filter(x=>x.e.s>=minScore)
@@ -446,6 +470,7 @@ function compute(){
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 function renderFicha(){
+  if(!base) return;
   const tags = (arr,dict,cls)=> arr.length
     ? `<div class="tagrow">${arr.map(k=>`<span class="tg ${cls}">${esc(dict[k][0])}</span>`).join("")}</div>`
     : `<div class="tagrow"><span class="tg">sin señal clara</span></div>`;
@@ -458,6 +483,7 @@ function renderFicha(){
 }
 
 function renderDist(){
+  if(!base) return;
   const counts={};
   ORDER.forEach(k=>counts[k]=0);
   scored.forEach(x=>counts[x.e.rel]++);
@@ -495,6 +521,7 @@ function card({c,e}){
 }
 
 function renderList(){
+  if(!base) return;
   const hit = scored.filter(x=>!relFilter||x.e.rel===relFilter);
   const act = hit.filter(x=>x.c.batch!=="Histórico");
   const his = hit.filter(x=>x.c.batch==="Histórico");
@@ -531,6 +558,7 @@ function setBase(c){
   if(!c) return;
   base=c; relFilter=null;
   document.getElementById("q").value="";
+  document.body.setAttribute("data-base","");
   compute(); renderFicha(); renderDist(); renderList();
 }
 
@@ -564,9 +592,10 @@ q.addEventListener("keydown",ev=>{
 document.addEventListener("click",ev=>{if(!ev.target.closest(".picker"))closeSug();});
 
 const NH = CO.filter(c=>c.batch==="Histórico").length;
+const mil = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 document.getElementById("kicker").textContent =
-  `${CO.length} empresas · ${CO.length-NH} activas + ${NH} del histórico · Lanzadera`;
-document.getElementById("nrest").textContent = `las otras ${CO.length-1}`;
+  `${mil(CO.length)} empresas · ${mil(CO.length-NH)} activas + ${mil(NH)} del histórico · Lanzadera`;
+document.getElementById("nrest").textContent = `las otras ${mil(CO.length-1)}`;
 
 document.querySelectorAll("#levels button").forEach(b=>b.onclick=()=>{
   minScore = +b.dataset.min;
@@ -576,7 +605,8 @@ document.querySelectorAll("#levels button").forEach(b=>b.onclick=()=>{
   compute(); renderDist(); renderList();
 });
 
-compute(); renderFicha(); renderDist(); renderList();
+document.getElementById("nother").textContent = `las otras ${mil(CO.length-1)}`;
+document.getElementById("q").focus();
 </script>
 
 </body>
